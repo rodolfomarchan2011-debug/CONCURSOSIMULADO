@@ -6,7 +6,7 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 
 | Item | Situação |
 | --- | --- |
-| Banco com **332 questões** oficiais (2025, 2024, 2018, 2004) | ✅ |
+| Banco com **420 questões** oficiais (2025, 2024, 2018, 2015, 2004) | ✅ |
 | Simulado sorteado 16/30/4/4/9/7 + travas (8 LP, 15 Direito, nota 5,0) | ✅ |
 | Treino aleatório por matéria, sempre em ordem diferente | ✅ |
 | Modo estudo (gabarito e explicação logo após responder) | ✅ |
@@ -48,6 +48,7 @@ pnpm test          # 21 testes (banco, sorteio/matriz, correção/travas, cronô
 - **Prova 2025**: VUNESP TJSP2503/001, aplicada em **07/12/2025**, 70 questões + redação. Gabarito oficial VERSÃO 1 (70/70 conferido).
 - **Prova 2024**: TJSP2401 (interior, 08/09/2024), 100 questões — 94 importadas (4 anuladas pelo gabarito definitivo: 26, 30, 64, 98; 1 com imagem). Gabarito VERSÃO 3, conferido em 4 questões de conteúdo.
 - **Prova 2018**: TJSP1704 (Interior), 100 questões — 99 importadas (a 91 usa figuras). Gabarito versão 2.
+- **Prova 2015**: TJSP1503 (26/04/2015), 100 questões — 88 importadas (12 com imagem/figura). Gabarito VERSÃO 1, conferido em 3 questões de lógica.
 - **Prova 2004**: caderno único com gabarito ao final, 70 questões. As 30 de Direito ficam marcadas como `revisar` e só aparecem no treino com aviso.
 - **Estrutura de 2027**: edital TJSP2607, Anexo VIII — 16 Língua Portuguesa, 30 Direito, 4 Atualidades, 4 Matemática, 9 Informática, 7 Raciocínio Lógico. Redação 0–40, mínimo 24.
 
@@ -114,8 +115,8 @@ Decisões e desvios do briefing original:
 
 ## Limitações conhecidas
 
-1. Banco atual: 332 questões de 4 edições. Ficaram de fora, por falta de par prova+gabarito confiável: **2023** (o caderno baixado não fecha com o gabarito VERSÃO 3 em questão de lógica), **2024R** (reaplicação da Capital: o gabarito tem 4 versões e as verificações ficaram ambíguas), **2021** (gabarito em imagem) e **2006/2007 e anteriores** (múltiplas versões). Entram numa próxima rodada baixando a prova da mesma versão do gabarito.
-2. Gabaritos: 2025 (VERSÃO 1, 70/70), 2024 (VERSÃO 3, 4 verificações), 2018 (versão 2) e 2004 (caderno único). Questões anuladas ficam fora.
+1. Banco atual: 420 questões de 5 edições. Ficaram de fora, por falta de par prova+gabarito da mesma versão: **2014, 2017, 2013, 2011, 2010** (gabaritos com 4 versões e caderno sem indicação de versão), **2023, 2024R** (idem), **2021** (gabarito em imagem), **2006/2007** (versões). Entram numa próxima rodada com a prova da versão exata.
+2. Gabaritos: 2025 (VERSÃO 1, 70/70), 2024 (VERSÃO 3, 4 verificações), 2018 (versão 2), 2015 (VERSÃO 1, 3 verificações) e 2004 (caderno único). Questões anuladas ficam fora.
 3. Explicações curadas cobrem 42 questões da edição 2025; nas demais o app mostra gabarito, alternativa correta e fonte, e o tutor (com chave) aprofunda.
 4. Sem login: progresso é local ao navegador (exportável em JSON). Importação ainda não implementada.
 5. Probabilidade de aprovação e módulo de redação estão fora do MVP (roadmap).
