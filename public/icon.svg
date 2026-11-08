@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Simulador TJSP Escrevente">
+  <rect width="512" height="512" rx="96" fill="#163664"/>
+  <g fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 120v250"/>
+    <path d="M176 150h160"/>
+    <path d="M150 370h212"/>
+    <path d="M120 200l-44 92h88z" fill="#85bdff" stroke="none"/>
+    <path d="M392 200l-44 92h88z" fill="#85bdff" stroke="none"/>
+    <circle cx="256" cy="112" r="22" fill="#ffffff" stroke="none"/>
+  </g>
+</svg>

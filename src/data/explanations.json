@@ -1,0 +1,62 @@
+{
+  "01": {
+    "correta": "A alternativa A reproduz o que o texto afirma: Cambridge destacou as contribuições de Hawking para o conhecimento científico e para a popularidade da ciência e da matemática. As demais distorcem o texto (carisma como causa do renome, papel insignificante, contribuição para Toope ou incapacidade de popularizar).",
+    "base": "Interpretação literal e inferência a partir do texto.",
+    "fonte": "VUNESP TJSP2503, questão 01"
+  },
+  "02": {
+    "correta": "A regência de \"dedicar\" pede \"à qual\" (dedicou suas contribuições à Universidade). \"Considera o professor como uma inspiração a milhões de pessoas\" não leva crase, e \"às quais deixa um legado\" exige crase porque \"deixar\" é transitivo indireto. Só a alternativa B combina as três exigências.",
+    "base": "Regência nominal e verbal; uso da crase.",
+    "fonte": "VUNESP TJSP2503, questão 02"
+  },
+  "03": {
+    "correta": "\"Excepcionais\" significa excepcionais/brilhantes e \"indelével\" significa que não se apaga, permanente. A alternativa A é a única que traz os dois sentidos corretos; as demais trocam por antônimos ou sentidos incompatíveis (efêmero, transitório, prescindível).",
+    "base": "Significação contextual de palavras.",
+    "fonte": "VUNESP TJSP2503, questão 03"
+  },
+  "04": {
+    "correta": "A alternativa C respeita concordância (sujeito composto antes do verbo: \"lembrar-se-ão\"), regência (\"coerente com\") e colocação pronominal (ênclise com sujeito composto e verbo no futuro). As demais erram a colocação (\"se lembrará\"), a regência (\"coerente ao/perante/sobre/do\") ou a concordância.",
+    "base": "Concordância verbal, regência nominal e colocação pronominal.",
+    "fonte": "VUNESP TJSP2503, questão 04"
+  },
+  "05": {
+    "correta": "A alternativa D isola corretamente a oração adjetiva explicativa com vírgulas (\"Stephen Hawking, que contribuiu...\") e usa \"deixando-lhes\" (deixar a eles). Em A e C a pontuação quebra a estrutura; em B falta a vírgula antes de \"que\"; em E o pronome \"nas\" não retoma \"milhões de pessoas\".",
+    "base": "Pontuação e emprego de pronomes.",
+    "fonte": "VUNESP TJSP2503, questão 05"
+  },
+  "17": {
+    "correta": "O crime do art. 293 do CP é falsificar cautela de penhor emitida por entidade de direito público. A questão cobra a hipótese em que o documento é legitimamente cancelado pelo credor: a conduta deixa de ser típica nessa hipótese, conforme a alternativa D.",
+    "base": "CP, art. 293 (falsificação de cautela de penhor).",
+    "fonte": "VUNESP TJSP2503, questão 17"
+  },
+  "44": {
+    "correta": "A LC 1.111/2010 exige, para a nomeação em cargo em comissão de chefe de seção judiciária, experiência anterior em cargos dessa natureza (ainda que em substituição) ou experiência adequada segundo critérios do Comitê de Recursos Humanos — exatamente o que diz a alternativa E.",
+    "base": "LC 1.111/2010 (Plano de Cargos e Carreiras do TJSP).",
+    "fonte": "VUNESP TJSP2503, questão 44"
+  },
+  "45": {
+    "correta": "A alternativa A reproduz a regra do Regimento Interno: nenhum feito será julgado na ausência do relator, ainda que já tenha votado, salvo se, iniciado o julgamento, ele se afastar — computando-se os votos já proferidos. As demais criam exigências ou efeitos que o Regimento não prevê.",
+    "base": "Regimento Interno do TJSP, normas de sessão e julgamento.",
+    "fonte": "VUNESP TJSP2503, questão 45"
+  },
+  "50": {
+    "correta": "A alternativa C está correta ao afirmar que a deficiência não retira a plena capacidade civil (inclusive para adoção) e que o atendimento prioritário alcança os procedimentos judiciais e administrativos. A Lei 13.146/2015 não impede a participação em pesquisa por curatela, nem exige consentimento do curador no caso descrito, nem reduz o conceito a três barreiras.",
+    "base": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência), arts. 1º a 13.",
+    "fonte": "VUNESP TJSP2503, questão 50"
+  },
+  "51": {
+    "correta": "Sejam a = só piano, b = só violão e c = os dois. Do enunciado, a/b = 4/7 e (a+c)/(b+c) = 7/10. Escrevendo a = 4k e b = 7k, a segunda igualdade dá c = 3k. Como a + b + c = 84, temos 14k = 84, k = 6. Logo b = 42, e o algarismo das unidades é 2.",
+    "base": "Conjuntos, razão e proporção.",
+    "fonte": "VUNESP TJSP2503, questão 51"
+  },
+  "64": {
+    "correta": "A negação de \"Se (p ou q), então r\" é \"(p ou q) e não r\": mantém a antecedente e nega a consequente. É exatamente a alternativa C: \"Estou correndo ou jogando futebol, e amanhã não estarei de férias\".",
+    "base": "Lógica proposicional: negação da condicional.",
+    "fonte": "VUNESP TJSP2503, questão 64"
+  },
+  "70": {
+    "correta": "Se p → ~q é falsa, então p é verdadeira e ~q é falsa, ou seja, q é verdadeira. q é a conjunção \"as pessoas estão felizes e os carrinhos estão vazios\"; portanto é dia de verão, as pessoas estão felizes e os carrinhos estão vazios — alternativa E.",
+    "base": "Lógica proposicional: tabela-verdade da condicional e da conjunção.",
+    "fonte": "VUNESP TJSP2503, questão 70"
+  }
+}
