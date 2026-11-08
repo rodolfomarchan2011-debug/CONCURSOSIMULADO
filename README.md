@@ -63,12 +63,18 @@ O parser reconstrói a ordem de leitura por coluna (PyMuPDF), separa enunciado/a
 
 ## Tutor de IA
 
-Copie `.env.example` para `.env.local` e configure **uma** chave:
+Copie `.env.example` para `.env.local` e escolha **uma** opção. O app fala o protocolo OpenAI, então qualquer endpoint compatível serve:
 
-```env
-OPENAI_API_KEY=...        # ou DEEPSEEK_API_KEY / OPENROUTER_API_KEY
-TAVILY_API_KEY=...        # opcional: busca web para dúvidas
-```
+| Opção | Custo | Como configurar | Observação |
+| --- | --- | --- | --- |
+| Ollama local | grátis | `AI_BASE_URL=http://127.0.0.1:11434/v1`, `AI_MODEL=qwen2.5:3b-instruct` | roda offline; neste PC (i5, 16 GB, sem GPU) ~40 s por resposta curta no 3B |
+| Google Gemini | cota grátis | `GEMINI_API_KEY=...` | rápido; bom custo-benefício em texto |
+| Groq | cota grátis | `GROQ_API_KEY=...` | modelos abertos, latência baixa |
+| OpenRouter | modelos `:free` | `OPENROUTER_API_KEY=...` | disponibilidade dos grátis varia |
+| DeepSeek API | pago, barato | `DEEPSEEK_API_KEY=...` | mesma família do modelo deste chat |
+| OpenAI | pago | `OPENAI_API_KEY=...` | referência de qualidade |
+
+`GET /api/tutor/status` informa o modo atual (`offline`, `llm` ou `llm+web`), provedor e modelo; o painel do tutor mostra isso na interface.
 
 Comportamento:
 - **Sem chave**: o tutor responde em modo offline com gabarito, explicação da base e fonte (não inventa).

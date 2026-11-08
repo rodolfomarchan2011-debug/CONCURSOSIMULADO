@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { contextoDa, getQuestao } from "@/lib/banco";
 import { getExplicacao } from "@/lib/explicacoes";
+import { maxTokens, provedor } from "@/lib/server/ai-config";
 import type { Letra } from "@/lib/types";
 
 export const runtime = "nodejs";
@@ -24,41 +25,6 @@ function permitido(chave: string): boolean {
   if (atual.total >= LIMITE_DIARIO) return false;
   atual.total += 1;
   return true;
-}
-
-interface Provedor {
-  nome: string;
-  url: string;
-  chave: string;
-  modelo: string;
-}
-
-function provedor(): Provedor | null {
-  if (process.env.OPENAI_API_KEY) {
-    return {
-      nome: "openai",
-      url: `${process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1"}/chat/completions`,
-      chave: process.env.OPENAI_API_KEY,
-      modelo: process.env.AI_MODEL ?? "gpt-4o-mini",
-    };
-  }
-  if (process.env.DEEPSEEK_API_KEY) {
-    return {
-      nome: "deepseek",
-      url: `${process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com/v1"}/chat/completions`,
-      chave: process.env.DEEPSEEK_API_KEY,
-      modelo: process.env.AI_MODEL ?? "deepseek-chat",
-    };
-  }
-  if (process.env.OPENROUTER_API_KEY) {
-    return {
-      nome: "openrouter",
-      url: "https://openrouter.ai/api/v1/chat/completions",
-      chave: process.env.OPENROUTER_API_KEY,
-      modelo: process.env.AI_MODEL ?? "openai/gpt-4o-mini",
-    };
-  }
-  return null;
 }
 
 interface Busca {
@@ -253,7 +219,7 @@ export async function POST(req: NextRequest) {
         model: cfg.modelo,
         messages: mensagens,
         temperature: 0.2,
-        max_tokens: 900,
+        max_tokens: maxTokens(),
         stream: true,
       }),
     });

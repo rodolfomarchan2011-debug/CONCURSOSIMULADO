@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Bot, Loader2, Send, Sparkles, X } from "lucide-react";
 import type { Letra, Questao } from "@/lib/types";
 import { deviceId } from "@/lib/prefs";
@@ -26,7 +26,25 @@ export function TutorPanel({
   const [pergunta, setPergunta] = useState("");
   const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
+  const [status, setStatus] = useState<{
+    modo: string;
+    provedor: string | null;
+    modelo: string | null;
+  } | null>(null);
   const fim = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ativo = true;
+    fetch("/api/tutor/status")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (ativo && d) setStatus(d);
+      })
+      .catch(() => {});
+    return () => {
+      ativo = false;
+    };
+  }, []);
 
   async function enviar(texto: string) {
     const limpo = texto.trim();
@@ -118,6 +136,13 @@ export function TutorPanel({
         >
           <Bot className="h-4 w-4" /> {aberto ? "Fechar chat" : "Tirar dúvida"}
         </button>
+        <span className="ml-auto text-[10px] font-medium text-ink-500">
+          {status
+            ? status.modo === "offline"
+              ? "IA offline · base local"
+              : `IA: ${status.provedor}${status.modelo ? ` · ${status.modelo}` : ""}`
+            : ""}
+        </span>
         {aberto ? (
           <button
             type="button"
