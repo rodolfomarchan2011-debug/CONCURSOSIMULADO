@@ -13,7 +13,7 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 | Cronômetro por timestamp + autosave em IndexedDB | ✅ |
 | Resultado por bloco/matéria + tempo restante para a redação | ✅ |
 | Treino por matéria com feedback imediato | ✅ |
-| Explicação automática por IA ao responder (sem clique) | ✅ |
+| Base legal oficial (CF, CP, CPP, CPC — 2.463 artigos) no tutor | ✅ |
 | Exportar/importar progresso | ✅ |
 | PWA básico (manifest + service worker) | ✅ |
 | Redação corrigida por IA, probabilidade de aprovação, login, backoffice | ⏳ roadmap |
@@ -86,7 +86,10 @@ Comportamento:
 - **Sem chave**: o tutor responde em modo offline com gabarito, explicação da base e fonte (não inventa).
 - **Com chave**: resposta em streaming, com prompt de professor VUNESP, citação de artigo e, se `TAVILY_API_KEY` existir, busca web com as fontes injetadas no contexto.
 - **Automático**: ao responder (treino, simulado em modo estudo ou revisão de erro), se a questão não tem explicação curada, o app chama a IA e mostra o texto em streaming, sem precisar clicar. Cache em memória evita repetir a mesma chamada.
+- **Base legal**: o tutor recebe, por recuperação (artigo citado + assunto + palavras-chave), trechos literais da CF/88, CP, CPP e CPC consolidados pela Câmara dos Deputados (2.463 artigos, atualizados). Ele cita o artigo e a fonte; não é um "Vade Mecum" comercial (texto protegido), e sim a legislação oficial.
 - **Limite**: 300 perguntas/dia por dispositivo+IP (memória do processo — em serverless, troque por tabela/Redis).
+
+Para atualizar a base legal: baixe os PDFs consolidados em `data/legal/raw/` (URLs em `tools/ingerir_legislacao.py`), rode `python tools/ingerir_legislacao.py` e faça o deploy.
 - **Segurança**: texto da web entra como dado, nunca como instrução; a chave fica só no servidor.
 
 ## Explicações

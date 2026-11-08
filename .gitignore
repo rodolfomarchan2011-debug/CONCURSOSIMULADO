@@ -22,3 +22,5 @@ deploy/render.env
 deploy/.env
 
 data/raw/*.png
+
+data/legal/raw/
