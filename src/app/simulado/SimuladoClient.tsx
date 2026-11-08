@@ -48,7 +48,7 @@ export function SimuladoClient() {
   const [grade, setGrade] = useState(false);
   const [confirmar, setConfirmar] = useState(false);
   const [extraMin, setExtraMin] = useState(0);
-  const [modoEstudo, setModoEstudo] = useState(false);
+  const [modoEstudo, setModoEstudo] = useState(true);
   const [erro, setErro] = useState<string | null>(null);
   const finalizando = useRef(false);
 
@@ -95,7 +95,7 @@ export function SimuladoClient() {
             return;
           }
           setSessao(aberta);
-          setModoEstudo(Boolean(aberta.modoEstudo));
+          setModoEstudo(aberta.modoEstudo ?? true);
           setRestante(restanteMs(aberta.terminaEm));
           setCarregando(false);
           return;

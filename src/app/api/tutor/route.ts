@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const LIMITE_DIARIO = 80;
+const LIMITE_DIARIO = 300;
 
 type Uso = { dia: string; total: number };
 const usos = new Map<string, Uso>();

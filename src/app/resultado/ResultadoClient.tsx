@@ -14,9 +14,8 @@ import {
   XCircle,
 } from "lucide-react";
 import { Badge, Card, buttonClass } from "@/components/ui";
-import { TutorPanel } from "@/components/TutorPanel";
+import { ExplicacaoBox } from "@/components/ExplicacaoBox";
 import { contextoDa, getQuestao, porId, questoes } from "@/lib/banco";
-import { getExplicacao } from "@/lib/explicacoes";
 import { corrigir, NOTA_MINIMA, NOTA_REDACAO_MINIMA } from "@/lib/scoring";
 import { formatarDuracao } from "@/lib/timer";
 import { exportarProgresso } from "@/lib/prefs";
@@ -298,7 +297,6 @@ export function ResultadoClient() {
             {resultado.erros.map((qid) => {
               const q = getQuestao(qid);
               if (!q) return null;
-              const exp = getExplicacao(q);
               const abertoAgora = aberto === qid;
               return (
                 <div key={qid} className="py-2">
@@ -335,21 +333,11 @@ export function ResultadoClient() {
                         </p>
                         <p className="mt-1">{q.alternativas[q.correta]}</p>
                       </div>
-                      {exp ? (
-                        <div className="rounded-xl border border-ink-100 bg-white p-3 text-sm text-ink-700">
-                          <p className="font-semibold text-ink-900">Por quê</p>
-                          <p className="mt-1 leading-relaxed">{exp.correta}</p>
-                          {exp.base ? (
-                            <p className="mt-2 text-xs text-ink-500">Fundamento: {exp.base}</p>
-                          ) : null}
-                        </div>
-                      ) : (
-                        <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                          Esta questão ainda não tem explicação revisada na base local. Peça ao
-                          tutor abaixo (requer chave de IA configurada).
-                        </p>
-                      )}
-                      <TutorPanel questao={q} escolha={sessao.respostas[qid] ?? null} />
+                      <ExplicacaoBox
+                        questao={q}
+                        escolha={sessao.respostas[qid] ?? null}
+                        compacto
+                      />
                     </div>
                   ) : null}
                 </div>
