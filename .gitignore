@@ -13,3 +13,9 @@ next-env.d.ts
 
 # repositorio local criado pelo GitHub Desktop (nao faz parte do app)
 CONCURSOSIMULADO/
+
+# segredos locais
+CHAVEAPIGEMINI.txt
+deploy/render.env
+.env.local
+.env*.local
