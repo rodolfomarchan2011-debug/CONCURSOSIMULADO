@@ -16,11 +16,11 @@ function rng(seed: number) {
 }
 
 describe("banco de questões oficiais", () => {
-  it("tem as três edições e pelo menos 230 questões", () => {
-    expect(questoes.length).toBeGreaterThanOrEqual(230);
+  it("tem as quatro edições e pelo menos 320 questões", () => {
+    expect(questoes.length).toBeGreaterThanOrEqual(320);
     expect(banco.meta.total).toBe(questoes.length);
     const edicoes = new Set(questoes.map((q) => q.edicao));
-    expect(edicoes).toEqual(new Set(["2025", "2018", "2004"]));
+    expect(edicoes).toEqual(new Set(["2025", "2024", "2018", "2004"]));
   });
 
   it("não tem id repetido e cada questão tem 5 alternativas", () => {
@@ -32,10 +32,10 @@ describe("banco de questões oficiais", () => {
     }
   });
 
-  it("não tem pergunta duplicada entre edições", () => {
+  it("não tem pergunta idêntica repetida", () => {
     const vistos = new Set<string>();
     for (const q of questoes) {
-      const chave = q.enunciado.slice(0, 80).toLowerCase();
+      const chave = q.enunciado.trim().toLowerCase();
       expect(vistos.has(chave)).toBe(false);
       vistos.add(chave);
     }

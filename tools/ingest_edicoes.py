@@ -41,6 +41,14 @@ INSTRUCAO_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Questões que dependem de imagem/tabela do caderno não são respondíveis em texto.
+IMAGEM_RE = re.compile(
+    r"(^\s*(leia a tira|observe a (figura|imagem|tira|charge)|a figura|o gráfico|"
+    r"a tabela|considere a figura|com base na figura|conforme (a figura|mostra))|"
+    r"\b(tira|charge|quadrinho|tirinha)\b|\bfigura\b|\bgráfico\b)",
+    re.IGNORECASE,
+)
+
 # (primeira, última, bloco, assunto)
 EDICOES = {
     "2025": {
@@ -79,6 +87,26 @@ EDICOES = {
             (91, 100, GER, "Raciocínio Lógico"),
         ],
     },
+    "2024": {
+        "prova": "2024-prova.pdf",
+        "gabarito": "2024-gabarito.pdf",
+        "n": 100,
+        "versao": "3",
+        "aplicada": "2024-09-08",
+        "faixas": [
+            (1, 24, LP, "Interpretação de texto"),
+            (25, 30, DIR, "Direito Penal"),
+            (31, 37, DIR, "Direito Processual Penal"),
+            (38, 44, DIR, "Direito Processual Civil"),
+            (45, 51, DIR, "Direito Constitucional"),
+            (52, 59, DIR, "Direito Administrativo"),
+            (60, 64, DIR, "Legislação interna (TJSP)"),
+            (65, 70, GER, "Atualidades"),
+            (71, 76, GER, "Matemática"),
+            (77, 90, GER, "Informática"),
+            (91, 100, GER, "Raciocínio Lógico"),
+        ],
+    },
     "2004": {
         "prova": "2004-prova-gabarito.pdf",
         "gabarito": "2004-prova-gabarito.pdf",
@@ -99,7 +127,7 @@ EDICOES = {
     },
 }
 
-LIXO = ("pcimarkpci", "pciconcursos", "confidencial", "tjsp2503", "tjsp1704")
+LIXO = ("pcimarkpci", "pciconcursos", "confidencial", "tjsp2503", "tjsp1704", "tjsp2401", "tjsp2201")
 HEADERS_EXTRA = {
     "PORTUGUÊS",
     "CONHECIMENTOS",
@@ -173,12 +201,24 @@ def pagina_do_offset(offsets, blocos, off):
     return pagina
 
 
-def gabarito_do_pdf(pdf: Path, pagina: int | None = None) -> dict[int, str]:
+def gabarito_do_pdf(pdf: Path, pagina: int | None = None, versao: str | None = None) -> dict[int, str]:
     doc = pymupdf.open(pdf)
     paginas = [doc[pagina - 1]] if pagina else list(doc)
     texto = "\n".join(p.get_text() for p in paginas)
+
+    if versao:
+        partes = re.split(r"VERS[ÃA]O\s*(\d)", texto, flags=re.IGNORECASE)
+        bloco = None
+        for i in range(1, len(partes), 2):
+            if partes[i].strip() == versao:
+                bloco = partes[i + 1]
+                break
+        if bloco is None:
+            raise SystemExit(f"versão {versao} não encontrada no gabarito {pdf.name}")
+        texto = bloco
+
     gab: dict[int, str] = {}
-    for m in re.finditer(r"(\d{1,3})\s*[-–]\s*([A-E])\b", texto):
+    for m in re.finditer(r"(\d{1,3})\s*[-–]\s*([A-EN])\b", texto):
         numero, letra = int(m.group(1)), m.group(2)
         if numero <= 200:
             gab.setdefault(numero, letra)
@@ -199,7 +239,7 @@ def ingerir(ano: str) -> dict:
     n = cfg["n"]
 
     texto, offsets, blocos = texto_da_prova(prova)
-    gab = gabarito_do_pdf(gabarito, cfg.get("gabarito_pagina"))
+    gab = gabarito_do_pdf(gabarito, cfg.get("gabarito_pagina"), cfg.get("versao"))
 
     marcas: list[re.Match[str]] = []
     inicio = texto.upper().find("LÍNGUA PORTUGUESA")
@@ -261,15 +301,21 @@ def ingerir(ano: str) -> dict:
             puladas.append((numero, "alternativas incompletas (provável questão com imagem)"))
             continue
         enunciado, alternativas = parsed
+        if IMAGEM_RE.search(enunciado[:400]):
+            puladas.append((numero, "depende de imagem/tabela do caderno"))
+            continue
         bloco, assunto = classificar(numero, cfg["faixas"])
         if numero not in gab:
             puladas.append((numero, "sem gabarito"))
+            continue
+        if gab[numero] == "N":
+            puladas.append((numero, "anulada pelo gabarito oficial"))
             continue
         questoes.append(
             {
                 "id": f"tjsp-{ano}-{numero:03d}",
                 "edicao": ano,
-                "ano": int(ano),
+                "ano": cfg.get("ano", int(ano) if ano.isdigit() else 0),
                 "numero": numero,
                 "bloco": bloco,
                 "materia": bloco,
@@ -305,22 +351,32 @@ def main() -> None:
     todas: list[dict] = []
     contextos: list[dict] = []
     metas: dict[str, dict] = {}
+    vistos: set[str] = set()
+    repetidas = 0
     for ano in EDICOES:
         dados = ingerir(ano)
-        todas.extend(dados["questoes"])
+        unicas = []
+        for q in dados["questoes"]:
+            chave = re.sub(r"\W+", " ", q["enunciado"][:160]).strip().lower()
+            if chave in vistos:
+                repetidas += 1
+                continue
+            vistos.add(chave)
+            unicas.append(q)
+        todas.extend(unicas)
         contextos.extend(dados["contextos"])
         metas[ano] = {
-            "questoes": len(dados["questoes"]),
+            "questoes": len(unicas),
             "aplicada": dados["meta"].get("aplicada"),
             "puladas": dados["puladas"],
             "matriz": {
-                a: sum(1 for q in dados["questoes"] if q["assunto"] == a)
-                for a in sorted({q["assunto"] for q in dados["questoes"]})
+                a: sum(1 for q in unicas if q["assunto"] == a)
+                for a in sorted({q["assunto"] for q in unicas})
             },
         }
         if dados["puladas"]:
             print(f"  puladas em {ano}: {dados['puladas']}")
-        print(f"{ano}: {len(dados['questoes'])} questões")
+        print(f"{ano}: {len(unicas)} questões")
 
     banco = {
         "meta": {
@@ -328,6 +384,7 @@ def main() -> None:
             "banca": "VUNESP",
             "edicoes": metas,
             "total": len(todas),
+            "duplicadas_removidas": repetidas,
             "gerado_por": "tools/ingest_edicoes.py",
         },
         "contextos": contextos,

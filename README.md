@@ -6,7 +6,7 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 
 | Item | Situação |
 | --- | --- |
-| Banco com **239 questões** oficiais (2025, 2018, 2004) | ✅ |
+| Banco com **332 questões** oficiais (2025, 2024, 2018, 2004) | ✅ |
 | Simulado sorteado 16/30/4/4/9/7 + travas (8 LP, 15 Direito, nota 5,0) | ✅ |
 | Treino aleatório por matéria, sempre em ordem diferente | ✅ |
 | Modo estudo (gabarito e explicação logo após responder) | ✅ |
@@ -46,8 +46,9 @@ pnpm test          # 21 testes (banco, sorteio/matriz, correção/travas, cronô
 ## Dados (fonte primária)
 
 - **Prova 2025**: VUNESP TJSP2503/001, aplicada em **07/12/2025**, 70 questões + redação. Gabarito oficial VERSÃO 1 (70/70 conferido).
-- **Prova 2018**: TJSP1704 (Interior), 100 questões — 99 importadas (a 91 usa figuras). Gabarito oficial versão 2.
-- **Prova 2004**: caderno único com gabarito ao final, 70 questões. As 30 de Direito ficam marcadas como `revisar` (legislação anterior ao CPC/2015 e a reformas) e **não entram no simulado**, só no treino com aviso.
+- **Prova 2024**: TJSP2401 (interior, 08/09/2024), 100 questões — 94 importadas (4 anuladas pelo gabarito definitivo: 26, 30, 64, 98; 1 com imagem). Gabarito VERSÃO 3, conferido em 4 questões de conteúdo.
+- **Prova 2018**: TJSP1704 (Interior), 100 questões — 99 importadas (a 91 usa figuras). Gabarito versão 2.
+- **Prova 2004**: caderno único com gabarito ao final, 70 questões. As 30 de Direito ficam marcadas como `revisar` e só aparecem no treino com aviso.
 - **Estrutura de 2027**: edital TJSP2607, Anexo VIII — 16 Língua Portuguesa, 30 Direito, 4 Atualidades, 4 Matemática, 9 Informática, 7 Raciocínio Lógico. Redação 0–40, mínimo 24.
 
 O simulado **sorteia** 70 questões do banco a cada início, respeitando as cotas por bloco e matéria; o treino embaralha a matéria escolhida. Assim não dá para decorar a ordem.
@@ -113,9 +114,9 @@ Decisões e desvios do briefing original:
 
 ## Limitações conhecidas
 
-1. Banco atual: 239 questões de 3 edições (2025, 2018, 2004). Ficaram de fora 2021 (gabarito oficial em imagem, sem texto) e 2006/2007 (provas com múltiplas versões e risco de cruzar gabarito errado). Entram numa próxima rodada com OCR/validação por versão.
-2. Gabaritos: 2025 (VERSÃO 1, conferido 70/70), 2018 (versão 2) e 2004 (caderno único).
-3. Explicações curadas cobrem 42 questões da edição 2025; nas demais o app mostra gabarito, alternativa correta e fonte, e o tutor (com chave) aprofunda. O restante depende do tutor.
+1. Banco atual: 332 questões de 4 edições. Ficaram de fora, por falta de par prova+gabarito confiável: **2023** (o caderno baixado não fecha com o gabarito VERSÃO 3 em questão de lógica), **2024R** (reaplicação da Capital: o gabarito tem 4 versões e as verificações ficaram ambíguas), **2021** (gabarito em imagem) e **2006/2007 e anteriores** (múltiplas versões). Entram numa próxima rodada baixando a prova da mesma versão do gabarito.
+2. Gabaritos: 2025 (VERSÃO 1, 70/70), 2024 (VERSÃO 3, 4 verificações), 2018 (versão 2) e 2004 (caderno único). Questões anuladas ficam fora.
+3. Explicações curadas cobrem 42 questões da edição 2025; nas demais o app mostra gabarito, alternativa correta e fonte, e o tutor (com chave) aprofunda.
 4. Sem login: progresso é local ao navegador (exportável em JSON). Importação ainda não implementada.
 5. Probabilidade de aprovação e módulo de redação estão fora do MVP (roadmap).
 6. Direitos autorais: enunciados pertencem à VUNESP/TJSP; uso educacional com atribuição. Para produto comercial, avalie licenciamento.

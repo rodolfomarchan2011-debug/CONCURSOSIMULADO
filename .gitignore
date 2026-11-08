@@ -20,3 +20,5 @@ deploy/render.env
 .env.local
 .env*.local
 deploy/.env
+
+data/raw/*.png
