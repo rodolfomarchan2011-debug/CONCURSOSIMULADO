@@ -39,7 +39,7 @@ def main() -> int:
             erros.append(f"{q['id']}: texto vazio")
 
     por_edicao = Counter(q["edicao"] for q in questoes)
-    if set(por_edicao) != {"2025", "2024", "2018", "2015", "2004"}:
+    if set(por_edicao) != {"2025", "2024", "2018", "2017", "2015", "2004"}:
         erros.append(f"edições inesperadas: {dict(por_edicao)}")
 
     vigentes = [q for q in questoes if q["status_vigencia"] == "vigente"]
