@@ -10,3 +10,6 @@ __pycache__
 
 tsconfig.tsbuildinfo
 next-env.d.ts
+
+# repositorio local criado pelo GitHub Desktop (nao faz parte do app)
+CONCURSOSIMULADO/
