@@ -6,6 +6,7 @@ import type { Letra } from "@/lib/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 const LIMITE_DIARIO = 80;
 

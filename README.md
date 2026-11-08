@@ -21,6 +21,8 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 
 Requisitos: Node 20+ e pnpm.
 
+Para usar no celular (iPhone/Android) sem APK, veja [DEPLOY.md](DEPLOY.md): publica na Vercel e instala como PWA.
+
 ```bash
 pnpm install
 pnpm dev

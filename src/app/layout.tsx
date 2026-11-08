@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   applicationName: "Simulador TJSP Escrevente",
   appleWebApp: { capable: true, title: "TJSP Escrevente", statusBarStyle: "default" },
-  icons: { icon: "/icon.svg", apple: "/icon.svg" },
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/icon-180.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export const viewport: Viewport = {
