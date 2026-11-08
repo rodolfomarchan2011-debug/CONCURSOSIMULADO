@@ -19,3 +19,4 @@ CHAVEAPIGEMINI.txt
 deploy/render.env
 .env.local
 .env*.local
+deploy/.env

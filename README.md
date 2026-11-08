@@ -6,8 +6,9 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 
 | Item | Situação |
 | --- | --- |
-| Banco com a prova oficial de 2025 (70 questões) | ✅ |
-| Simulado completo 16/30/4/4/9/7 + travas (8 LP, 15 Direito, nota 5,0) | ✅ |
+| Banco com **239 questões** oficiais (2025, 2018, 2004) | ✅ |
+| Simulado sorteado 16/30/4/4/9/7 + travas (8 LP, 15 Direito, nota 5,0) | ✅ |
+| Treino aleatório por matéria, sempre em ordem diferente | ✅ |
 | Modo estudo (gabarito e explicação logo após responder) | ✅ |
 | Cronômetro por timestamp + autosave em IndexedDB | ✅ |
 | Resultado por bloco/matéria + tempo restante para a redação | ✅ |
@@ -39,29 +40,29 @@ pnpm start
 Testes:
 
 ```bash
-pnpm test          # 20 testes (matriz, correção/travas, cronômetro)
+pnpm test          # 21 testes (banco, sorteio/matriz, correção/travas, cronômetro)
 ```
 
 ## Dados (fonte primária)
 
-- **Prova**: VUNESP TJSP2503/001 — Escrevente Técnico Judiciário, aplicada em **07/12/2025** (Capital e 1ª RAJ), 70 questões + redação, 5 horas, 5 alternativas.
-- **Gabarito**: edital oficial do TJSP de 09/12/2025, **VERSÃO 1** (o caderno importado é a versão 1).
-- **Estrutura de 2027**: edital TJSP2607, Anexo VIII — 16 Língua Portuguesa, 30 Conhecimentos em Direito (Penal 4, Processual Penal 5, Processual Civil 5, Constitucional 5, Administrativo 5, Legislação interna 6), 4 Atualidades, 4 Matemática, 9 Informática, 7 Raciocínio Lógico. Redação 0–40, mínimo 24 (19,2 para cotas).
+- **Prova 2025**: VUNESP TJSP2503/001, aplicada em **07/12/2025**, 70 questões + redação. Gabarito oficial VERSÃO 1 (70/70 conferido).
+- **Prova 2018**: TJSP1704 (Interior), 100 questões — 99 importadas (a 91 usa figuras). Gabarito oficial versão 2.
+- **Prova 2004**: caderno único com gabarito ao final, 70 questões. As 30 de Direito ficam marcadas como `revisar` (legislação anterior ao CPC/2015 e a reformas) e **não entram no simulado**, só no treino com aviso.
+- **Estrutura de 2027**: edital TJSP2607, Anexo VIII — 16 Língua Portuguesa, 30 Direito, 4 Atualidades, 4 Matemática, 9 Informática, 7 Raciocínio Lógico. Redação 0–40, mínimo 24.
 
-Os PDFs oficiais ficam em `data/raw/` e o JSON gerado em `src/data/questions-2025.json`.
+O simulado **sorteia** 70 questões do banco a cada início, respeitando as cotas por bloco e matéria; o treino embaralha a matéria escolhida. Assim não dá para decorar a ordem.
+
+Os PDFs oficiais ficam em `data/raw/` e o JSON gerado em `src/data/banco.json`.
 
 ### Reingestão
 
 ```bash
 python -m pip install -r tools/requirements.txt
-python tools/ingest_tjsp2025.py \
-  --prova data/raw/vunesp-tjsp2503-prova.pdf \
-  --gabarito data/raw/vunesp-tjsp2503-gabarito.pdf \
-  --out src/data/questions-2025.json
+python tools/ingest_edicoes.py        # gera src/data/banco.json (3 edições)
 python tools/test_ingest.py
 ```
 
-O parser reconstrói a ordem de leitura por coluna (PyMuPDF), separa enunciado/alternativas, trata texto de apoio compartilhado, corrige palavras quebradas entre blocos e valida a matriz 16/30/4/4/9/7 antes de gravar.
+O parser reconstrói a ordem de leitura por coluna (PyMuPDF), descarta marcas d'água do PCI, separa enunciado/alternativas, trata texto de apoio compartilhado, corrige palavras quebradas entre blocos e valida número de questões, alternativas e gabarito.
 
 ## Tutor de IA
 
@@ -112,9 +113,9 @@ Decisões e desvios do briefing original:
 
 ## Limitações conhecidas
 
-1. Banco apenas com a prova de 2025 (Capital/1ª RAJ). As provas de 2018 e anteriores têm matriz própria (100 questões) e entram na Fase 2.
-2. Gabarito é o oficial preliminar de 09/12/2025; não foi localizada publicação de anulação. Confira antes de uso comercial.
-3. Explicações cobrem 11 questões; o restante depende do tutor com chave.
+1. Banco atual: 239 questões de 3 edições (2025, 2018, 2004). Ficaram de fora 2021 (gabarito oficial em imagem, sem texto) e 2006/2007 (provas com múltiplas versões e risco de cruzar gabarito errado). Entram numa próxima rodada com OCR/validação por versão.
+2. Gabaritos: 2025 (VERSÃO 1, conferido 70/70), 2018 (versão 2) e 2004 (caderno único).
+3. Explicações curadas cobrem 42 questões da edição 2025; nas demais o app mostra gabarito, alternativa correta e fonte, e o tutor (com chave) aprofunda. O restante depende do tutor.
 4. Sem login: progresso é local ao navegador (exportável em JSON). Importação ainda não implementada.
 5. Probabilidade de aprovação e módulo de redação estão fora do MVP (roadmap).
 6. Direitos autorais: enunciados pertencem à VUNESP/TJSP; uso educacional com atribuição. Para produto comercial, avalie licenciamento.

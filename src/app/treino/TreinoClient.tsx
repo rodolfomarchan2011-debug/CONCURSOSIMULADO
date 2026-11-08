@@ -1,45 +1,37 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Lightbulb,
-  RotateCcw,
-  Target,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Lightbulb, RotateCcw, Shuffle, Target } from "lucide-react";
 import { Badge, Card, buttonClass } from "@/components/ui";
 import { QuestionBody } from "@/components/QuestionBody";
 import { ExplicacaoBox } from "@/components/ExplicacaoBox";
 import { ASSUNTOS, contextoDa, questoes } from "@/lib/banco";
-import type { Letra } from "@/lib/types";
+import { sortearTreino } from "@/lib/selecao";
+import type { Letra, Questao } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
 const LETRAS: Letra[] = ["A", "B", "C", "D", "E"];
 
 export function TreinoClient() {
   const [assunto, setAssunto] = useState<string>("todas");
+  const [lista, setLista] = useState<Questao[]>([]);
   const [indice, setIndice] = useState(0);
   const [selecionada, setSelecionada] = useState<Letra | null>(null);
   const [revelado, setRevelado] = useState(false);
   const [acertos, setAcertos] = useState(0);
   const [respondidas, setRespondidas] = useState(0);
 
-  const lista = useMemo(
-    () => (assunto === "todas" ? questoes : questoes.filter((q) => q.assunto === assunto)),
-    [assunto],
-  );
-
-  const questao = lista[Math.min(indice, Math.max(0, lista.length - 1))];
-
   useEffect(() => {
+    setLista(sortearTreino(questoes, assunto === "todas" ? undefined : assunto));
     setIndice(0);
     setSelecionada(null);
     setRevelado(false);
     setAcertos(0);
     setRespondidas(0);
   }, [assunto]);
+
+  const questao = lista[Math.min(indice, Math.max(0, lista.length - 1))];
 
   function responder(letra: Letra) {
     if (revelado || !questao) return;
@@ -50,11 +42,19 @@ export function TreinoClient() {
   }
 
   function proxima() {
-    if (!questao) return;
     if (indice + 1 >= lista.length) return;
     setIndice((i) => i + 1);
     setSelecionada(null);
     setRevelado(false);
+  }
+
+  function reiniciar() {
+    setLista(sortearTreino(questoes, assunto === "todas" ? undefined : assunto));
+    setIndice(0);
+    setSelecionada(null);
+    setRevelado(false);
+    setAcertos(0);
+    setRespondidas(0);
   }
 
   useEffect(() => {
@@ -80,11 +80,12 @@ export function TreinoClient() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-500">
-            Treino com feedback imediato
+            Treino aleatório com feedback imediato
           </p>
           <h1 className="text-2xl font-bold text-ink-900">Treine por matéria</h1>
           <p className="text-sm text-ink-600">
-            Responda e veja na hora o gabarito oficial, a explicação e o tutor.
+            As questões são sorteadas do banco de {questoes.length} — cada sessão vem em ordem
+            diferente.
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs text-ink-500">
@@ -150,18 +151,25 @@ export function TreinoClient() {
               desabilitado={revelado}
             />
 
+            {questao.status_vigencia !== "vigente" ? (
+              <p className="rounded-lg border border-amber-200 bg-amber-50 p-2 text-[11px] text-amber-900">
+                Questão da edição {questao.edicao}. Legislação pode ter mudado — confira o texto
+                atual antes de memorizar. Por isso ela não entra no simulado oficial.
+              </p>
+            ) : null}
+
             {revelado ? (
               <div className="space-y-3 border-t border-ink-100 pt-4">
                 <ExplicacaoBox questao={questao} escolha={selecionada} />
 
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-[11px] text-ink-400">
-                    {questao.fonte}, p. {questao.fonte_pagina}
+                    {questao.fonte}, p. {questao.fonte_pagina} · edição {questao.edicao}
                   </p>
                   {fim ? (
-                    <Link href="/resultado" className={buttonClass("primary")}>
-                      Ver resultados <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    <button type="button" onClick={reiniciar} className={buttonClass("primary")}>
+                      Nova rodada <Shuffle className="h-4 w-4" />
+                    </button>
                   ) : (
                     <button type="button" onClick={proxima} className={buttonClass("primary")}>
                       Próxima questão <ArrowRight className="h-4 w-4" />
@@ -178,7 +186,9 @@ export function TreinoClient() {
 
           <aside className="space-y-3">
             <Card className="space-y-3 p-4">
-              <h2 className="text-sm font-semibold">Sessão de treino</h2>
+              <h2 className="flex items-center gap-2 text-sm font-semibold">
+                <Shuffle className="h-4 w-4" /> Sessão de treino
+              </h2>
               <div className="h-2 overflow-hidden rounded-full bg-ink-100">
                 <div
                   className="h-full rounded-full bg-brand-500"
@@ -199,16 +209,10 @@ export function TreinoClient() {
               </div>
               <button
                 type="button"
-                onClick={() => {
-                  setIndice(0);
-                  setSelecionada(null);
-                  setRevelado(false);
-                  setAcertos(0);
-                  setRespondidas(0);
-                }}
+                onClick={reiniciar}
                 className={buttonClass("secondary", "w-full px-3 py-2 text-xs")}
               >
-                <RotateCcw className="h-3.5 w-3.5" /> Reiniciar sessão
+                <RotateCcw className="h-3.5 w-3.5" /> Embaralhar de novo
               </button>
             </Card>
 
@@ -219,7 +223,7 @@ export function TreinoClient() {
                 fixa mais do que reler o gabarito.
               </p>
               <p className="text-ink-400">
-                A prova real tem 70 questões em 5 horas — média de 4min17s por questão.
+                Banco com questões de {[...new Set(questoes.map((q) => q.edicao))].join(", ")}.
               </p>
             </Card>
 

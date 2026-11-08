@@ -15,13 +15,22 @@ import {
 } from "lucide-react";
 import { Badge, Card, buttonClass } from "@/components/ui";
 import { TutorPanel } from "@/components/TutorPanel";
-import { contextoDa, getQuestao, questoes } from "@/lib/banco";
+import { contextoDa, getQuestao, porId, questoes } from "@/lib/banco";
 import { getExplicacao } from "@/lib/explicacoes";
 import { corrigir, NOTA_MINIMA, NOTA_REDACAO_MINIMA } from "@/lib/scoring";
 import { formatarDuracao } from "@/lib/timer";
 import { exportarProgresso } from "@/lib/prefs";
 import { carregarSessao, importarSessoes, listarSessoes, type SessaoRow } from "@/lib/db";
+import type { Questao } from "@/lib/types";
 import { cn } from "@/lib/cn";
+
+/** Questões efetivamente usadas na sessão (com fallback para sessões antigas). */
+function selecaoDaSessao(s: SessaoRow): Questao[] {
+  if (s.questaoIds?.length) {
+    return s.questaoIds.map((id) => porId[id]).filter(Boolean) as Questao[];
+  }
+  return questoes.filter((q) => q.edicao === "2025").slice(0, 70);
+}
 
 export function ResultadoClient() {
   const params = useSearchParams();
@@ -29,7 +38,7 @@ export function ResultadoClient() {
 
   const [sessao, setSessao] = useState<SessaoRow | null | undefined>(undefined);
   const [historico, setHistorico] = useState<SessaoRow[]>([]);
-  const [aberto, setAberto] = useState<number | null>(null);
+  const [aberto, setAberto] = useState<string | null>(null);
   const [avisoImport, setAvisoImport] = useState<string | null>(null);
 
   useEffect(() => {
@@ -51,7 +60,7 @@ export function ResultadoClient() {
       0,
       sessao.terminaEm - (sessao.finalizadaEm ?? sessao.terminaEm),
     );
-    return corrigir(questoes, sessao.respostas, { tempoRestanteMs });
+    return corrigir(selecaoDaSessao(sessao), sessao.respostas, { tempoRestanteMs });
   }, [sessao]);
 
   if (sessao === undefined) {
@@ -79,7 +88,7 @@ export function ResultadoClient() {
         ) : (
           <div className="space-y-2">
             {historico.map((s) => {
-              const r = corrigir(questoes, s.respostas);
+              const r = corrigir(selecaoDaSessao(s), s.respostas);
               return (
                 <Link
                   key={s.id}
@@ -286,21 +295,23 @@ export function ResultadoClient() {
           <p className="text-sm text-emerald-700">Gabaritou! Nada para revisar.</p>
         ) : (
           <div className="divide-y divide-ink-100">
-            {resultado.erros.map((numero) => {
-              const q = getQuestao(numero);
+            {resultado.erros.map((qid) => {
+              const q = getQuestao(qid);
               if (!q) return null;
               const exp = getExplicacao(q);
-              const abertoAgora = aberto === numero;
+              const abertoAgora = aberto === qid;
               return (
-                <div key={numero} className="py-2">
+                <div key={qid} className="py-2">
                   <button
                     type="button"
-                    onClick={() => setAberto(abertoAgora ? null : numero)}
+                    onClick={() => setAberto(abertoAgora ? null : qid)}
                     className="focus-ring flex w-full items-center gap-3 rounded-lg px-1 py-2 text-left hover:bg-ink-50"
                     aria-expanded={abertoAgora}
                   >
                     <XCircle className="h-4 w-4 shrink-0 text-rose-500" />
-                    <span className="text-sm font-semibold">Questão {numero}</span>
+                    <span className="text-sm font-semibold">
+                      Questão {q.numero} <span className="text-xs text-ink-400">({q.ano})</span>
+                    </span>
                     <span className="truncate text-xs text-ink-500">{q.assunto}</span>
                     <span className="ml-auto text-xs text-ink-500">
                       gabarito {q.correta}
@@ -338,7 +349,7 @@ export function ResultadoClient() {
                           tutor abaixo (requer chave de IA configurada).
                         </p>
                       )}
-                      <TutorPanel questao={q} escolha={sessao.respostas[String(numero)] ?? null} />
+                      <TutorPanel questao={q} escolha={sessao.respostas[qid] ?? null} />
                     </div>
                   ) : null}
                 </div>

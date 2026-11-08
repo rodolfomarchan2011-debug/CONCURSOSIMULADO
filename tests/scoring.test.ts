@@ -1,23 +1,41 @@
 import { describe, expect, it } from "vitest";
 import { questoes } from "@/lib/banco";
-import { corrigir, calcularNota, MINIMO_DIREITO, MINIMO_LP } from "@/lib/scoring";
-import type { Letra } from "@/lib/types";
+import { sortearSimulado } from "@/lib/selecao";
+import { calcularNota, corrigir, MINIMO_DIREITO, MINIMO_LP } from "@/lib/scoring";
+import type { Letra, Questao } from "@/lib/types";
 
 const LETRAS: Letra[] = ["A", "B", "C", "D", "E"];
 
-function respostasCorretas(): Record<string, Letra> {
-  return Object.fromEntries(questoes.map((q) => [String(q.numero), q.correta]));
+function rng(seed: number) {
+  let a = seed;
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }
 
-function respostasErradas(): Record<string, Letra> {
+const prova: Questao[] = sortearSimulado(questoes, rng(42));
+
+function certas(): Record<string, Letra> {
+  return Object.fromEntries(prova.map((q) => [q.id, q.correta]));
+}
+
+function erradas(): Record<string, Letra> {
   return Object.fromEntries(
-    questoes.map((q) => [String(q.numero), LETRAS.find((l) => l !== q.correta)!]),
+    prova.map((q) => [q.id, LETRAS.find((l) => l !== q.correta)!]),
   );
 }
 
 describe("correção e travas do edital", () => {
+  it("a seleção de teste tem 70 questões", () => {
+    expect(prova).toHaveLength(70);
+  });
+
   it("gabaritando tudo, nota 10 e aprovado", () => {
-    const r = corrigir(questoes, respostasCorretas());
+    const r = corrigir(prova, certas());
     expect(r.acertos).toBe(70);
     expect(r.nota).toBe(10);
     expect(r.aprovado).toBe(true);
@@ -25,7 +43,7 @@ describe("correção e travas do edital", () => {
   });
 
   it("zerando tudo, nota 0 e reprovado", () => {
-    const r = corrigir(questoes, respostasErradas());
+    const r = corrigir(prova, erradas());
     expect(r.acertos).toBe(0);
     expect(r.nota).toBe(0);
     expect(r.aprovado).toBe(false);
@@ -33,11 +51,11 @@ describe("correção e travas do edital", () => {
   });
 
   it("reprova com menos de 8 acertos em Português, mesmo com o resto perfeito", () => {
-    const respostas = respostasCorretas();
-    for (const q of questoes.filter((x) => x.materia === "Língua Portuguesa").slice(0, 9)) {
-      respostas[String(q.numero)] = LETRAS.find((l) => l !== q.correta)!;
+    const respostas = certas();
+    for (const q of prova.filter((x) => x.materia === "Língua Portuguesa").slice(0, 9)) {
+      respostas[q.id] = LETRAS.find((l) => l !== q.correta)!;
     }
-    const r = corrigir(questoes, respostas);
+    const r = corrigir(prova, respostas);
     const lp = r.blocos.find((b) => b.bloco === "Língua Portuguesa")!;
     expect(lp.acertos).toBe(7);
     expect(lp.ok).toBe(false);
@@ -46,11 +64,11 @@ describe("correção e travas do edital", () => {
   });
 
   it("reprova com menos de 15 acertos em Direito, mesmo com nota acima de 5", () => {
-    const respostas = respostasCorretas();
-    for (const q of questoes.filter((x) => x.materia === "Conhecimentos em Direito").slice(0, 16)) {
-      respostas[String(q.numero)] = LETRAS.find((l) => l !== q.correta)!;
+    const respostas = certas();
+    for (const q of prova.filter((x) => x.materia === "Conhecimentos em Direito").slice(0, 16)) {
+      respostas[q.id] = LETRAS.find((l) => l !== q.correta)!;
     }
-    const r = corrigir(questoes, respostas);
+    const r = corrigir(prova, respostas);
     const direito = r.blocos.find((b) => b.bloco === "Conhecimentos em Direito")!;
     expect(direito.acertos).toBe(14);
     expect(direito.ok).toBe(false);
@@ -58,22 +76,18 @@ describe("correção e travas do edital", () => {
   });
 
   it("reprova por nota final abaixo de 5,0 mesmo passando nas duas travas", () => {
-    // mantém exatamente 8 em LP e 15 em Direito (travas ok) e erra todas as demais:
-    // 23 acertos em 70 = 3,29 — abaixo de 5,0.
-    const respostas = respostasCorretas();
+    const respostas = certas();
     const manter = new Set([
-      ...questoes.filter((q) => q.materia === "Língua Portuguesa").slice(0, 8).map((q) => q.numero),
-      ...questoes
+      ...prova.filter((q) => q.materia === "Língua Portuguesa").slice(0, 8).map((q) => q.id),
+      ...prova
         .filter((q) => q.materia === "Conhecimentos em Direito")
         .slice(0, 15)
-        .map((q) => q.numero),
+        .map((q) => q.id),
     ]);
-    for (const q of questoes) {
-      if (!manter.has(q.numero)) {
-        respostas[String(q.numero)] = LETRAS.find((l) => l !== q.correta)!;
-      }
+    for (const q of prova) {
+      if (!manter.has(q.id)) respostas[q.id] = LETRAS.find((l) => l !== q.correta)!;
     }
-    const r = corrigir(questoes, respostas);
+    const r = corrigir(prova, respostas);
     expect(r.blocos[0].ok).toBe(true);
     expect(r.blocos[1].ok).toBe(true);
     expect(r.nota).toBeLessThan(5);
@@ -81,7 +95,7 @@ describe("correção e travas do edital", () => {
   });
 
   it("conta em branco como erro", () => {
-    const r = corrigir(questoes, {});
+    const r = corrigir(prova, {});
     expect(r.acertos).toBe(0);
     expect(r.erros).toHaveLength(70);
   });

@@ -65,6 +65,7 @@ export function TutorPanel({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          id: questao.id,
           numero: questao.numero,
           escolha: escolha ?? null,
           pergunta: limpo,

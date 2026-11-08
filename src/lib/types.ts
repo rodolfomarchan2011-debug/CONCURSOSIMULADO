@@ -2,6 +2,8 @@ export type Letra = "A" | "B" | "C" | "D" | "E";
 
 export interface Questao {
   id: string;
+  edicao: string;
+  ano: number;
   numero: number;
   bloco: string;
   materia: string;
@@ -30,11 +32,8 @@ export interface Banco {
   meta: {
     concurso: string;
     banca: string;
-    edital: string;
-    prova_aplicada_em: string;
-    questoes: number;
-    matriz: Record<string, number>;
-    gabarito_fonte: string;
+    edicoes: Record<string, { questoes: number; aplicada?: string }>;
+    total: number;
     gerado_por: string;
   };
   contextos: Contexto[];
@@ -61,6 +60,8 @@ export interface Sessao {
   finalizadaEm?: number;
   /** Modo estudo: revela gabarito e explicação logo após responder. */
   modoEstudo?: boolean;
+  /** IDs das questões sorteadas para esta sessão (permite retomar após recarregar). */
+  questaoIds?: string[];
 }
 
 export interface BlocoResumo {
@@ -78,6 +79,6 @@ export interface Resultado {
   blocos: BlocoResumo[];
   porAssunto: { assunto: string; acertos: number; total: number }[];
   aprovado: boolean;
-  erros: number[];
+  erros: string[];
   tempoRestanteMs: number;
 }

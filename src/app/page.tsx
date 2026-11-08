@@ -8,16 +8,15 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { Badge, Card, buttonClass, Progress, Stat } from "@/components/ui";
+import { Badge, Card, buttonClass, Stat } from "@/components/ui";
 import { Countdown } from "@/components/Countdown";
-import { META, questoes } from "@/lib/banco";
-import { validarMatriz } from "@/lib/scoring";
+import { EDICOES, QUOTAS, questoes } from "@/lib/banco";
 
 export default function Home() {
-  const validacao = validarMatriz(questoes);
   const lp = questoes.filter((q) => q.materia === "Língua Portuguesa").length;
   const direito = questoes.filter((q) => q.materia === "Conhecimentos em Direito").length;
   const gerais = questoes.length - lp - direito;
+  const suficiente = lp >= QUOTAS.lp && direito >= QUOTAS.direito && gerais >= QUOTAS.geraisTotal;
 
   return (
     <div className="space-y-10">
@@ -36,9 +35,9 @@ export default function Home() {
               Simulado do concurso de Escrevente do TJSP, com a cara da prova real.
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-ink-200 sm:text-base">
-              70 questões na matriz oficial, cronômetro de 5 horas, correção com as travas
-              do edital e explicação imediata de cada questão. Base: prova oficial de
-              07/12/2025, aplicada pela VUNESP.
+              Cada simulado sorteia 70 questões do banco de {questoes.length} (edições{" "}
+              {EDICOES.map((e) => e.ano).join(", ")}), na matriz oficial, com cronômetro de 5
+              horas, correção com as travas do edital e explicação imediata.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/simulado" className={buttonClass("primary", "bg-white text-ink-900 hover:bg-ink-100")}>
@@ -125,8 +124,8 @@ export default function Home() {
                 Anexo VIII do edital de 2027, conferido no caderno de 2025.
               </p>
             </div>
-            <Badge tone={validacao.ok ? "green" : "red"}>
-              {validacao.ok ? "matriz validada" : "revisar"}
+            <Badge tone={suficiente ? "green" : "red"}>
+              {suficiente ? "banco suficiente" : "banco insuficiente"}
             </Badge>
           </div>
 
@@ -135,40 +134,40 @@ export default function Home() {
               <thead className="bg-ink-50 text-left text-xs uppercase tracking-wide text-ink-500">
                 <tr>
                   <th className="px-3 py-2 font-semibold">Bloco / matéria</th>
-                  <th className="px-3 py-2 text-right font-semibold">Questões</th>
-                  <th className="px-3 py-2 text-right font-semibold">Mínimo</th>
+                  <th className="px-3 py-2 text-right font-semibold">No simulado</th>
+                  <th className="px-3 py-2 text-right font-semibold">No banco</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-ink-100">
                 <tr>
                   <td className="px-3 py-2">Língua Portuguesa</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{lp}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">8</td>
+                  <td className="px-3 py-2 text-right tabular-nums">{QUOTAS.lp}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-ink-500">{lp}</td>
                 </tr>
                 <tr>
                   <td className="px-3 py-2">Conhecimentos em Direito</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{direito}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">15</td>
+                  <td className="px-3 py-2 text-right tabular-nums">{QUOTAS.direito}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-ink-500">{direito}</td>
                 </tr>
                 <tr>
                   <td className="px-3 py-2">Conhecimentos Gerais</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{gerais}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">—</td>
+                  <td className="px-3 py-2 text-right tabular-nums">{QUOTAS.geraisTotal}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-ink-500">{gerais}</td>
                 </tr>
                 <tr className="bg-ink-50/60 font-semibold">
                   <td className="px-3 py-2">Total</td>
+                  <td className="px-3 py-2 text-right tabular-nums">70</td>
                   <td className="px-3 py-2 text-right tabular-nums">{questoes.length}</td>
-                  <td className="px-3 py-2 text-right">5,0/10</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            <Stat label="Português" value={`${lp} questões`} hint="eliminatório: 8 acertos" />
-            <Stat label="Direito" value={`${direito} questões`} hint="eliminatório: 15 acertos" />
-            <Stat label="Gerais" value={`${gerais} questões`} hint="só classifica" />
-            <Stat label="Banco" value={`${questoes.length} questões`} hint="prova oficial de 2025" />
+            <Stat label="Português" value="16 por simulado" hint="eliminatório: 8 acertos" />
+            <Stat label="Direito" value="30 por simulado" hint="eliminatório: 15 acertos" />
+            <Stat label="Gerais" value="24 por simulado" hint="4/4/9/7" />
+            <Stat label="Banco" value={`${questoes.length} questões`} hint={`${EDICOES.length} edições`} />
           </div>
         </Card>
 
@@ -179,17 +178,22 @@ export default function Home() {
               <h2 className="text-lg font-semibold">De onde vêm as questões</h2>
             </div>
             <p className="text-sm leading-relaxed text-ink-600">
-              Todas as 70 questões vêm do caderno oficial <strong>{META.edital}</strong>, com
-              gabarito oficial da VUNESP. A prova foi aplicada em{" "}
-              {new Date(META.prova_aplicada_em + "T12:00:00").toLocaleDateString("pt-BR")}.
+              {questoes.length} questões de {EDICOES.length} edições oficiais da VUNESP, com
+              gabarito oficial: {EDICOES.map((e) => `${e.ano} (${e.questoes})`).join(", ")}.
             </p>
             <div className="rounded-xl bg-ink-50 p-3 text-xs text-ink-600">
               <p>
-                <strong>Fonte:</strong> {META.gabarito_fonte} — VERSÃO 1.
+                <strong>2025:</strong> TJSP2503, gabarito oficial VERSÃO 1.
               </p>
               <p className="mt-1">
-                O concurso de 2027 tem a mesma estrutura (70 questões + redação, 5 horas), mas
-                a prova de 2025 foi aplicada para a Capital e 1ª RAJ. Use como treino de banca.
+                <strong>2018:</strong> TJSP1704 (Interior), gabarito versão 2.
+              </p>
+              <p className="mt-1">
+                <strong>2004:</strong> caderno único, gabarito ao final do PDF.
+              </p>
+              <p className="mt-1 text-ink-500">
+                A prova de 2027 tem 70 questões + redação, 5 horas. O simulado reproduz a matriz
+                atual; as edições antigas entram como acervo de treino.
               </p>
             </div>
             <Link href="/treino" className={buttonClass("secondary", "w-full")}>
@@ -219,10 +223,6 @@ export default function Home() {
             </div>
           </Card>
         </div>
-      </section>
-
-      <section>
-        <Progress valor={questoes.length} max={70} />
       </section>
     </div>
   );

@@ -18,8 +18,9 @@ import {
 import { Badge, Card, buttonClass } from "@/components/ui";
 import { QuestionBody } from "@/components/QuestionBody";
 import { ExplicacaoBox } from "@/components/ExplicacaoBox";
-import { contextoDa, questoes } from "@/lib/banco";
+import { porId, questoes, contextoDa } from "@/lib/banco";
 import { corrigir, validarMatriz } from "@/lib/scoring";
+import { sortearSimulado } from "@/lib/selecao";
 import { DURACAO_PROVA_MIN, formatarDuracao, restanteMs } from "@/lib/timer";
 import { lerTempoAdicional, salvarTempoAdicional } from "@/lib/prefs";
 import {
@@ -29,7 +30,7 @@ import {
   sessaoAberta,
   type SessaoRow,
 } from "@/lib/db";
-import type { Letra } from "@/lib/types";
+import type { Letra, Questao } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
 const LETRAS: Letra[] = ["A", "B", "C", "D", "E"];
@@ -48,13 +49,27 @@ export function SimuladoClient() {
   const [confirmar, setConfirmar] = useState(false);
   const [extraMin, setExtraMin] = useState(0);
   const [modoEstudo, setModoEstudo] = useState(false);
+  const [erro, setErro] = useState<string | null>(null);
   const finalizando = useRef(false);
 
-  const validacao = useMemo(() => validarMatriz(questoes), []);
-  const questao = useMemo(
-    () => questoes.find((q) => q.numero === sessao?.atual) ?? questoes[0],
-    [sessao?.atual],
+  const selecionadas: Questao[] = useMemo(() => {
+    if (!sessao?.questaoIds) return [];
+    return sessao.questaoIds.map((id) => porId[id]).filter(Boolean) as Questao[];
+  }, [sessao]);
+
+  const indice = Math.min(
+    Math.max(0, sessao?.atual ?? 0),
+    Math.max(0, selecionadas.length - 1),
   );
+  const questao = selecionadas[indice];
+  const respondidas = sessao ? Object.keys(sessao.respostas).length : 0;
+
+  const parcial = useMemo(() => {
+    if (!sessao || selecionadas.length === 0) return null;
+    return corrigir(selecionadas, sessao.respostas);
+  }, [sessao, selecionadas]);
+
+  const validacao = useMemo(() => validarMatriz(selecionadas), [selecionadas]);
 
   const finalizar = useCallback(
     async (alvo?: SessaoRow) => {
@@ -73,7 +88,7 @@ export function SimuladoClient() {
     (async () => {
       if (!forcarNovo) {
         const aberta = await sessaoAberta();
-        if (aberta) {
+        if (aberta?.questaoIds?.length) {
           if (aberta.terminaEm <= Date.now()) {
             setCarregando(false);
             await finalizar(aberta);
@@ -104,24 +119,31 @@ export function SimuladoClient() {
   }, [sessao, finalizar]);
 
   async function iniciar() {
-    const agora = Date.now();
     const extra = Math.min(120, Math.max(0, Math.floor(extraMin)));
     salvarTempoAdicional(extra);
-    const nova: SessaoRow = {
-      id: novoId(),
-      modo: "simulado",
-      criadaEm: agora,
-      terminaEm: agora + (DURACAO_PROVA_MIN + extra) * 60_000,
-      duracaoMin: DURACAO_PROVA_MIN,
-      respostas: {},
-      marcadas: [],
-      atual: 1,
-      modoEstudo,
-    };
-    await salvarSessao(nova);
-    finalizando.current = false;
-    setSessao(nova);
-    setRestante(restanteMs(nova.terminaEm));
+    try {
+      const sorteadas = sortearSimulado(questoes);
+      const agora = Date.now();
+      const nova: SessaoRow = {
+        id: novoId(),
+        modo: "simulado",
+        criadaEm: agora,
+        terminaEm: agora + (DURACAO_PROVA_MIN + extra) * 60_000,
+        duracaoMin: DURACAO_PROVA_MIN,
+        respostas: {},
+        marcadas: [],
+        atual: 0,
+        modoEstudo,
+        questaoIds: sorteadas.map((q) => q.id),
+      };
+      await salvarSessao(nova);
+      finalizando.current = false;
+      setErro(null);
+      setSessao(nova);
+      setRestante(restanteMs(nova.terminaEm));
+    } catch (e) {
+      setErro(e instanceof Error ? e.message : "Não foi possível montar o simulado.");
+    }
   }
 
   async function atualizar(mudanca: Partial<SessaoRow>) {
@@ -134,17 +156,18 @@ export function SimuladoClient() {
 
   const responder = useCallback(
     (letra: Letra) => {
-      if (!sessao) return;
-      const respostas = { ...sessao.respostas, [String(sessao.atual)]: letra };
-      void atualizar({ respostas });
+      if (!sessao || !questao) return;
+      void atualizar({
+        respostas: { ...sessao.respostas, [questao.id]: letra },
+      });
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [sessao],
+    [sessao, questao],
   );
 
   const irPara = useCallback(
-    (numero: number) => {
-      const alvo = Math.min(TOTAL, Math.max(1, numero));
+    (novoIndice: number) => {
+      const alvo = Math.min(TOTAL - 1, Math.max(0, novoIndice));
       if (!sessao) return;
       void atualizar({ atual: alvo });
       setGrade(false);
@@ -163,43 +186,33 @@ export function SimuladoClient() {
         e.preventDefault();
         responder(letra);
       }
-      if (e.key === "ArrowRight") irPara(sessao.atual + 1);
-      if (e.key === "ArrowLeft") irPara(sessao.atual - 1);
+      if (e.key === "ArrowRight") irPara(indice + 1);
+      if (e.key === "ArrowLeft") irPara(indice - 1);
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [sessao, responder, irPara, confirmar, grade]);
-
-  const respondidas = sessao ? Object.keys(sessao.respostas).length : 0;
-  const parcial = useMemo(() => {
-    if (!sessao) return null;
-    return corrigir(questoes, sessao.respostas);
-  }, [sessao]);
+  }, [sessao, responder, irPara, confirmar, grade, indice]);
 
   if (carregando) {
-    return (
-      <div className="mx-auto max-w-3xl space-y-3 py-16 text-center">
-        <p className="text-sm text-ink-500">Carregando simulado…</p>
-      </div>
-    );
+    return <p className="py-16 text-center text-sm text-ink-500">Carregando simulado…</p>;
   }
 
-  if (!sessao) {
+  if (!sessao || !questao) {
     return (
       <div className="mx-auto max-w-3xl space-y-5">
         <Card className="space-y-5">
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="brand">simulado completo</Badge>
-            <Badge>70 questões</Badge>
+            <Badge>70 questões sorteadas</Badge>
             <Badge>5 horas</Badge>
-            <Badge>VUNESP TJSP2503</Badge>
+            <Badge>banco {questoes.length} questões</Badge>
           </div>
           <div>
             <h1 className="text-2xl font-bold text-ink-900">Pronto para a prova?</h1>
             <p className="mt-2 text-sm leading-relaxed text-ink-600">
-              São 70 questões na matriz oficial, com cronômetro de 5 horas e correção com as
-              travas do edital. O progresso é salvo neste navegador a cada resposta — se você
-              recarregar a página, o simulado continua de onde parou.
+              Cada simulado sorteia 70 questões do banco (16 de Português, 30 de Direito e 24
+              de Conhecimentos Gerais), na matriz do edital de 2027. O progresso é salvo neste
+              navegador a cada resposta — se recarregar, continua de onde parou.
             </p>
           </div>
 
@@ -207,7 +220,7 @@ export function SimuladoClient() {
             {[
               { label: "Português", valor: "16 questões", detalhe: "mínimo 8 acertos" },
               { label: "Direito", valor: "30 questões", detalhe: "mínimo 15 acertos" },
-              { label: "Gerais", valor: "24 questões", detalhe: "só classifica" },
+              { label: "Gerais", valor: "24 questões", detalhe: "4/4/9/7" },
             ].map((b) => (
               <div key={b.label} className="rounded-xl border border-ink-100 bg-ink-50/60 p-3">
                 <div className="text-xs font-semibold uppercase tracking-wide text-ink-500">
@@ -257,11 +270,10 @@ export function SimuladoClient() {
             </span>
           </label>
 
-          {!validacao.ok ? (
-            <div className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs text-rose-800">
-              <AlertTriangle className="mr-1 inline h-4 w-4" />
-              Matriz com problema: {validacao.problemas.join("; ")}
-            </div>
+          {erro ? (
+            <p className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs text-rose-800">
+              {erro}
+            </p>
           ) : null}
 
           <div className="flex flex-col gap-2 sm:flex-row">
@@ -277,9 +289,10 @@ export function SimuladoClient() {
     );
   }
 
-  const marcada = sessao.respostas[String(questao.numero)];
-  const marcadaRevisao = sessao.marcadas.includes(questao.numero);
+  const marcada = sessao.respostas[questao.id];
+  const marcadaRevisao = sessao.marcadas.includes(indice);
   const minutosRestantes = restante / 60_000;
+  const revelar = Boolean(sessao.modoEstudo && marcada);
 
   return (
     <div className="space-y-4">
@@ -331,22 +344,20 @@ export function SimuladoClient() {
         <Card className="space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="text-xs font-semibold uppercase tracking-wide text-ink-500">
-              Questão {String(questao.numero).padStart(2, "0")} de 70
+              Questão {indice + 1} de 70 · prova {questao.ano}
             </div>
             <button
               type="button"
               onClick={() =>
                 void atualizar({
                   marcadas: marcadaRevisao
-                    ? sessao.marcadas.filter((n) => n !== questao.numero)
-                    : [...sessao.marcadas, questao.numero],
+                    ? sessao.marcadas.filter((n) => n !== indice)
+                    : [...sessao.marcadas, indice],
                 })
               }
               className={cn(
                 "focus-ring inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold",
-                marcadaRevisao
-                  ? "bg-amber-100 text-amber-800"
-                  : "text-ink-500 hover:bg-ink-100",
+                marcadaRevisao ? "bg-amber-100 text-amber-800" : "text-ink-500 hover:bg-ink-100",
               )}
             >
               <Flag className="h-3.5 w-3.5" /> {marcadaRevisao ? "marcada" : "marcar"}
@@ -357,19 +368,17 @@ export function SimuladoClient() {
             questao={questao}
             contexto={contextoDa(questao)}
             selecionada={marcada ?? null}
-            revelado={Boolean(sessao.modoEstudo && marcada)}
+            revelado={revelar}
             onSelect={responder}
           />
 
-          {sessao.modoEstudo && marcada ? (
-            <ExplicacaoBox questao={questao} escolha={marcada} />
-          ) : null}
+          {revelar ? <ExplicacaoBox questao={questao} escolha={marcada} /> : null}
 
           <div className="flex items-center justify-between gap-2 border-t border-ink-100 pt-4">
             <button
               type="button"
-              onClick={() => irPara(questao.numero - 1)}
-              disabled={questao.numero === 1}
+              onClick={() => irPara(indice - 1)}
+              disabled={indice === 0}
               className={buttonClass("secondary", "px-3 py-2 text-xs")}
             >
               <ChevronLeft className="h-4 w-4" /> Anterior
@@ -381,7 +390,7 @@ export function SimuladoClient() {
                   type="button"
                   onClick={() => {
                     const respostas = { ...sessao.respostas };
-                    delete respostas[String(questao.numero)];
+                    delete respostas[questao.id];
                     void atualizar({ respostas });
                   }}
                   className={buttonClass("ghost", "px-2 py-2 text-xs")}
@@ -389,10 +398,10 @@ export function SimuladoClient() {
                   <X className="h-3.5 w-3.5" /> limpar
                 </button>
               ) : null}
-              {questao.numero < TOTAL ? (
+              {indice < selecionadas.length - 1 ? (
                 <button
                   type="button"
-                  onClick={() => irPara(questao.numero + 1)}
+                  onClick={() => irPara(indice + 1)}
                   className={buttonClass("primary", "px-3 py-2 text-xs")}
                 >
                   Próxima <ChevronRight className="h-4 w-4" />
@@ -423,25 +432,23 @@ export function SimuladoClient() {
               {respondidas}/70 respondidas · {sessao.marcadas.length} marcadas
             </p>
             <div className="grid grid-cols-10 gap-1">
-              {questoes.map((q) => {
-                const respondida = Boolean(sessao.respostas[String(q.numero)]);
-                const marcadaGrade = sessao.marcadas.includes(q.numero);
+              {selecionadas.map((q, i) => {
+                const respondida = Boolean(sessao.respostas[q.id]);
+                const marcadaGrade = sessao.marcadas.includes(i);
                 return (
                   <button
-                    key={q.numero}
+                    key={q.id}
                     type="button"
-                    onClick={() => irPara(q.numero)}
+                    onClick={() => irPara(i)}
                     className={cn(
                       "focus-ring grid h-6 w-6 place-items-center rounded text-[10px] font-semibold",
-                      q.numero === questao.numero && "ring-2 ring-brand-500",
-                      respondida
-                        ? "bg-brand-600 text-white"
-                        : "bg-ink-100 text-ink-600 hover:bg-ink-200",
+                      i === indice && "ring-2 ring-brand-500",
+                      respondida ? "bg-brand-600 text-white" : "bg-ink-100 text-ink-600 hover:bg-ink-200",
                       marcadaGrade && "ring-2 ring-amber-400",
                     )}
-                    aria-label={`Ir para a questão ${q.numero}`}
+                    aria-label={`Ir para a questão ${i + 1}`}
                   >
-                    {q.numero}
+                    {i + 1}
                   </button>
                 );
               })}
@@ -481,22 +488,22 @@ export function SimuladoClient() {
               </span>
             </div>
             <div className="mt-4 grid grid-cols-8 gap-2 sm:grid-cols-10">
-              {questoes.map((q) => {
-                const respondida = Boolean(sessao.respostas[String(q.numero)]);
-                const marcadaGrade = sessao.marcadas.includes(q.numero);
+              {selecionadas.map((q, i) => {
+                const respondida = Boolean(sessao.respostas[q.id]);
+                const marcadaGrade = sessao.marcadas.includes(i);
                 return (
                   <button
-                    key={q.numero}
+                    key={q.id}
                     type="button"
-                    onClick={() => irPara(q.numero)}
+                    onClick={() => irPara(i)}
                     className={cn(
                       "focus-ring grid h-9 place-items-center rounded-lg text-xs font-semibold",
                       respondida ? "bg-brand-600 text-white" : "bg-ink-100 text-ink-700",
                       marcadaGrade && "ring-2 ring-amber-400",
-                      q.numero === questao.numero && "outline outline-2 outline-ink-900",
+                      i === indice && "outline outline-2 outline-ink-900",
                     )}
                   >
-                    {q.numero}
+                    {i + 1}
                   </button>
                 );
               })}
@@ -526,6 +533,12 @@ export function SimuladoClient() {
         </div>
       ) : null}
 
+      {!validacao.ok ? (
+        <p className="flex items-center gap-1 text-[11px] text-rose-600">
+          <AlertTriangle className="h-3 w-3" /> matriz fora do padrão: {validacao.problemas.join("; ")}
+        </p>
+      ) : null}
+
       <div className="flex items-center justify-between text-xs text-ink-400">
         <button
           type="button"
@@ -533,9 +546,7 @@ export function SimuladoClient() {
             if (confirm("Descartar este simulado e começar outro? O progresso atual será perdido.")) {
               void (async () => {
                 const atual = await carregarSessao(sessao.id);
-                if (atual) {
-                  await salvarSessao({ ...atual, finalizadaEm: Date.now() });
-                }
+                if (atual) await salvarSessao({ ...atual, finalizadaEm: Date.now() });
                 window.location.assign("/simulado");
               })();
             }

@@ -11,15 +11,19 @@ export interface Explicacao {
 const mapa = raw as Record<string, Explicacao>;
 
 function chave(q: Questao): string {
-  return String(q.numero).padStart(2, "0");
+  return `${q.edicao}-${String(q.numero).padStart(2, "0")}`;
 }
 
 export function getExplicacao(q: Questao): Explicacao | null {
-  return mapa[chave(q)] ?? null;
+  const especifica = mapa[chave(q)];
+  if (especifica) return especifica;
+  // compatibilidade: explicações antigas só tinham o número (edição 2025)
+  if (q.edicao === "2025") return mapa[String(q.numero).padStart(2, "0")] ?? null;
+  return null;
 }
 
 export function temExplicacao(q: Questao): boolean {
-  return Boolean(mapa[chave(q)]);
+  return Boolean(getExplicacao(q));
 }
 
 export function coberturaExplicacoes(questoes: Questao[]): number {

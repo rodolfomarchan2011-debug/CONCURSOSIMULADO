@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "ingest": "python tools/ingest_tjsp2025.py --prova data/raw/vunesp-tjsp2503-prova.pdf --gabarito data/raw/vunesp-tjsp2503-gabarito.pdf --out src/data/questions-2025.json"
+    "ingest": "python tools/ingest_edicoes.py"
   },
   "dependencies": {
     "clsx": "^2.1.1",

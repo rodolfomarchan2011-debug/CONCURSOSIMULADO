@@ -19,16 +19,16 @@ export function corrigir(
 ): Resultado {
   const total = questoes.length;
   let acertos = 0;
-  const erros: number[] = [];
+  const erros: string[] = [];
 
   const porAssunto = new Map<string, { acertos: number; total: number }>();
   const porBloco = new Map<string, { acertos: number; total: number }>();
 
   for (const q of questoes) {
-    const marcada = respostas[String(q.numero)];
+    const marcada = respostas[q.id] ?? respostas[String(q.numero)];
     const certa = marcada === q.correta;
     if (certa) acertos += 1;
-    else erros.push(q.numero);
+    else erros.push(q.id);
 
     const a = porAssunto.get(q.assunto) ?? { acertos: 0, total: 0 };
     a.total += 1;
@@ -83,31 +83,45 @@ export interface ValidacaoMatriz {
   problemas: string[];
 }
 
-/** Confere a matriz do simulado contra o Anexo VIII do edital 2027. */
+/** Confere um simulado contra a matriz do Anexo VIII do edital 2027. */
 export function validarMatriz(questoes: Questao[]): ValidacaoMatriz {
   const contagem: Record<string, number> = {};
   for (const q of questoes) {
     contagem[q.assunto] = (contagem[q.assunto] ?? 0) + 1;
   }
 
-  const esperado: Record<string, number> = { ...MATRIZ_OFICIAL };
+  const esperado: Record<string, number> = {
+    "Língua Portuguesa": MATRIZ_OFICIAL["Língua Portuguesa"],
+    "Conhecimentos em Direito": MATRIZ_OFICIAL["Conhecimentos em Direito"],
+    ...Object.fromEntries(
+      Object.entries(MATRIZ_OFICIAL).filter(
+        ([k]) => !["Língua Portuguesa", "Conhecimentos em Direito"].includes(k),
+      ),
+    ),
+  };
   const problemas: string[] = [];
 
   const lp = questoes.filter((q) => q.materia === "Língua Portuguesa").length;
   const direito = questoes.filter((q) => q.materia === "Conhecimentos em Direito").length;
+  const gerais = questoes.filter((q) => q.materia === "Conhecimentos Gerais").length;
   const atualidades = contagem["Atualidades"] ?? 0;
   const matematica = contagem["Matemática"] ?? 0;
   const informatica = contagem["Informática"] ?? 0;
   const rl = contagem["Raciocínio Lógico"] ?? 0;
 
+  if (questoes.length !== 70) problemas.push(`Total: ${questoes.length}/70`);
   if (lp !== esperado["Língua Portuguesa"]) problemas.push(`Português: ${lp}/16`);
   if (direito !== esperado["Conhecimentos em Direito"]) problemas.push(`Direito: ${direito}/30`);
+  if (gerais !== 24) problemas.push(`Gerais: ${gerais}/24`);
   if (atualidades !== esperado["Atualidades"]) problemas.push(`Atualidades: ${atualidades}/4`);
   if (matematica !== esperado["Matemática"]) problemas.push(`Matemática: ${matematica}/4`);
   if (informatica !== esperado["Informática"]) problemas.push(`Informática: ${informatica}/9`);
   if (rl !== esperado["Raciocínio Lógico"]) problemas.push(`Raciocínio Lógico: ${rl}/7`);
-  if (questoes.length !== 70) problemas.push(`Total: ${questoes.length}/70`);
+  if (new Set(questoes.map((q) => q.id)).size !== questoes.length)
+    problemas.push("Questões repetidas");
   if (questoes.some((q) => q.anulada)) problemas.push("Há questão anulada na seleção");
+  if (questoes.some((q) => Object.keys(q.alternativas).length !== 5))
+    problemas.push("Questão sem 5 alternativas");
 
   return { ok: problemas.length === 0, contagem, esperado, problemas };
 }

@@ -1,22 +1,17 @@
-"""Valida o JSON gerado pela ingestão. Uso: python tools/test_ingest.py"""
+"""Valida o banco multi-edição gerado por tools/ingest_edicoes.py.
+
+Uso: python tools/test_ingest.py
+"""
 
 from __future__ import annotations
 
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-ALVO = RAIZ / "src" / "data" / "questions-2025.json"
-
-MATRIZ = {
-    "Língua Portuguesa": 16,
-    "Conhecimentos em Direito": 30,
-    "Atualidades": 4,
-    "Matemática": 4,
-    "Informática": 9,
-    "Raciocínio Lógico": 7,
-}
+ALVO = RAIZ / "src" / "data" / "banco.json"
 
 
 def main() -> int:
@@ -24,39 +19,43 @@ def main() -> int:
     questoes = banco["questoes"]
     erros: list[str] = []
 
-    if len(questoes) != 70:
-        erros.append(f"total {len(questoes)} != 70")
-    if [q["numero"] for q in questoes] != list(range(1, 71)):
-        erros.append("numeração fora de ordem")
+    if len(questoes) < 230:
+        erros.append(f"total {len(questoes)} < 230")
 
-    contagem: dict[str, int] = {}
+    ids = [q["id"] for q in questoes]
+    if len(set(ids)) != len(ids):
+        erros.append("ids repetidos")
+
     for q in questoes:
-        contagem[q["assunto"]] = contagem.get(q["assunto"], 0) + 1
         if sorted(q["alternativas"]) != ["A", "B", "C", "D", "E"]:
-            erros.append(f"questão {q['numero']}: alternativas inválidas")
+            erros.append(f"{q['id']}: alternativas inválidas")
         if q["correta"] not in "ABCDE":
-            erros.append(f"questão {q['numero']}: gabarito inválido")
+            erros.append(f"{q['id']}: gabarito inválido")
         if q["anulada"]:
-            erros.append(f"questão {q['numero']}: anulada")
+            erros.append(f"{q['id']}: anulada")
         if not q["enunciado"].strip() or any(
             not v.strip() for v in q["alternativas"].values()
         ):
-            erros.append(f"questão {q['numero']}: texto vazio")
+            erros.append(f"{q['id']}: texto vazio")
 
-    for chave, esperado in {
-        "Língua Portuguesa": MATRIZ["Língua Portuguesa"],
-        "Conhecimentos em Direito": MATRIZ["Conhecimentos em Direito"],
-    }.items():
-        obtido = sum(1 for q in questoes if q["materia"] == chave)
-        if obtido != esperado:
-            erros.append(f"{chave}: {obtido} != {esperado}")
+    por_edicao = Counter(q["edicao"] for q in questoes)
+    if set(por_edicao) != {"2025", "2018", "2004"}:
+        erros.append(f"edições inesperadas: {dict(por_edicao)}")
 
-    for chave in ("Atualidades", "Matemática", "Informática", "Raciocínio Lógico"):
-        if contagem.get(chave) != MATRIZ[chave]:
-            erros.append(f"{chave}: {contagem.get(chave)} != {MATRIZ[chave]}")
+    vigentes = [q for q in questoes if q["status_vigencia"] == "vigente"]
+    lp = sum(1 for q in vigentes if q["materia"] == "Língua Portuguesa")
+    direito = sum(1 for q in vigentes if q["materia"] == "Conhecimentos em Direito")
+    gerais = sum(1 for q in vigentes if q["materia"] == "Conhecimentos Gerais")
+    if lp < 16:
+        erros.append(f"Português vigente insuficiente: {lp}")
+    if direito < 30:
+        erros.append(f"Direito vigente insuficiente: {direito}")
+    if gerais < 24:
+        erros.append(f"Gerais vigente insuficiente: {gerais}")
 
-    if len(banco.get("contextos", [])) < 3:
-        erros.append("contextos insuficientes")
+    minimo = min(min(len(v) for v in q["alternativas"].values()) for q in questoes)
+    if minimo < 1:
+        erros.append("alternativa vazia")
 
     if erros:
         print("FALHOU")
@@ -65,8 +64,9 @@ def main() -> int:
         return 1
 
     print(
-        f"OK: {len(questoes)} questões, matriz 16/30/4/4/9/7, "
-        f"{len(banco['contextos'])} contextos"
+        f"OK: {len(questoes)} questões | {dict(por_edicao)} | "
+        f"vigentes LP {lp}, Direito {direito}, Gerais {gerais} | "
+        f"contextos {len(banco.get('contextos', []))}"
     )
     return 0
 
