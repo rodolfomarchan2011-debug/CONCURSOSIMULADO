@@ -8,11 +8,12 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 | --- | --- |
 | Banco com a prova oficial de 2025 (70 questões) | ✅ |
 | Simulado completo 16/30/4/4/9/7 + travas (8 LP, 15 Direito, nota 5,0) | ✅ |
+| Modo estudo (gabarito e explicação logo após responder) | ✅ |
 | Cronômetro por timestamp + autosave em IndexedDB | ✅ |
 | Resultado por bloco/matéria + tempo restante para a redação | ✅ |
 | Treino por matéria com feedback imediato | ✅ |
 | Tutor de IA com streaming, citação e fallback offline | ✅ |
-| Exportar/importar progresso | ✅ (exportar) |
+| Exportar/importar progresso | ✅ |
 | PWA básico (manifest + service worker) | ✅ |
 | Redação corrigida por IA, probabilidade de aprovação, login, backoffice | ⏳ roadmap |
 
@@ -77,7 +78,7 @@ Comportamento:
 
 ## Explicações
 
-`src/data/explanations.json` guarda as explicações revisadas. Cobertura atual: **11/70** (Português 1–5, 17, 44, 45, 50, 51, 64, 70). Questões sem explicação mostram o gabarito e o botão do tutor — o pipeline foi desenhado para gerar sob demanda e enfileirar revisão humana (campo `revisado`).
+`src/data/explanations.json` guarda as explicações revisadas. Cobertura atual: **42/70** (Português 1–16, Informática 55–63, Atualidades 47–49, Matemática 52 e 54, Raciocínio Lógico 64–70, mais 17, 44, 45, 50, 51). Faltam as questões de Direito 18–43 e 46 e a 53 (depende da figura do caderno). Questões sem explicação mostram o gabarito, a alternativa correta e um aviso honesto; o botão do tutor permite aprofundar (com chave de IA) e o campo `revisado` existe para a fila de revisão humana.
 
 ## Arquitetura
 

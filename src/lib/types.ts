@@ -59,6 +59,8 @@ export interface Sessao {
   marcadas: number[];
   atual: number;
   finalizadaEm?: number;
+  /** Modo estudo: revela gabarito e explicação logo após responder. */
+  modoEstudo?: boolean;
 }
 
 export interface BlocoResumo {

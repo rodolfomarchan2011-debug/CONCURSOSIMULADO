@@ -5,17 +5,14 @@ import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
-  CheckCircle2,
   Lightbulb,
   RotateCcw,
   Target,
-  XCircle,
 } from "lucide-react";
 import { Badge, Card, buttonClass } from "@/components/ui";
 import { QuestionBody } from "@/components/QuestionBody";
-import { TutorPanel } from "@/components/TutorPanel";
+import { ExplicacaoBox } from "@/components/ExplicacaoBox";
 import { ASSUNTOS, contextoDa, questoes } from "@/lib/banco";
-import { getExplicacao } from "@/lib/explicacoes";
 import type { Letra } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
@@ -35,7 +32,6 @@ export function TreinoClient() {
   );
 
   const questao = lista[Math.min(indice, Math.max(0, lista.length - 1))];
-  const exp = questao ? getExplicacao(questao) : null;
 
   useEffect(() => {
     setIndice(0);
@@ -156,51 +152,7 @@ export function TreinoClient() {
 
             {revelado ? (
               <div className="space-y-3 border-t border-ink-100 pt-4">
-                <div
-                  className={cn(
-                    "flex items-center gap-2 rounded-xl p-3 text-sm font-semibold",
-                    selecionada === questao.correta
-                      ? "bg-emerald-50 text-emerald-800"
-                      : "bg-rose-50 text-rose-800",
-                  )}
-                >
-                  {selecionada === questao.correta ? (
-                    <>
-                      <CheckCircle2 className="h-5 w-5" /> Você acertou — gabarito {questao.correta}
-                    </>
-                  ) : (
-                    <>
-                      <XCircle className="h-5 w-5" /> Você marcou {selecionada}; o gabarito é{" "}
-                      {questao.correta}
-                    </>
-                  )}
-                </div>
-
-                <div className="rounded-xl border border-ink-100 bg-ink-50/60 p-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-ink-500">
-                    Alternativa correta ({questao.correta})
-                  </p>
-                  <p className="mt-1 text-sm text-ink-800">
-                    {questao.alternativas[questao.correta]}
-                  </p>
-                </div>
-
-                {exp ? (
-                  <div className="rounded-xl border border-ink-100 bg-white p-3">
-                    <p className="text-sm font-semibold text-ink-900">Por quê</p>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-700">{exp.correta}</p>
-                    {exp.base ? (
-                      <p className="mt-2 text-xs text-ink-500">Fundamento: {exp.base}</p>
-                    ) : null}
-                  </div>
-                ) : (
-                  <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                    Ainda não há explicação revisada para esta questão. Use o tutor abaixo para
-                    pedir a explicação (requer chave de IA configurada no servidor).
-                  </p>
-                )}
-
-                <TutorPanel questao={questao} escolha={selecionada} />
+                <ExplicacaoBox questao={questao} escolha={selecionada} />
 
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-[11px] text-ink-400">

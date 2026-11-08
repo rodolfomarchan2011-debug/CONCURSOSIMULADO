@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Badge, Card, buttonClass } from "@/components/ui";
 import { QuestionBody } from "@/components/QuestionBody";
+import { ExplicacaoBox } from "@/components/ExplicacaoBox";
 import { contextoDa, questoes } from "@/lib/banco";
 import { corrigir, validarMatriz } from "@/lib/scoring";
 import { DURACAO_PROVA_MIN, formatarDuracao, restanteMs } from "@/lib/timer";
@@ -46,6 +47,7 @@ export function SimuladoClient() {
   const [grade, setGrade] = useState(false);
   const [confirmar, setConfirmar] = useState(false);
   const [extraMin, setExtraMin] = useState(0);
+  const [modoEstudo, setModoEstudo] = useState(false);
   const finalizando = useRef(false);
 
   const validacao = useMemo(() => validarMatriz(questoes), []);
@@ -78,6 +80,7 @@ export function SimuladoClient() {
             return;
           }
           setSessao(aberta);
+          setModoEstudo(Boolean(aberta.modoEstudo));
           setRestante(restanteMs(aberta.terminaEm));
           setCarregando(false);
           return;
@@ -113,6 +116,7 @@ export function SimuladoClient() {
       respostas: {},
       marcadas: [],
       atual: 1,
+      modoEstudo,
     };
     await salvarSessao(nova);
     finalizando.current = false;
@@ -237,6 +241,22 @@ export function SimuladoClient() {
             </div>
           </div>
 
+          <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-ink-100 p-4">
+            <input
+              type="checkbox"
+              checked={modoEstudo}
+              onChange={(e) => setModoEstudo(e.target.checked)}
+              className="focus-ring mt-1 h-4 w-4 rounded border-ink-300"
+            />
+            <span>
+              <span className="block text-sm font-semibold text-ink-800">Modo estudo</span>
+              <span className="block text-xs leading-relaxed text-ink-500">
+                Mostra o gabarito e a explicação logo depois de cada resposta. Desligado, o
+                gabarito só aparece no resultado — como na prova real.
+              </span>
+            </span>
+          </label>
+
           {!validacao.ok ? (
             <div className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs text-rose-800">
               <AlertTriangle className="mr-1 inline h-4 w-4" />
@@ -337,8 +357,13 @@ export function SimuladoClient() {
             questao={questao}
             contexto={contextoDa(questao)}
             selecionada={marcada ?? null}
+            revelado={Boolean(sessao.modoEstudo && marcada)}
             onSelect={responder}
           />
+
+          {sessao.modoEstudo && marcada ? (
+            <ExplicacaoBox questao={questao} escolha={marcada} />
+          ) : null}
 
           <div className="flex items-center justify-between gap-2 border-t border-ink-100 pt-4">
             <button

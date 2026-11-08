@@ -139,8 +139,13 @@ function fallback(numero: number, escolha: string | null): string {
   const exp = getExplicacao(q);
   const linhas: string[] = [];
   linhas.push(`Gabarito oficial: ${q.correta}.`);
+  linhas.push(`Alternativa correta: ${q.alternativas[q.correta]}`);
   if (escolha && escolha !== q.correta) {
+    const marcada = (["A", "B", "C", "D", "E"] as Letra[]).includes(escolha as Letra)
+      ? q.alternativas[escolha as Letra]
+      : "";
     linhas.push(`Você marcou ${escolha} — a correta é ${q.correta}.`);
+    if (marcada) linhas.push(`Sua alternativa: ${marcada}`);
   }
   if (exp) {
     linhas.push(exp.correta);
