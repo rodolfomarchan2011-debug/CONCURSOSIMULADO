@@ -1,11 +1,11 @@
-{
+﻿{
   "name": "tjsp-escrevente-simulador",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3210",
     "build": "next build",
-    "start": "next start -p 3210",
+    "start": "next start",
     "test": "vitest run",
     "ingest": "python tools/ingest_tjsp2025.py --prova data/raw/vunesp-tjsp2503-prova.pdf --gabarito data/raw/vunesp-tjsp2503-gabarito.pdf --out src/data/questions-2025.json"
   },
@@ -32,3 +32,4 @@
     "onlyBuiltDependencies": ["esbuild", "sharp"]
   }
 }
+
