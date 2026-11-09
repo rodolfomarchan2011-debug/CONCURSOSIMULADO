@@ -9,7 +9,9 @@ const links = [
   { href: "/", label: "Início" },
   { href: "/simulado", label: "Simulado" },
   { href: "/treino", label: "Treino" },
+  { href: "/desempenho", label: "Desempenho" },
   { href: "/resultado", label: "Resultados" },
+  { href: "/revisao", label: "Revisão" },
 ];
 
 export function Header() {

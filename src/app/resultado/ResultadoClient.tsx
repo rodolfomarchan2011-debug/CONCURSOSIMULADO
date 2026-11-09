@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -20,6 +20,7 @@ import { corrigir, NOTA_MINIMA, NOTA_REDACAO_MINIMA } from "@/lib/scoring";
 import { formatarDuracao } from "@/lib/timer";
 import { exportarProgresso } from "@/lib/prefs";
 import { carregarSessao, importarSessoes, listarSessoes, type SessaoRow } from "@/lib/db";
+import { registrarErros } from "@/lib/revisao";
 import type { Questao } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
@@ -61,6 +62,14 @@ export function ResultadoClient() {
     );
     return corrigir(selecaoDaSessao(sessao), sessao.respostas, { tempoRestanteMs });
   }, [sessao]);
+
+  const errosRegistrados = useRef<string | null>(null);
+  useEffect(() => {
+    if (!sessao?.finalizadaEm || !resultado) return;
+    if (errosRegistrados.current === sessao.id) return;
+    errosRegistrados.current = sessao.id;
+    void registrarErros(resultado.erros);
+  }, [sessao, resultado]);
 
   if (sessao === undefined) {
     return <p className="py-16 text-center text-sm text-ink-500">Carregando resultado…</p>;

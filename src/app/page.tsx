@@ -1,7 +1,9 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  BarChart3,
   BookOpenCheck,
+  CalendarCheck2,
   Clock3,
   FileText,
   ListChecks,
@@ -113,6 +115,37 @@ export default function Home() {
             <p className="text-sm leading-relaxed text-ink-600">{f.texto}</p>
           </Card>
         ))}
+      </section>
+
+      <section className="grid gap-4 sm:grid-cols-2">
+        <Card className="flex items-start gap-4">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-700">
+            <BarChart3 className="h-5 w-5" aria-hidden />
+          </span>
+          <div className="space-y-1">
+            <h3 className="font-semibold text-ink-900">Meu desempenho</h3>
+            <p className="text-sm leading-relaxed text-ink-600">
+              Média, melhor nota, evolução por matéria e histórico dos simulados salvos.
+            </p>
+            <Link href="/desempenho" className="focus-ring inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+              Ver evolução <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Card>
+        <Card className="flex items-start gap-4">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-700">
+            <CalendarCheck2 className="h-5 w-5" aria-hidden />
+          </span>
+          <div className="space-y-1">
+            <h3 className="font-semibold text-ink-900">Revisão espaçada</h3>
+            <p className="text-sm leading-relaxed text-ink-600">
+              Toda questão errada volta na hora certa: 1, 3, 7, 15 e 30 dias.
+            </p>
+            <Link href="/revisao" className="focus-ring inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+              Revisar erros <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Card>
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">

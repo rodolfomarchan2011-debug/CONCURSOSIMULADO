@@ -5,13 +5,29 @@ export interface SessaoRow extends Sessao {
   id: string;
 }
 
+export interface RevisaoRow {
+  /** id da questão */
+  id: string;
+  /** 0 = errada; sobe a cada acerto até 5 */
+  nivel: number;
+  proximaEm: number;
+  ultimaEm: number;
+  erros: number;
+  acertos: number;
+}
+
 class AppDb extends Dexie {
   sessoes!: Table<SessaoRow, string>;
+  revisoes!: Table<RevisaoRow, string>;
 
   constructor() {
     super("tjsp-escrevente-simulador");
     this.version(1).stores({
       sessoes: "id, criadaEm, finalizadaEm, modo",
+    });
+    this.version(2).stores({
+      sessoes: "id, criadaEm, finalizadaEm, modo",
+      revisoes: "id, proximaEm, nivel",
     });
   }
 }
@@ -55,6 +71,22 @@ export async function listarSessoes(): Promise<SessaoRow[]> {
 
 export async function excluirSessao(id: string): Promise<void> {
   await getDb().sessoes.delete(id);
+}
+
+export async function listarRevisoes(): Promise<RevisaoRow[]> {
+  return getDb().revisoes.toArray();
+}
+
+export async function obterRevisao(id: string): Promise<RevisaoRow | undefined> {
+  return getDb().revisoes.get(id);
+}
+
+export async function salvarRevisao(revisao: RevisaoRow): Promise<void> {
+  await getDb().revisoes.put(revisao);
+}
+
+export async function excluirRevisao(id: string): Promise<void> {
+  await getDb().revisoes.delete(id);
 }
 
 export interface ResultadoImportacao {
