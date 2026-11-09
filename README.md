@@ -14,6 +14,10 @@ Aplicação web de estudo para o concurso de **Escrevente Técnico Judiciário d
 | Resultado por bloco/matéria + tempo restante para a redação | ✅ |
 | Treino por matéria com feedback imediato | ✅ |
 | Base legal oficial (CF, CP, CPP, CPC — 2.463 artigos) no tutor | ✅ |
+| Explicação automática por IA ao responder (streaming + cache) | ✅ |
+| Página **Meu desempenho**: média, melhor nota, evolução por matéria e histórico | ✅ |
+| **Revisão espaçada** com caderno de erros (1/3/7/15/30 dias) | ✅ |
+| Tratamento de erro, loading, 404 e CI no GitHub Actions | ✅ |
 | Exportar/importar progresso | ✅ |
 | PWA básico (manifest + service worker) | ✅ |
 | Redação corrigida por IA, probabilidade de aprovação, login, backoffice | ⏳ roadmap |
