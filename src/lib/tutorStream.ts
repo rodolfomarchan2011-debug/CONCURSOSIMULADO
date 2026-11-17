@@ -106,6 +106,19 @@ export async function lerExplicacao(
   return undefined;
 }
 
+/** Cache primeiro; só chama o provedor se não houver texto salvo. */
+export async function obterExplicacao(
+  q: Questao,
+  escolha: Letra | null | undefined,
+  gerar: () => Promise<string>,
+): Promise<string> {
+  const salvo = await lerExplicacao(q, escolha);
+  if (salvo) return salvo;
+  const texto = await gerar();
+  guardarExplicacao(q, escolha, texto);
+  return texto;
+}
+
 export function guardarExplicacao(
   q: Questao,
   escolha: Letra | null | undefined,

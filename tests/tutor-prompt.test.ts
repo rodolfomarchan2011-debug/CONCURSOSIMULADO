@@ -1,115 +1,112 @@
 import { describe, expect, it } from "vitest";
 import {
   blocoCorrecao,
+  contarPalavras,
+  contrato,
   instrucao,
-  limparRepeticao,
-  limitarPalavras,
-  montarTextoLinhas,
-  parseLinhas,
-  precisaAvisoArtigo,
-  violaGabarito,
+  similaridadeTokens,
+  validarTexto,
 } from "@/lib/tutorPrompt";
 import type { Questao } from "@/lib/types";
 
 const q: Questao = {
-  id: "tjsp-2025-001",
-  edicao: "2025",
-  ano: 2025,
-  numero: 1,
-  bloco: "Língua Portuguesa",
-  materia: "Língua Portuguesa",
-  assunto: "Interpretação de texto",
+  id: "tjsp-2018-030",
+  edicao: "2018",
+  ano: 2018,
+  numero: 30,
+  bloco: "Conhecimentos em Direito",
+  materia: "Conhecimentos em Direito",
+  assunto: "Direito Penal",
   contexto_id: null,
-  enunciado: "Segundo o texto, a contribuição de Hawking foi:",
+  enunciado: "A respeito da exploração de prestígio (art. 357 do CP), é correto afirmar:",
   alternativas: {
-    A: "reconhecida pela universidade e pela popularização da ciência",
-    B: "restrita ao círculo de amigos",
-    C: "irrelevante para a física",
-    D: "apenas institucional",
-    E: "contestada pelos alunos",
+    A: "prevê causa de aumento se o agente alega que o dinheiro também é destinado a funcionário público estrangeiro",
+    B: "exige a condição de funcionário público do agente",
+    C: "é crime próprio praticado apenas por advogado",
+    D: "é crime comum, podendo ser praticado por qualquer pessoa",
+    E: "só se configura se houver prejuízo à administração",
   },
-  correta: "A",
+  correta: "D",
   anulada: false,
   tem_imagem: false,
   imagens: [],
-  fonte: "VUNESP TJSP2503",
+  fonte: "VUNESP",
   fonte_pagina: 1,
   status_vigencia: "vigente",
   lei_que_alterou: null,
   revisado: false,
 };
 
-describe("prompt do tutor", () => {
-  it("proíbe repetir o gabarito e limita a 180 palavras", () => {
-    const texto = instrucao("B");
+describe("prompt e validação da correção", () => {
+  it("instrução proíbe repetir o gabarito e o contrato limita a 140 palavras", () => {
+    const texto = instrucao("A");
     expect(texto).toContain("PROIBIDO");
-    expect(texto).toContain("180 palavras");
-    expect(texto).toContain("alternativa B");
+    expect(texto).toContain("alternativa A");
+    const c = contrato("A");
+    expect(c).toContain("140 palavras");
+    expect(c).toContain("Caminho:");
+    expect(c).toContain("Sua resposta (A):");
+    expect(c).toContain("sem artigo aplicável na base");
   });
 
-  it("envia a alternativa marcada e não manda o gabarito", () => {
-    const bloco = blocoCorrecao({ q, escolha: "B", trechos: [], explicacao: null });
-    expect(bloco).toContain("Alternativa marcada pelo aluno: (B)");
+  it("bloco envia a alternativa marcada e não manda o gabarito", () => {
+    const bloco = blocoCorrecao({ q, escolha: "A", trechos: [], explicacao: null });
+    expect(bloco).toContain("Alternativa marcada pelo aluno: (A)");
     expect(bloco).not.toContain("Gabarito oficial");
-    expect(bloco).not.toContain("(C)");
-    expect(bloco).not.toContain("(D)");
   });
 
-  it("detecta repetição do gabarito e transcrição da correta", () => {
-    expect(violaGabarito("O gabarito é C.")).toBe(true);
-    expect(violaGabarito("A alternativa correta é a letra A.")).toBe(true);
-    expect(violaGabarito("A resposta é B.")).toBe(true);
-    expect(
-      violaGabarito("A letra B falha porque confunde popularidade com carisma."),
-    ).toBe(false);
-    expect(
-      violaGabarito(
-        "A banca considerou reconhecida pela universidade e pela popularização da ciência.",
-        q.alternativas.A,
-      ),
-    ).toBe(true);
+  it("reprova texto que abre repetindo o gabarito", () => {
+    const v = validarTexto("O gabarito é D. A letra A troca o sujeito.", q, "A");
+    expect(v.ok).toBe(false);
+    expect(v.motivo).toMatch(/gabarito/);
   });
 
-  it("exige artigo em Direito, salvo declaração de ausência", () => {
-    expect(precisaAvisoArtigo("Conhecimentos em Direito", "O crime é de concussão.")).toBe(true);
-    expect(precisaAvisoArtigo("Conhecimentos em Direito", "Conforme art. 316 do CP.")).toBe(false);
-    expect(
-      precisaAvisoArtigo("Conhecimentos em Direito", "sem artigo aplicável na base"),
-    ).toBe(false);
-    expect(precisaAvisoArtigo("Língua Portuguesa", "Sem artigo, é interpretação.")).toBe(false);
+  it("reprova 'alternativa correta é'", () => {
+    const v = validarTexto("A alternativa correta é a letra D.", q, "A");
+    expect(v.ok).toBe(false);
   });
 
-  it("remove linha que repete o gabarito", () => {
-    const limpo = limparRepeticao(
-      "O gabarito é C.\nA letra B erra ao trocar o sujeito.",
+  it("reprova transcrição da alternativa correta", () => {
+    const v = validarTexto(
+      "É crime comum, podendo ser praticado por qualquer pessoa. Isso resolve a questão.",
+      q,
+      "A",
     );
-    expect(limpo).not.toMatch(/gabarito é/i);
-    expect(limpo).toContain("A letra B erra");
+    expect(v.ok).toBe(false);
+    expect(v.motivo).toMatch(/transcreveram/);
   });
 
-  it("corta a resposta no limite de palavras", () => {
-    const longo = Array.from({ length: 300 }, (_, i) => `palavra${i}.`).join(" ");
-    const curto = limitarPalavras(longo, 160);
-    expect(curto.split(/\s+/).length).toBeLessThanOrEqual(160);
+  it("reprova Direito sem artigo", () => {
+    const v = validarTexto(
+      "1) Caminho: analisar o tipo.\n2) Sua resposta (A) falha.\n3) Pegadinha.\n4) Fixe.",
+      q,
+      "A",
+    );
+    expect(v.ok).toBe(false);
+    expect(v.motivo).toMatch(/art\./);
   });
 
-  it("lê o formato de 5 linhas e respeita os limites por item", () => {
-    const bruto = [
-      "### 1) Caminho: primeiro passo; segundo passo; terceiro passo.",
-      "2) Por que a alternativa B falha: porque troca o sujeito.",
-      "3) Pegadinha VUNESP: confundir popularidade com carisma.",
-      "4) Fundamento: art. 357 do CP.",
-      "5) Fixe: comum não exige qualidade especial.",
+  it("reprova texto acima de 180 palavras", () => {
+    const palavras = Array.from({ length: 200 }, (_, i) => `palavra${i}`);
+    const v = validarTexto(`art. 357 do CP. ${palavras.join(" ")}`, q, "A");
+    expect(v.ok).toBe(false);
+    expect(v.motivo).toMatch(/180/);
+  });
+
+  it("aprova texto no contrato", () => {
+    const texto = [
+      "1) Caminho: o tipo não exige qualidade especial; o parágrafo único traz aumento; a alegação de funcionário estrangeiro não está no dispositivo.",
+      "2) Sua resposta (A) falha porque inventa uma causa de aumento que não existe.",
+      "3) Pegadinha VUNESP: trocar o parágrafo único por outra lei.",
+      "4) Fundamento: art. 357 do CP — solicitar dinheiro a pretexto de influir em juiz.",
+      "5) Fixe: exploração de prestígio é crime comum.",
     ].join("\n");
-    const itens = parseLinhas(bruto);
-    expect(itens).not.toBeNull();
-    expect(itens?.[0]).toContain("primeiro passo");
-    const texto = montarTextoLinhas(itens!);
-    expect(texto.split("\n")).toHaveLength(5);
-    expect(texto).not.toContain("###");
+    expect(validarTexto(texto, q, "A").ok).toBe(true);
+    expect(contarPalavras(texto)).toBeLessThanOrEqual(180);
   });
 
-  it("rejeita resposta fora do formato", () => {
-    expect(parseLinhas("texto solto sem numeração")).toBeNull();
+  it("similaridade detecta cópia da alternativa", () => {
+    expect(similaridadeTokens(q.alternativas.D, q.alternativas.D)).toBe(1);
+    expect(similaridadeTokens("texto completamente diferente", q.alternativas.D)).toBeLessThan(0.3);
   });
 });

@@ -6,14 +6,10 @@ import { maxTokens, provedor } from "@/lib/server/ai-config";
 import {
   blocoCorrecao,
   contarPalavras,
+  contrato,
   instrucao,
-  instrucaoLinhas,
-  limparRepeticao,
   limitarPalavras,
-  montarTextoLinhas,
-  parseLinhas,
-  precisaAvisoArtigo,
-  violaGabarito,
+  validarTexto,
 } from "@/lib/tutorPrompt";
 import type { Letra } from "@/lib/types";
 
@@ -140,20 +136,16 @@ interface Mensagem {
   content: string;
 }
 
-/** Insere um reforço logo após a instrução principal (system antes do user). */
-function reforcar(mensagens: Mensagem[], texto: string): Mensagem[] {
-  return [
-    mensagens[0],
-    { role: "system", content: texto },
-    ...mensagens.slice(1),
-  ];
+interface Geracao {
+  texto: string;
+  finish: string;
 }
 
 async function gerar(
   cfg: NonNullable<ReturnType<typeof provedor>>,
   mensagens: Mensagem[],
   temperatura: number,
-): Promise<string> {
+): Promise<Geracao> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 45000);
   try {
@@ -174,12 +166,25 @@ async function gerar(
     });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
     const json = (await res.json()) as {
-      choices?: { message?: { content?: string } }[];
+      choices?: { message?: { content?: string }; finish_reason?: string }[];
     };
-    return (json.choices?.[0]?.message?.content ?? "").trim();
+    const escolha = json.choices?.[0];
+    return {
+      texto: (escolha?.message?.content ?? "").trim(),
+      finish: escolha?.finish_reason ?? "desconhecido",
+    };
   } finally {
     clearTimeout(timer);
   }
+}
+
+/** Insere um reforço logo após a instrução principal (system antes do user). */
+function reforcar(mensagens: Mensagem[], texto: string): Mensagem[] {
+  return [mensagens[0], { role: "system", content: texto }, ...mensagens.slice(1)];
+}
+
+function modeloPequeno(cfg: NonNullable<ReturnType<typeof provedor>>): boolean {
+  return /:3b\b|3b-instruct|qwen2\.5:3b|llama3\.2:3b/i.test(cfg.modelo) || /11434/.test(cfg.url);
 }
 
 export async function POST(req: NextRequest) {
@@ -256,84 +261,77 @@ export async function POST(req: NextRequest) {
         role: m.papel === "user" ? ("user" as const) : ("assistant" as const),
         content: m.texto.slice(0, 1200),
       })),
-    { role: "user", content: pergunta || "Explique o raciocínio desta questão." },
+    { role: "user", content: `${contrato(escolha)}\n\nPergunta do aluno: ${pergunta || "explique o raciocínio desta questão."}` },
   ];
 
+  const registrar = (
+    tentativa: number,
+    motivo: string,
+    finish: string,
+    texto: string,
+    cortado: boolean,
+  ) => {
+    console.log(
+      JSON.stringify({
+        tutor: true,
+        tentativa,
+        motivo,
+        finish,
+        cortado,
+        palavras: contarPalavras(texto),
+      }),
+    );
+  };
+
   try {
-    let texto = "";
-    let viaJSON = false;
+    const normalizarCitacao = (t: string) => t.replace(/\bArtigo\s+(\d)/g, "art. $1");
+    const primeira = await gerar(cfg, mensagens, 0.2);
+    let texto = normalizarCitacao(primeira.texto);
+    let finish = primeira.finish;
+    let validacao = validarTexto(texto, q, escolha);
+    let tentativas = 1;
+    let ajustada = false;
 
-    if (!pergunta) {
-      const mensagensLinhas: Mensagem[] = [
-        { role: "system", content: instrucaoLinhas(escolha) },
-        { role: "system", content: blocoCorrecao({ q, escolha, trechos, explicacao }) },
-        { role: "user", content: "Responda só as 5 linhas numeradas." },
-      ];
-      let itens = parseLinhas(await gerar(cfg, mensagensLinhas, 0.2));
-      if (!itens) {
-        itens = parseLinhas(
-          await gerar(
-            cfg,
-            reforcar(
-              mensagensLinhas,
-              "A resposta anterior não seguiu o formato. Responda apenas 5 linhas: 1) Caminho... 2) Por que... 3) Pegadinha... 4) Fundamento... 5) Fixe...",
-            ),
-            0,
-          ),
-        );
-      }
-      if (itens) {
-        texto = montarTextoLinhas(itens);
-        viaJSON = true;
-        if (violaGabarito(texto, q.alternativas[q.correta])) {
-          const retry = parseLinhas(
-            await gerar(
-              cfg,
-              reforcar(
-                mensagensLinhas,
-                "Reescreva as 5 linhas sem citar a letra correta, sem a palavra gabarito e sem transcrever a alternativa correta.",
-              ),
-              0,
-            ),
-          );
-          if (retry) texto = montarTextoLinhas(retry);
-          if (violaGabarito(texto, q.alternativas[q.correta])) {
-            texto = limparRepeticao(texto);
-          }
-        }
+    registrar(1, validacao.ok ? "ok" : validacao.motivo, finish, texto, finish === "length");
+
+    if (!validacao.ok) {
+      if (modeloPequeno(cfg)) {
+        console.log(JSON.stringify({ tutor: true, aviso: "modelo pequeno — fallback" }));
+        texto = fallback(q, escolha);
+        ajustada = true;
+      } else {
+        const reforco = `A resposta anterior foi reprovada porque ${validacao.motivo}. Reescreva seguindo o contrato: 5 itens (Caminho, Sua resposta, Pegadinha, Fundamento, Fixe), máximo 180 palavras, sem citar a letra correta, sem transcrever a alternativa correta e, em Direito, com artigo ou "sem artigo aplicável na base".`;
+        const segunda = await gerar(cfg, reforcar(mensagens, reforco), 0);
+        texto = normalizarCitacao(segunda.texto);
+        finish = segunda.finish;
+        tentativas = 2;
+        validacao = validarTexto(texto, q, escolha);
+        registrar(2, validacao.ok ? "ok" : validacao.motivo, finish, texto, finish === "length");
+        if (!validacao.ok) ajustada = true;
       }
     }
 
-    if (!viaJSON) {
-      texto = await gerar(cfg, mensagens, 0.2);
-
-      if (!texto || violaGabarito(texto, q.alternativas[q.correta])) {
-        const reforco =
-          "Sua resposta repetiu o gabarito ou transcreveu a alternativa correta. Reescreva no formato pedido, sem citar letra correta, sem a palavra gabarito e sem copiar a alternativa. Vá direto ao raciocínio.";
-        texto = await gerar(cfg, reforcar(mensagens, reforco), 0);
-        if (!texto) texto = fallback(q, escolha);
-        else if (violaGabarito(texto, q.alternativas[q.correta])) {
-          texto = limparRepeticao(texto);
-        }
-      }
-
-      if (contarPalavras(texto) > 180) {
-        const encurtar =
-          "Reescreva a resposta em no máximo 140 palavras, mantendo os 5 itens numerados, sem citar letra do gabarito e sem transcrever a alternativa correta.";
-        const curto = await gerar(cfg, reforcar(mensagens, encurtar), 0);
-        if (curto && !violaGabarito(curto, q.alternativas[q.correta])) texto = curto;
-      }
-    }
-
-    texto = limitarPalavras(texto, 175);
-    if (precisaAvisoArtigo(q.materia, texto)) {
+    if (
+      q.materia === "Conhecimentos em Direito" &&
+      !/art(?:igo)?\.?\s*\d/i.test(texto) &&
+      !/sem artigo aplicável na base/i.test(texto)
+    ) {
       texto += "\n6) Fundamento: sem artigo aplicável na base — confira a fonte.";
+    }
+    if (ajustada) {
+      if (validacao.motivo.includes("afirmou que a alternativa")) {
+        texto = fallback(q, escolha);
+      }
+      texto = limitarPalavras(texto, 170);
+      texto += "\n\n⚠ resposta ajustada — confira a fonte citada.";
     }
 
     headers.set(
       "X-Tutor-Mode",
       buscas.length ? "llm+web" : trechos.length ? "llm+base" : "llm",
     );
+    headers.set("X-Finish-Reason", finish);
+    headers.set("X-Tutor-Tentativas", String(tentativas));
     return new Response(sse(texto), { headers });
   } catch {
     headers.set("X-Tutor-Mode", "offline-fallback");

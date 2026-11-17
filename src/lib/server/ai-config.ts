@@ -78,8 +78,8 @@ export function provedor(): Provedor | null {
 }
 
 export function maxTokens(): number {
-  const n = Number(process.env.AI_MAX_TOKENS ?? "2400");
-  return Number.isFinite(n) && n > 0 ? Math.min(8000, Math.floor(n)) : 2400;
+  const n = Number(process.env.AI_MAX_TOKENS ?? "900");
+  return Number.isFinite(n) && n > 0 ? Math.min(2000, Math.floor(n)) : 900;
 }
 
 export function statusTutor() {

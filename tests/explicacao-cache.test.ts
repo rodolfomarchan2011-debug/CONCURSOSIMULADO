@@ -2,9 +2,8 @@ import "fake-indexeddb/auto";
 import { describe, expect, it } from "vitest";
 import {
   chaveExplicacao,
-  guardarExplicacao,
-  lerExplicacao,
   limparCacheMemoria,
+  obterExplicacao,
 } from "@/lib/tutorStream";
 import type { Questao } from "@/lib/types";
 
@@ -30,17 +29,22 @@ const q: Questao = {
   revisado: false,
 };
 
-describe("cache persistente de explicação", () => {
-  it("sobrevive à limpeza da memória (IndexedDB)", async () => {
-    guardarExplicacao(q, "A", "explicação persistida de teste");
-    limparCacheMemoria();
+describe("cache de explicação", () => {
+  it("a 2ª chamada com a mesma chave não bate no provedor", async () => {
+    let chamadas = 0;
+    const gerar = async () => {
+      chamadas += 1;
+      return "explicação persistida de teste";
+    };
 
-    let lido: string | undefined;
-    for (let i = 0; i < 20 && !lido; i += 1) {
-      lido = await lerExplicacao(q, "A");
-      if (!lido) await new Promise((r) => setTimeout(r, 50));
-    }
-    expect(lido).toBe("explicação persistida de teste");
+    const primeira = await obterExplicacao(q, "A", gerar);
+    expect(primeira).toBe("explicação persistida de teste");
+    expect(chamadas).toBe(1);
+
+    limparCacheMemoria(); // força leitura do IndexedDB
+    const segunda = await obterExplicacao(q, "A", gerar);
+    expect(segunda).toBe("explicação persistida de teste");
+    expect(chamadas).toBe(1);
   });
 
   it("chave inclui questão, escolha e versão do prompt", () => {

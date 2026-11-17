@@ -18,8 +18,8 @@ Resumo: **não precisa de APK**. O app é um PWA (web app instalável): você pu
    - `GROQ_API_KEY` = chave da Groq (**grátis**), ou
    - `DEEPSEEK_API_KEY` = chave paga da DeepSeek, ou
    - `OPENROUTER_API_KEY` = chave do OpenRouter.
-   - `AI_MODEL` (opcional): `gemini-2.5-flash`, `llama-3.3-70b-versatile`, `deepseek-chat` etc.
-   - `AI_MAX_TOKENS` (opcional): `700`.
+   - `AI_MODEL` (opcional): `gemini-3.1-flash-lite`, `llama-3.3-70b-versatile`, `deepseek-chat` etc.
+   - `AI_MAX_TOKENS` (opcional): `900`.
    - `TAVILY_API_KEY` (opcional): busca web nas dúvidas.
    - **Não defina `AI_BASE_URL`** na Vercel: essa variável aponta para o Ollama local (`127.0.0.1`) e não existe no servidor.
 5. Clique em **Deploy**. Sai um link tipo `https://tjsp-escrevente.vercel.app`.

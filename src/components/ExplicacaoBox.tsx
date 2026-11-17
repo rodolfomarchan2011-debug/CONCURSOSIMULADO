@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, ChevronDown, Loader2, Sparkles, XCircle } from "lucide-react";
 import type { Letra, Questao } from "@/lib/types";
 import { getExplicacaoV2 } from "@/lib/explicacaoV2";
-import { guardarExplicacao, lerExplicacao, streamTutor } from "@/lib/tutorStream";
+import { obterExplicacao, streamTutor } from "@/lib/tutorStream";
 import { Badge } from "@/components/ui";
 import { TutorPanel } from "@/components/TutorPanel";
 import { cn } from "@/lib/cn";
@@ -38,27 +38,23 @@ export function ExplicacaoBox({
     setFalhou(false);
 
     (async () => {
-      const salvo = await lerExplicacao(questao, escolha);
-      if (!ativo) return;
-      if (salvo) {
-        setTexto(salvo);
-        return;
-      }
-
-      setTexto("");
+      setFalhou(false);
       setGerando(true);
       try {
-        let acumulado = "";
-        await streamTutor({
-          questao,
-          escolha,
-          onDelta: (delta) => {
-            acumulado += delta;
-            if (ativo) setTexto(acumulado);
-          },
-          signal: controller.signal,
+        const salvo = await obterExplicacao(questao, escolha, async () => {
+          let acumulado = "";
+          await streamTutor({
+            questao,
+            escolha,
+            onDelta: (delta) => {
+              acumulado += delta;
+              if (ativo) setTexto(acumulado);
+            },
+            signal: controller.signal,
+          });
+          return acumulado;
         });
-        guardarExplicacao(questao, escolha, acumulado);
+        if (ativo) setTexto(salvo);
       } catch {
         if (ativo && !controller.signal.aborted) setFalhou(true);
       } finally {
