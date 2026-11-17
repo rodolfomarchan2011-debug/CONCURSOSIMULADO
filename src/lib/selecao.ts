@@ -17,6 +17,18 @@ function utilizavel(q: Questao, incluirRevisar = false): boolean {
   return incluirRevisar || q.status_vigencia === "vigente";
 }
 
+const ANO_MINIMO: Record<string, number> = {
+  Atualidades: 2024,
+  Informática: 2023,
+};
+
+/** Validade editorial: notícia velha em Atualidades e TI antiga distorcem o simulado. */
+export function vigentePorAssunto(q: Questao): boolean {
+  if (q.status_vigencia === "desatualizada_por_lei") return false;
+  const minimo = ANO_MINIMO[q.assunto];
+  return minimo ? q.ano >= minimo : true;
+}
+
 /**
  * Sorteia 70 questões respeitando a matriz do edital 2027:
  * 16 Língua Portuguesa, 30 Direito e 24 Gerais (4/4/9/7 dentro de Gerais).
@@ -26,7 +38,7 @@ export function sortearSimulado(
   pool: Questao[] = questoes,
   rng: Rng = Math.random,
 ): Questao[] {
-  const validas = pool.filter((q) => utilizavel(q));
+  const validas = pool.filter((q) => utilizavel(q) && vigentePorAssunto(q));
   const lp = embaralhar(
     validas.filter((q) => q.materia === "Língua Portuguesa"),
     rng,

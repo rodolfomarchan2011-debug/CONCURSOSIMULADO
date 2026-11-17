@@ -4,6 +4,12 @@ import { getExplicacaoV2 } from "@/lib/explicacaoV2";
 import { buscarBaseLegal } from "@/lib/legal";
 import { maxTokens, provedor } from "@/lib/server/ai-config";
 import {
+  limiteGlobalEstourado,
+  registrarChamada,
+  registrarErro,
+  registrarFallback,
+} from "@/lib/server/metricas";
+import {
   blocoCorrecao,
   contarPalavras,
   contrato,
@@ -115,6 +121,7 @@ function fallback(
   linhas.push(
     "Aviso: resposta em modo offline, sem modelo de linguagem. Confira a fonte oficial.",
   );
+  linhas.push("⚠ explicação resumida — confira a fonte citada.");
   return linhas.join("\n\n");
 }
 
@@ -147,7 +154,7 @@ async function gerar(
   temperatura: number,
 ): Promise<Geracao> {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 45000);
+  const timer = setTimeout(() => controller.abort(), 20000);
   try {
     const res = await fetch(cfg.url, {
       method: "POST",
@@ -164,7 +171,10 @@ async function gerar(
       }),
       signal: controller.signal,
     });
-    if (!res.ok) throw new Error(`upstream ${res.status}`);
+    if (!res.ok) {
+      registrarErro();
+      throw new Error(`upstream ${res.status}`);
+    }
     const json = (await res.json()) as {
       choices?: { message?: { content?: string }; finish_reason?: string }[];
     };
@@ -219,18 +229,25 @@ export async function POST(req: NextRequest) {
     req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
     req.headers.get("x-real-ip") ??
     "local";
-  const chave = `${ip}:${corpo.deviceId ?? "anon"}`;
-  if (!permitido(chave) || !permitido(`ip:${ip}`, LIMITE_POR_IP)) {
-    return new Response("Limite diário de perguntas atingido.", { status: 429 });
-  }
-
-  const pergunta = String(corpo.pergunta ?? "").slice(0, 800);
-  const cfg = provedor();
   const headers = new Headers({
     "Content-Type": "text/event-stream; charset=utf-8",
     "Cache-Control": "no-cache, no-transform",
     Connection: "keep-alive",
   });
+  const chave = `${ip}:${corpo.deviceId ?? "anon"}`;
+  if (!permitido(chave) || !permitido(`ip:${ip}`, LIMITE_POR_IP)) {
+    registrarFallback();
+    headers.set("X-Tutor-Mode", "offline-fallback");
+    return new Response(sse(fallback(q, escolha)), { headers });
+  }
+  if (limiteGlobalEstourado()) {
+    registrarFallback();
+    headers.set("X-Tutor-Mode", "offline-fallback");
+    return new Response(sse(fallback(q, escolha)), { headers });
+  }
+
+  const pergunta = String(corpo.pergunta ?? "").slice(0, 800);
+  const cfg = provedor();
 
   if (!cfg) {
     headers.set("X-Tutor-Mode", "offline");
@@ -284,6 +301,7 @@ export async function POST(req: NextRequest) {
   };
 
   try {
+    registrarChamada();
     const normalizarCitacao = (t: string) => t.replace(/\bArtigo\s+(\d)/g, "art. $1");
     const primeira = await gerar(cfg, mensagens, 0.2);
     let texto = normalizarCitacao(primeira.texto);
@@ -297,6 +315,7 @@ export async function POST(req: NextRequest) {
     if (!validacao.ok) {
       if (modeloPequeno(cfg)) {
         console.log(JSON.stringify({ tutor: true, aviso: "modelo pequeno — fallback" }));
+        registrarFallback();
         texto = fallback(q, escolha);
         ajustada = true;
       } else {
@@ -334,6 +353,9 @@ export async function POST(req: NextRequest) {
     headers.set("X-Tutor-Tentativas", String(tentativas));
     return new Response(sse(texto), { headers });
   } catch {
+    registrarErro();
+    registrarFallback();
+    console.log(JSON.stringify({ tutor: true, evento: "fallback", motivo: "provedor" }));
     headers.set("X-Tutor-Mode", "offline-fallback");
     return new Response(sse(fallback(q, escolha)), { headers });
   }
