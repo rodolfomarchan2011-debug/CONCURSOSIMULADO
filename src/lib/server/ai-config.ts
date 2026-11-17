@@ -34,7 +34,7 @@ export function provedor(): Provedor | null {
       nome: "gemini",
       url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
       chave: process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY!,
-      modelo: process.env.AI_MODEL ?? "gemini-2.5-flash",
+      modelo: process.env.AI_MODEL ?? "gemini-3.1-flash-lite",
     };
   }
 
@@ -78,8 +78,8 @@ export function provedor(): Provedor | null {
 }
 
 export function maxTokens(): number {
-  const n = Number(process.env.AI_MAX_TOKENS ?? "900");
-  return Number.isFinite(n) && n > 0 ? Math.min(4000, Math.floor(n)) : 900;
+  const n = Number(process.env.AI_MAX_TOKENS ?? "2400");
+  return Number.isFinite(n) && n > 0 ? Math.min(8000, Math.floor(n)) : 2400;
 }
 
 export function statusTutor() {

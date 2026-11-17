@@ -2,6 +2,8 @@
 
 import type { Letra, Questao } from "@/lib/types";
 import { deviceId } from "@/lib/prefs";
+import { obterExplicacaoIa, salvarExplicacaoIa } from "@/lib/db";
+import { VERSAO_PROMPT } from "@/lib/tutorPrompt";
 
 export interface StreamOpts {
   questao: Questao;
@@ -73,11 +75,35 @@ export async function streamTutor({
 const cache = new Map<string, string>();
 
 export function chaveExplicacao(q: Questao, escolha: Letra | null | undefined): string {
-  return `${q.id}:${escolha ?? "nenhuma"}`;
+  return `${q.id}:${escolha ?? "nenhuma"}:v${VERSAO_PROMPT}`;
 }
 
 export function cacheExplicacao(q: Questao, escolha: Letra | null | undefined): string | undefined {
   return cache.get(chaveExplicacao(q, escolha));
+}
+
+/** Usado nos testes para forçar a leitura do IndexedDB. */
+export function limparCacheMemoria(): void {
+  cache.clear();
+}
+
+/** Memória → IndexedDB. Retorna o texto já gerado, se existir. */
+export async function lerExplicacao(
+  q: Questao,
+  escolha: Letra | null | undefined,
+): Promise<string | undefined> {
+  const emMemoria = cacheExplicacao(q, escolha);
+  if (emMemoria) return emMemoria;
+  try {
+    const linha = await obterExplicacaoIa(chaveExplicacao(q, escolha));
+    if (linha?.texto) {
+      cache.set(linha.chave, linha.texto);
+      return linha.texto;
+    }
+  } catch {
+    /* IndexedDB indisponível */
+  }
+  return undefined;
 }
 
 export function guardarExplicacao(
@@ -85,5 +111,17 @@ export function guardarExplicacao(
   escolha: Letra | null | undefined,
   texto: string,
 ): void {
-  if (texto.trim()) cache.set(chaveExplicacao(q, escolha), texto);
+  if (!texto.trim()) return;
+  const chave = chaveExplicacao(q, escolha);
+  cache.set(chave, texto);
+  void salvarExplicacaoIa({
+    chave,
+    questaoId: q.id,
+    escolha: escolha ?? "nenhuma",
+    versao: VERSAO_PROMPT,
+    texto,
+    criadaEm: Date.now(),
+  }).catch(() => {
+    /* sem IndexedDB: mantém só a memória */
+  });
 }

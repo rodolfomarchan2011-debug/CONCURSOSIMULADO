@@ -177,14 +177,11 @@ export function ResultadoClient() {
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-500">
             Resultado do simulado
           </p>
-          <h1 className="text-2xl font-bold text-ink-900">
-            {resultado.aprovado ? "Você passaria no corte do simulado" : "Ainda não passaria"}
-          </h1>
+          <h1 className="text-2xl font-bold text-ink-900">Resultado do simulado</h1>
           <p className="text-sm text-ink-600">
-            {new Date(sessao.criadaEm).toLocaleString("pt-BR")} · {sessao.duracaoMin} minutos
-            {sessao.terminaEm - sessao.criadaEm > sessao.duracaoMin * 60_000
-              ? " + tempo adicional"
-              : ""}
+            {resultado.aprovado
+              ? "Critérios do edital atingidos neste simulado — não é previsão de aprovação."
+              : "Critérios do edital ainda não atingidos neste simulado."}
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -210,7 +207,7 @@ export function ResultadoClient() {
               </p>
             </div>
             <Badge tone={resultado.aprovado ? "green" : "red"}>
-              {resultado.aprovado ? "aprovado" : "reprovado"}
+              {resultado.aprovado ? "critérios atingidos" : "critérios não atingidos"}
             </Badge>
           </div>
           <p className="text-sm text-ink-600">

@@ -1,0 +1,639 @@
+{
+ "tjsp-2025-001": {
+  "questao_id": "tjsp-2025-001",
+  "raciocinio": [
+   "Interpretação literal e inferência a partir do texto."
+  ],
+  "porque_correta": "A alternativa A reproduz o que o texto afirma: Cambridge destacou as contribuições de Hawking para o conhecimento científico e para a popularidade da ciência e da matemática. As demais distorcem o texto (carisma como causa do renome, papel insignificante, contribuição para Toope ou incapacidade de popularizar).",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 01",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-002": {
+  "questao_id": "tjsp-2025-002",
+  "raciocinio": [
+   "Regência nominal e verbal; uso da crase."
+  ],
+  "porque_correta": "A regência de \"dedicar\" pede \"à qual\" (dedicou suas contribuições à Universidade). \"Considera o professor como uma inspiração a milhões de pessoas\" não leva crase, e \"às quais deixa um legado\" exige crase porque \"deixar\" é transitivo indireto. Só a alternativa B combina as três exigências.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 02",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-003": {
+  "questao_id": "tjsp-2025-003",
+  "raciocinio": [
+   "Significação contextual de palavras."
+  ],
+  "porque_correta": "\"Excepcionais\" significa excepcionais/brilhantes e \"indelével\" significa que não se apaga, permanente. A alternativa A é a única que traz os dois sentidos corretos; as demais trocam por antônimos ou sentidos incompatíveis (efêmero, transitório, prescindível).",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 03",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-004": {
+  "questao_id": "tjsp-2025-004",
+  "raciocinio": [
+   "Concordância verbal, regência nominal e colocação pronominal."
+  ],
+  "porque_correta": "A alternativa C respeita concordância (sujeito composto antes do verbo: \"lembrar-se-ão\"), regência (\"coerente com\") e colocação pronominal (ênclise com sujeito composto e verbo no futuro). As demais erram a colocação (\"se lembrará\"), a regência (\"coerente ao/perante/sobre/do\") ou a concordância.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 04",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-005": {
+  "questao_id": "tjsp-2025-005",
+  "raciocinio": [
+   "Pontuação e emprego de pronomes."
+  ],
+  "porque_correta": "A alternativa D isola corretamente a oração adjetiva explicativa com vírgulas (\"Stephen Hawking, que contribuiu...\") e usa \"deixando-lhes\" (deixar a eles). Em A e C a pontuação quebra a estrutura; em B falta a vírgula antes de \"que\"; em E o pronome \"nas\" não retoma \"milhões de pessoas\".",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 05",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-006": {
+  "questao_id": "tjsp-2025-006",
+  "raciocinio": [
+   "Inferência textual"
+  ],
+  "porque_correta": "O editorial afirma que o diagnóstico “expõe a falha nos mecanismos de proteção” e que “ainda há muito a ser feito”, o que autoriza inferir fragilidade das autoridades e persistência do feminicídio. D erra ao dizer que as leis obtiveram êxito além do esperado, pois o texto cobra medidas urgentes e aponta falha nos mecanismos de proteção.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 06",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-007": {
+  "questao_id": "tjsp-2025-007",
+  "raciocinio": [
+   "Classes de palavras"
+  ],
+  "porque_correta": "B reúne substantivo (horror), adjetivo (bárbaro) e advérbio (infelizmente), palavras que traduzem o assombro diante da violência. Em A a sequência falha no primeiro item, pois violentas é adjetivo, não substantivo, e diariamente não carrega esse juízo de espanto.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 07",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-008": {
+  "questao_id": "tjsp-2025-008",
+  "raciocinio": [
+   "Antônimos"
+  ],
+  "porque_correta": "Implacável é o que não se aplaça, que não cede nem tem piedade; seu antônimo é compassiva, aquele que sente compaixão. Impassiva é a armadilha: pela forma parece o contrário, mas significa sem emoção, sentido próximo da frieza de implacável, e não o oposto dela.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 08",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-009": {
+  "questao_id": "tjsp-2025-009",
+  "raciocinio": [
+   "Conectivos"
+  ],
+  "porque_correta": "Com a realização do Agosto Lilás indica meio ou instrumento; para desenvolver indica finalidade; Mas marca oposição; e soma informações. D troca o meio por modo e a oposição por conclusão, relações que os conectivos não estabelecem nesse trecho.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 09",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-010": {
+  "questao_id": "tjsp-2025-010",
+  "raciocinio": [
+   "Causa e consequência"
+  ],
+  "porque_correta": "Em C, as 718 mulheres morreram, consequência, em razão do gênero, causa, exatamente na ordem pedida pela questão. A apresenta apenas circunstância temporal, com o desde a criação da Lei do Feminicídio, sem relação de causa e efeito.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 10",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-011": {
+  "questao_id": "tjsp-2025-011",
+  "raciocinio": [
+   "Interpretação de crônica"
+  ],
+  "porque_correta": "O cronista diz que, ao lado dos brasileiros, os cabo-verdianos são o povo mais musical que conheceu e que nutrem amor incondicional pelo país e pelos seus ritmos, o que sustenta A. E erra ao falar de superioridade em relação ao Brasil, comparação que o texto não faz.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 11",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-012": {
+  "questao_id": "tjsp-2025-012",
+  "raciocinio": [
+   "Sentido figurado"
+  ],
+  "porque_correta": "Em A, cometa é usado em sentido figurado: o músico é comparado a um astro que passou breve e brilhante pela terra. Em B, não tem paralelo está no sentido próprio, como constatação de que nada se compara, sem essa transferência de sentido.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 12",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-013": {
+  "questao_id": "tjsp-2025-013",
+  "raciocinio": [
+   "Sinonímia"
+  ],
+  "porque_correta": "Incondicional é o amor sem condições, irrestrito; catártica é a música que purga e liberta, ligada ao fim do silenciamento; transportar para a canção é passar o sentir das gentes para a letra. A erra ao trazer impingido, imposto, e imutável, sentidos que o texto não dá a esses termos.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 13",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-014": {
+  "questao_id": "tjsp-2025-014",
+  "raciocinio": [
+   "Concordância verbal"
+  ],
+  "porque_correta": "Em E, poucos é sujeito plural e mantêm concorda corretamente com ele. Em D há o erro clássico: haver no sentido de existir é impessoal e fica no singular (houve artistas); em A, o sujeito Orlando Pantera exige transpõe.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 14",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-015": {
+  "questao_id": "tjsp-2025-015",
+  "raciocinio": [
+   "Pontuação"
+  ],
+  "porque_correta": "No primeiro trecho as vírgulas isolam a retificação ou melhor; no segundo, isolam o adjunto adverbial em Paris. E repete os dois empregos: isto é retifica e na sala é adjunto intercalado. Em B, o segundo caso é oração adjetiva explicativa (bem famosa), motivo diferente.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 15",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-016": {
+  "questao_id": "tjsp-2025-016",
+  "raciocinio": [
+   "Concordância e numerais"
+  ],
+  "porque_correta": "Em B, enfrentado concorda com estigma, e não com mulheres, que é o agente; meia acompanha meio-dia, isto é, meia hora; duzentos concorda com gramas, substantivo masculino. Em E, enfrentada concordaria com mulheres, meio perde a ideia de meia hora e duzentas erra o gênero de gramas.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 16",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-017": {
+  "questao_id": "tjsp-2025-017",
+  "raciocinio": [
+   "CP, art. 293 (falsificação de cautela de penhor)."
+  ],
+  "porque_correta": "O crime do art. 293 do CP é falsificar cautela de penhor emitida por entidade de direito público. A questão cobra a hipótese em que o documento é legitimamente cancelado pelo credor: a conduta deixa de ser típica nessa hipótese, conforme a alternativa D.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [
+   {
+    "lei": "CP",
+    "artigo": "293",
+    "trecho": "CP, art. 293 (falsificação de cautela de penhor).",
+    "fonte": "VUNESP TJSP 2025"
+   }
+  ],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 17",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-044": {
+  "questao_id": "tjsp-2025-044",
+  "raciocinio": [
+   "LC 1.111/2010 (Plano de Cargos e Carreiras do TJSP)."
+  ],
+  "porque_correta": "A LC 1.111/2010 exige, para a nomeação em cargo em comissão de chefe de seção judiciária, experiência anterior em cargos dessa natureza (ainda que em substituição) ou experiência adequada segundo critérios do Comitê de Recursos Humanos — exatamente o que diz a alternativa E.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 44",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-045": {
+  "questao_id": "tjsp-2025-045",
+  "raciocinio": [
+   "Regimento Interno do TJSP, normas de sessão e julgamento."
+  ],
+  "porque_correta": "A alternativa A reproduz a regra do Regimento Interno: nenhum feito será julgado na ausência do relator, ainda que já tenha votado, salvo se, iniciado o julgamento, ele se afastar — computando-se os votos já proferidos. As demais criam exigências ou efeitos que o Regimento não prevê.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 45",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-047": {
+  "questao_id": "tjsp-2025-047",
+  "raciocinio": [
+   "Atualidades internacionais (2025)"
+  ],
+  "porque_correta": "Netanyahu justificou a ofensiva israelense de junho de 2025 como ação para impedir o avanço do programa nuclear iraniano. As demais alternativas atribuem motivos que não foram os alegados: refúgio de líderes do Hamas em Teerã, drones contra a embaixada americana, tanques do Hezbollah e convocação de reservistas por Khamenei.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 47",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-048": {
+  "questao_id": "tjsp-2025-048",
+  "raciocinio": [
+   "Reforma do imposto de renda (2025)"
+  ],
+  "porque_correta": "O projeto aprovado na Câmara em julho de 2025 isenta do imposto de renda quem ganha até R$ 5 mil por mês. A faixa até R$ 7,35 mil recebe apenas desconto parcial, e não isenção total, o que torna C incorreta; as demais alternativas tratam de alíquotas e de tributos sobre estrangeiros que não estão no projeto.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 48",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-049": {
+  "questao_id": "tjsp-2025-049",
+  "raciocinio": [
+   "Atualidades internacionais (2025)"
+  ],
+  "porque_correta": "O texto diz que um dos países fundadores do BRICS pretende protagonismo no debate sobre a moeda comum, e os analistas apontam a China, que defende o yuan como moeda das transações do bloco. Brasil, Rússia, África do Sul e Índia não propuseram suas moedas como solução.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 49",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-050": {
+  "questao_id": "tjsp-2025-050",
+  "raciocinio": [
+   "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência), arts. 1º a 13."
+  ],
+  "porque_correta": "A alternativa C está correta ao afirmar que a deficiência não retira a plena capacidade civil (inclusive para adoção) e que o atendimento prioritário alcança os procedimentos judiciais e administrativos. A Lei 13.146/2015 não impede a participação em pesquisa por curatela, nem exige consentimento do curador no caso descrito, nem reduz o conceito a três barreiras.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 50",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-051": {
+  "questao_id": "tjsp-2025-051",
+  "raciocinio": [
+   "Conjuntos, razão e proporção."
+  ],
+  "porque_correta": "Sejam a = só piano, b = só violão e c = os dois. Do enunciado, a/b = 4/7 e (a+c)/(b+c) = 7/10. Escrevendo a = 4k e b = 7k, a segunda igualdade dá c = 3k. Como a + b + c = 84, temos 14k = 84, k = 6. Logo b = 42, e o algarismo das unidades é 2.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 51",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-052": {
+  "questao_id": "tjsp-2025-052",
+  "raciocinio": [
+   "Porcentagem e proporção"
+  ],
+  "porque_correta": "Nos 9 primeiros dias ela digitalizou 9 x 27 = 243 processos, que correspondem a 36% do total. O total é 243 / 0,36 = 675 processos. Restam 675 - 243 = 432 em 24 dias, então N = 432 / 24 = 18. O algarismo das unidades é 8.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 52",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-054": {
+  "questao_id": "tjsp-2025-054",
+  "raciocinio": [
+   "Médias aritméticas"
+  ],
+  "porque_correta": "Com n atletas e A e C os lances de André e Carlos: dia 1, 48(n-2); dia 2, 50(n-1) = 48(n-2) + A, logo A = 2n + 46; dia 3, 49n = 48(n-2) + A + C, o que dá C = 50 - n. Como A - C = 53: (2n + 46) - (50 - n) = 53, então 3n = 57 e n = 19.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 54",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-055": {
+  "questao_id": "tjsp-2025-055",
+  "raciocinio": [
+   "OneDrive e arquivos sob demanda"
+  ],
+  "porque_correta": "Os arquivos do OneDrive marcados como disponíveis podem voltar a ser somente online quando o dispositivo precisa de espaço, e o próprio Windows libera a cópia local sem ação do usuário. C erra ao ligar a exclusão à queda de internet: sem conexão o arquivo apenas deixa de sincronizar, não é apagado.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 55",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-056": {
+  "questao_id": "tjsp-2025-056",
+  "raciocinio": [
+   "Word: numeração de lista"
+  ],
+  "porque_correta": "Para renumerar a lista a partir de 20, clica-se com o botão secundário, o direito, no número 1 e escolhe-se Definir Valor de Numeração, digitando 20; o Word refaz a sequência a partir dali. B erra no botão e no comando: o menu de contexto abre com o secundário, e o valor inicial se define no primeiro item, não no 5.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 56",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-057": {
+  "questao_id": "tjsp-2025-057",
+  "raciocinio": [
+   "Word: formatação de fonte"
+  ],
+  "porque_correta": "O negrito fica apenas em JUSTIÇA, 1 palavra, e o itálico em JUSTIÇA e DO, 2 palavras, porque esses botões são desligados nos passos seguintes. O sublinhado é desativado no passo 13 e, no passo 17, o clique com o parágrafo todo selecionado e em estado misto desfaz o sublinhado do conjunto, deixando 0.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 57",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-058": {
+  "questao_id": "tjsp-2025-058",
+  "raciocinio": [
+   "Excel: PROCV e referências"
+  ],
+  "porque_correta": "Em B, PROCV procura o valor de C7 na primeira coluna de A$2:B$4 e devolve a coluna 2, a Descrição; o $ antes da linha mantém a tabela fixa ao arrastar até D9, enquanto C7 vira C8 e C9. Em E, o intervalo $A2:$B4 desce junto com a fórmula, virando A3:B5 em D8, e a busca se perde.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 58",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-059": {
+  "questao_id": "tjsp-2025-059",
+  "raciocinio": [
+   "Excel: funções SE, MAIOR e MENOR"
+  ],
+  "porque_correta": "MAIOR(A2:C3;2) devolve o segundo maior valor de A2:C3, que é menor que 5, então o SE escolhe o primeiro resultado: o terceiro menor valor de A1:B3 somado a B2, o que totaliza 4. Se a condição fosse falsa, a soma usaria B1 e o valor seria outro.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 59",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-060": {
+  "questao_id": "tjsp-2025-060",
+  "raciocinio": [
+   "Gmail: responder a todos"
+  ],
+  "porque_correta": "No Gmail, Responder a Todos vai para o remetente e para os destinatários de Para e Cc, nunca para o de Cco, que segue oculto: por isso D recebe só o e-mail 1. Quem envia não recebe a própria mensagem, então A fica com 2, B e C com 3 cada e D com 1. B erra ao supor que D participa das respostas.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 60",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-061": {
+  "questao_id": "tjsp-2025-061",
+  "raciocinio": [
+   "Google: operadores de busca"
+  ],
+  "porque_correta": "O operador allintext: restringe a busca ao corpo da página e vale para todos os termos seguintes, exigindo segurança, dados e privacidade juntos. Em D, as aspas obrigam a sequência exata da frase segurança dados privacidade, e não as três palavras em qualquer ponto do texto.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 61",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-062": {
+  "questao_id": "tjsp-2025-062",
+  "raciocinio": [
+   "Teams: menções em chat"
+  ],
+  "porque_correta": "No Teams, o arroba antes do nome cria uma menção: o usuário é notificado e o nome fica destacado no chat. Nenhum dos outros símbolos aciona notificação, porque só @ é reconhecido como marcador de menção.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 62",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-063": {
+  "questao_id": "tjsp-2025-063",
+  "raciocinio": [
+   "Windows 11: pesquisa com curinga"
+  ],
+  "porque_correta": "No Explorador de Arquivos, ind* completa o termo e casa com o início de palavras do nome do arquivo, separadas por _ e por ponto, o que traz indicios e indicativo. Ficam de fora sindicato, com ind no meio, Introducao e inicial. B erra ao supor que qualquer trecho do nome serve.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 63",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-064": {
+  "questao_id": "tjsp-2025-064",
+  "raciocinio": [
+   "Lógica proposicional: negação da condicional."
+  ],
+  "porque_correta": "A negação de \"Se (p ou q), então r\" é \"(p ou q) e não r\": mantém a antecedente e nega a consequente. É exatamente a alternativa C: \"Estou correndo ou jogando futebol, e amanhã não estarei de férias\".",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 64",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-065": {
+  "questao_id": "tjsp-2025-065",
+  "raciocinio": [
+   "Sequências e contagem de dígitos"
+  ],
+  "porque_correta": "B é a justaposição dos dígitos de A: 1, 4, 7, 1, 0, 1, 3, 1, 6, 1, 9... Até o termo 99 de A são 63 dígitos (3 termos de 1 dígito e 30 de 2 dígitos). Faltam 245 - 63 = 182 dígitos, ou seja, 60 termos de 3 dígitos (180) mais 2 dígitos. O 61º termo de 3 dígitos é A94 = 3 x 94 - 2 = 280, cujo segundo dígito é 8.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 65",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-066": {
+  "questao_id": "tjsp-2025-066",
+  "raciocinio": [
+   "Lógica dedutiva (mesa circular)"
+  ],
+  "porque_correta": "Fixando Fábio em um assento, a única disposição compatível é, no sentido horário: Fábio, Carla, Bruno, Ana, Davi e Eva. Nessa mesa, os vizinhos de Fábio são Carla e Eva. A ordem respeita todas as condições: ninguém mantém os dois vizinhos antigos, Eva não fica ao lado de Carla, o vizinho direito de Ana não é Davi e o esquerdo de Davi não é o direito de Carla.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 66",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-067": {
+  "questao_id": "tjsp-2025-067",
+  "raciocinio": [
+   "Aritmética e lógica"
+  ],
+  "porque_correta": "A filial de A tem 33 - 20 = 13 funcionários. Como F tem um terço da matriz, a matriz de F é 24 (B) ou 42 (C). A soma das filiais é 128 - 99 = 29; tirando 13, restam 16. Se F for filial de B, F = 8 e a outra filial também tem 8 (E), coincidindo com uma das outras duas. Se F fosse de C, F = 14 e sobraria 2, sem coincidência. Logo C e sua filial somam 42 + 8 = 50, e A e a sua, 33 + 13 = 46; a diferença é 4.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 67",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-068": {
+  "questao_id": "tjsp-2025-068",
+  "raciocinio": [
+   "Lógica dedutiva"
+  ],
+  "porque_correta": "A única ordem compatível com as falas é Lorenzo, Liam, Larson, Luciano e Leandro. Lorenzo venceu e falou a verdade sobre Luciano ser o penúltimo; Luciano mentiu ao dizer que Lorenzo não venceu; Leandro mentiu ao dizer que Liam foi o terceiro, pois Liam foi o segundo. Assim, o terceiro colocado é Larson.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 68",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-069": {
+  "questao_id": "tjsp-2025-069",
+  "raciocinio": [
+   "Sequências"
+  ],
+  "porque_correta": "Cada termo é igual ao termo de três posições antes menos 2: a4 = a1 - 2, a5 = a2 - 2, a6 = a3 - 2 e assim por diante. Os termos das posições 1, 4, 7... valem 200 - 2k; o zero aparece quando k = 100, na posição 3 x 100 + 1 = 301. Nas outras duas colunas (207 - 2k e 209 - 2k) não há zero inteiro.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 69",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ },
+ "tjsp-2025-070": {
+  "questao_id": "tjsp-2025-070",
+  "raciocinio": [
+   "Lógica proposicional: tabela-verdade da condicional e da conjunção."
+  ],
+  "porque_correta": "Se p → ~q é falsa, então p é verdadeira e ~q é falsa, ou seja, q é verdadeira. q é a conjunção \"as pessoas estão felizes e os carrinhos estão vazios\"; portanto é dia de verão, as pessoas estão felizes e os carrinhos estão vazios — alternativa E.",
+  "porque_erradas": [],
+  "pegadinha": "",
+  "fundamento_legal": [],
+  "como_lembrar": "",
+  "fonte": "VUNESP TJSP2503, questão 70",
+  "confianca": 0.8,
+  "revisado": false,
+  "versao": 1
+ }
+}

@@ -16,9 +16,20 @@ export interface RevisaoRow {
   acertos: number;
 }
 
+export interface ExplicacaoIaRow {
+  /** questaoId:escolha:versaoPrompt */
+  chave: string;
+  questaoId: string;
+  escolha: string;
+  versao: number;
+  texto: string;
+  criadaEm: number;
+}
+
 class AppDb extends Dexie {
   sessoes!: Table<SessaoRow, string>;
   revisoes!: Table<RevisaoRow, string>;
+  explicacoes_ia!: Table<ExplicacaoIaRow, string>;
 
   constructor() {
     super("tjsp-escrevente-simulador");
@@ -29,14 +40,19 @@ class AppDb extends Dexie {
       sessoes: "id, criadaEm, finalizadaEm, modo",
       revisoes: "id, proximaEm, nivel",
     });
+    this.version(3).stores({
+      sessoes: "id, criadaEm, finalizadaEm, modo",
+      revisoes: "id, proximaEm, nivel",
+      explicacoes_ia: "chave, questaoId, criadaEm",
+    });
   }
 }
 
 let instancia: AppDb | null = null;
 
 export function getDb(): AppDb {
-  if (typeof window === "undefined") {
-    throw new Error("IndexedDB só existe no navegador");
+  if (typeof indexedDB === "undefined") {
+    throw new Error("IndexedDB indisponível neste ambiente");
   }
   if (!instancia) instancia = new AppDb();
   return instancia;
@@ -87,6 +103,16 @@ export async function salvarRevisao(revisao: RevisaoRow): Promise<void> {
 
 export async function excluirRevisao(id: string): Promise<void> {
   await getDb().revisoes.delete(id);
+}
+
+export async function obterExplicacaoIa(
+  chave: string,
+): Promise<ExplicacaoIaRow | undefined> {
+  return getDb().explicacoes_ia.get(chave);
+}
+
+export async function salvarExplicacaoIa(linha: ExplicacaoIaRow): Promise<void> {
+  await getDb().explicacoes_ia.put(linha);
 }
 
 export interface ResultadoImportacao {
