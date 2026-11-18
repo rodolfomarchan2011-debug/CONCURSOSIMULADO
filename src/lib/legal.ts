@@ -80,6 +80,12 @@ function contar(texto: string, termo: string): number {
 function detectarLeis(consulta: string): Set<string> {
   const leis = new Set<string>();
   const t = normalizar(consulta);
+  if (/8\.?429|8429|improbidade/.test(t)) leis.add("L8429");
+  if (/9\.?099|9099|juizado especial/.test(t)) leis.add("L9099");
+  if (/13\.?146|13146|pessoa com deficiencia|estatuto da pessoa/.test(t)) leis.add("L13146");
+  if (/10\.?261|10261|funcionarios publicos|estatuto dos funcionarios/.test(t)) {
+    leis.add("L10261");
+  }
   if (/\bcp\b|codigo penal|penal\b/.test(t) && !/processual/.test(t)) leis.add("CP");
   if (/\bcpp\b|processo penal|processual penal/.test(t)) leis.add("CPP");
   if (/\bcpc\b|processo civil|processual civil/.test(t)) leis.add("CPC");

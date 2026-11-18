@@ -2,10 +2,19 @@ import { describe, expect, it } from "vitest";
 import { buscarBaseLegal, infoBaseLegal } from "@/lib/legal";
 
 describe("base legal oficial", () => {
-  it("indexa os quatro códigos", () => {
+  it("indexa os oito códigos", () => {
     const info = infoBaseLegal();
-    expect(info.artigos).toBeGreaterThan(2000);
-    expect(Object.keys(info.fontes).sort()).toEqual(["CF", "CP", "CPC", "CPP"]);
+    expect(info.artigos).toBeGreaterThan(3000);
+    expect(Object.keys(info.fontes).sort()).toEqual([
+      "CF",
+      "CP",
+      "CPC",
+      "CPP",
+      "L10261",
+      "L13146",
+      "L8429",
+      "L9099",
+    ]);
   });
 
   it("acha o artigo citado na consulta", () => {
