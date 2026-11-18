@@ -1,0 +1,60 @@
+{
+  "id": "dir-penal-adm",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Penal",
+  "topico": "Crimes contra a Administração Pública",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Reconhecer quem é funcionário público para o Código Penal.",
+    "Distinguir peculato, concussão e corrupção passiva.",
+    "Entender prevaricação e condescendência criminosa."
+  ],
+  "secoes": [
+    {
+      "titulo": "Quem é funcionário público no Código Penal",
+      "texto_md": "Antes de estudar os crimes contra a Administração Pública, é preciso saber quem a lei considera funcionário público. O art. 327 do Código Penal dá uma definição ampla: considera-se funcionário público, para os efeitos penais, quem, embora transitoriamente ou sem remuneração, exerce cargo, emprego ou função pública. O parágrafo primeiro equipara a funcionário público quem trabalha em entidade paraestatal, em empresa pública, em sociedade de economia mista ou em fundação instituída pelo poder público. Isso significa que não importa o regime jurídico (celetista ou estatutário), nem o nome do cargo: o que importa é o exercício de função pública. A banca gosta de colocar um estagiário, um contratado temporário ou um servidor de empresa pública para testar essa definição.",
+      "artigos": ["CP-327"]
+    },
+    {
+      "titulo": "Peculato, concussão e corrupção passiva",
+      "texto_md": "Os três crimes mais cobrados têm verbos diferentes. No peculato (art. 312), o funcionário se apropria de dinheiro, valor ou bem, público ou particular, de que tem a posse em razão do cargo, ou o desvia. Na concussão (art. 316), ele exige vantagem indevida, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela. Na corrupção passiva (art. 317), ele solicita ou recebe vantagem indevida, ou aceita promessa. A diferença está no verbo: apropriar-se é peculato; exigir é concussão; solicitar, receber ou aceitar promessa é corrupção passiva. A vítima da concussão é quem se sente obrigada a pagar; na corrupção, o funcionário pede ou aceita. Guardar os verbos resolve a maior parte das questões.",
+      "artigos": ["CP-312", "CP-316", "CP-317"]
+    },
+    {
+      "titulo": "Prevaricação e condescendência",
+      "texto_md": "A prevaricação (art. 319) ocorre quando o funcionário retarda ou deixa de praticar ato de ofício, ou o pratica contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal. O elemento subjetivo é o interesse pessoal: sem ele, o fato pode ser outro crime ou mera irregularidade administrativa. A condescendência criminosa (art. 320) ocorre quando o funcionário deixa de responsabilizar subordinado que cometeu infração no exercício do cargo ou, quando lhe falta competência, não leva o fato ao conhecimento da autoridade competente. O verbo é deixar de responsabilizar; o subordinado já cometeu a infração. Não se exige interesse pessoal. É comum a banca trocar os dois: prevaricação tem 'para satisfazer interesse pessoal'; condescendência é omissão em relação a subordinado.",
+      "artigos": ["CP-319", "CP-320"]
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "A VUNESP costuma apresentar uma situação concreta e perguntar qual é o crime ou se ele está configurado. O caminho é sempre o mesmo: identifique o sujeito (funcionário público na definição do art. 327), o verbo praticado, o elemento subjetivo e o objeto material. Se o enunciado fala em exigir, procure concussão; se fala em solicitar ou receber, procure corrupção passiva; se fala em deixar de responsabilizar subordinado, procure condescendência. Não confunda o crime do funcionário que se apropria (peculato) com o do particular que induz o funcionário a erro (estelionato ou corrupção, conforme o caso). A prova também cobra as penas e os efeitos da condenação, mas o núcleo é a tipificação. Em regra, os crimes funcionais próprios exigem a condição de funcionário público; se o particular pratica o fato, pode responder por outro crime ou como partícipe, desde que saiba da condição do agente. Outra distinção útil: no peculato há posse do bem em razão do cargo; se o funcionário não tem essa posse, o fato pode ser apropriação indébita ou outro delito.",
+      "artigos": ["CP-312", "CP-316", "CP-317", "CP-319", "CP-320"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Funcionário público deixa de responsabilizar subordinado que cometeu infração no exercício do cargo. Qual crime e por quê?",
+    "passo_a_passo": [
+      "1) Confirme que o agente é funcionário público na definição do art. 327.",
+      "2) Identifique o verbo: deixar de responsabilizar subordinado que cometeu infração.",
+      "3) Encaixe no art. 320 (condescendência criminosa), que não exige interesse pessoal."
+    ],
+    "questao_id": "tjsp-2025-020"
+  },
+  "erro_comum": "Trocar condescendência criminosa por prevaricação. Na prevaricação exige-se interesse ou sentimento pessoal; na condescendência, basta a omissão em responsabilizar o subordinado. O particular pode responder como partícipe.",
+  "pegadinhas": [
+    "Achar que só servidor estatutário é funcionário público: o art. 327 alcança cargo, emprego ou função, inclusive em empresa pública.",
+    "Confundir concussão (exigir) com corrupção passiva (solicitar/receber)."
+  ],
+  "resumo": "O art. 327 define funcionário público de forma ampla. Peculato é apropriar-se; concussão é exigir; corrupção passiva é solicitar, receber ou aceitar promessa. Prevaricação sempre exige interesse pessoal; condescendência é deixar de responsabilizar subordinado e não exige interesse pessoal.",
+  "flashcards": [
+    { "frente": "Verbo da concussão", "verso": "Exigir vantagem indevida." },
+    { "frente": "Verbo da corrupção passiva", "verso": "Solicitar, receber ou aceitar promessa de vantagem indevida." },
+    { "frente": "Prevaricação exige o quê?", "verso": "Interesse ou sentimento pessoal." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-017", "tjsp-2025-018", "tjsp-2025-019", "tjsp-2025-020"],
+  "artigos_citados": ["CP-327", "CP-312", "CP-316", "CP-317", "CP-319", "CP-320"],
+  "fonte": "CP (Câmara dos Deputados) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}

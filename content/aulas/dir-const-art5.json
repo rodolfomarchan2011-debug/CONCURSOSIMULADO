@@ -1,0 +1,60 @@
+{
+  "id": "dir-const-art5",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Constitucional",
+  "topico": "Direitos e garantias fundamentais (art. 5º)",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Entender o que a Constituição protege quando fala em casa.",
+    "Decorar as quatro exceções ao direito de não ser incomodado em casa.",
+    "Saber quando a entrada depende de dia ou de autorização judicial."
+  ],
+  "secoes": [
+    {
+      "titulo": "O que é 'casa' para a Constituição",
+      "texto_md": "A Constituição Federal de 1988 trata a casa como um espaço de intimidade e de tranquilidade da pessoa. Não é apenas o imóvel onde a pessoa dorme: quarto de hotel, trailer habitado, escritório profissional e até o veículo usado como moradia podem receber essa proteção, desde que sirvam de lugar de vida privada. A regra do art. 5º, inciso XI, é simples de enunciar: ninguém entra na casa de outra pessoa sem o consentimento do morador. O detalhe é que a própria Constituição abre exceções. A banca costuma cobrar exatamente a diferença entre a regra e a exceção, e não a definição teórica de casa.",
+      "artigos": ["CF-5"]
+    },
+    {
+      "titulo": "As quatro exceções do inciso XI",
+      "texto_md": "O texto constitucional permite entrar na casa sem o consentimento do morador em quatro situações: flagrante delito, desastre, para prestar socorro e, durante o dia, por determinação judicial. As três primeiras não têm horário: podem ocorrer de dia ou de noite, porque a urgência ou a proteção da vida está na frente. A quarta é diferente: a determinação judicial só autoriza a entrada durante o dia. Essa é a chave da maioria das questões. Se o policial tem mandado judicial e chega à noite, não pode arrombar a porta e entrar; deve aguardar o dia seguinte, salvo se houver, ao mesmo tempo, flagrante, desastre ou socorro. O candidato que trata as quatro exceções como se fossem iguais erra a questão.",
+      "artigos": ["CF-5"]
+    },
+    {
+      "titulo": "Flagrante durante a noite",
+      "texto_md": "Muita gente aprende que 'à noite ninguém entra em casa' e aplica essa frase a qualquer situação. A Constituição não diz isso. O que ela limita ao período diurno é apenas a entrada por determinação judicial. Se a polícia persegue alguém em flagrante e o suspeito se esconde em casa, a entrada é permitida também à noite, porque a exceção do flagrante não tem horário. O mesmo vale para desastre e socorro. Por isso, em uma questão com duas casas, é preciso olhar o motivo da entrada em cada uma: se em uma delas há mandado e na outra há flagrante, o resultado pode ser diferente para cada imóvel. A banca mistura os dois imóveis para testar se o candidato aplica a regra ao caso concreto, e não uma frase decorada.",
+      "artigos": ["CF-5"]
+    },
+    {
+      "titulo": "O que mais o art. 5º cobra",
+      "texto_md": "O art. 5º é um catálogo extenso. Para a prova de Escrevente, os pontos mais recorrentes são: igualdade perante a lei, legalidade, direito de resposta, liberdade de expressão, inviolabilidade do sigilo de correspondência e de comunicações telefônicas, salvo ordem judicial para investigação criminal ou instrução penal, e a gratuidade das ações de habeas corpus e habeas data. Também aparece a impetração de mandado de segurança coletivo por partido político com representação no Congresso Nacional, organização sindical, entidade de classe ou associação legalmente constituída. Guarde a diferença: ação popular é gratuita, salvo má-fé; mandado de segurança não é gratuito; habeas corpus e habeas data são gratuitos. Outro ponto lembrado é o devido processo legal, com contraditório e ampla defesa, e a proibição de provas obtidas por meios ilícitos. A banca costuma trocar o remédio adequado: habeas corpus protege liberdade de locomoção; habeas data protege acesso a informações pessoais; mandado de segurança protege direito líquido e certo não amparado por aqueles dois.",
+      "artigos": ["CF-5"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Policial é chamado para flagrante em uma casa e, na mesma diligência, precisa entrar em outra casa em cumprimento de ordem judicial, à noite. A resposta correta diferencia as duas situações.",
+    "passo_a_passo": [
+      "1) Identifique o motivo da entrada em cada casa: flagrante em uma, determinação judicial na outra.",
+      "2) Aplique o art. 5º, XI: flagrante não tem restrição de horário; determinação judicial só vale durante o dia.",
+      "3) Conclua: no imóvel do flagrante a entrada é possível à noite; no imóvel do mandado, não."
+    ],
+    "questao_id": "tjsp-2025-031"
+  },
+  "erro_comum": "Decorar 'à noite ninguém entra' e esquecer que o flagrante, o desastre e o socorro podem justificar entrada noturna. A restrição de horário atinge apenas a determinação judicial; entrar por mandado à noite é ilegal.",
+  "pegadinhas": [
+    "Trocar 'determinação judicial' por 'ordem policial': só a judicial autoriza entrada sem consentimento.",
+    "Achar que o flagrante só vale de dia: a Constituição não impõe horário ao flagrante."
+  ],
+  "resumo": "A casa é asilo inviolável, mas a Constituição permite entrada sem consentimento em flagrante, desastre, socorro e, durante o dia, por ordem judicial. Só a ordem judicial tem limite de horário; o flagrante vale de dia e de noite. Em prova, separe o motivo da entrada em cada imóvel antes de responder.",
+  "flashcards": [
+    { "frente": "Quais são as quatro exceções à inviolabilidade da casa?", "verso": "Flagrante, desastre, socorro e determinação judicial durante o dia." },
+    { "frente": "Qual exceção tem limite de horário?", "verso": "A determinação judicial: somente durante o dia." },
+    { "frente": "Habeas corpus e habeas data são gratuitos?", "verso": "Sim, por expressa previsão constitucional." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-031", "tjsp-2025-032", "tjsp-2025-033", "tjsp-2025-034"],
+  "artigos_citados": ["CF-5"],
+  "fonte": "CF/88 (Câmara dos Deputados) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}
