@@ -1,5 +1,6 @@
 import type { Banco, Contexto, Questao } from "./types";
 import raw from "@/data/banco.json";
+import edital from "../../data/edital/tjsp2607.json";
 
 export const banco = raw as unknown as Banco;
 
@@ -28,18 +29,13 @@ export const EDICOES = Object.entries(banco.meta.edicoes)
   .map(([ano, dados]) => ({ ano, ...dados }))
   .sort((a, b) => Number(b.ano) - Number(a.ano));
 
-/** Matriz do edital 2027 (Anexo VIII), usada para montar o simulado. */
+/** Matriz derivada de data/edital/tjsp2607.json (estrutura derivada — validar). */
 export const QUOTAS = {
-  lp: 16,
-  direito: 30,
-  geraisTotal: 24,
-  gerais: {
-    Atualidades: 4,
-    Matemática: 4,
-    Informática: 9,
-    "Raciocínio Lógico": 7,
-  } as Record<string, number>,
-} as const;
+  lp: edital.matriz.lp,
+  direito: edital.matriz.direito,
+  geraisTotal: edital.matriz.geraisTotal,
+  gerais: edital.matriz.gerais as Record<string, number>,
+};
 
 /** Assuntos usados nos filtros de treino, na ordem em que aparecem na prova. */
 export const ASSUNTOS = [

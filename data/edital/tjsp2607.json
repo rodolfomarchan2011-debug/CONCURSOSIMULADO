@@ -1,0 +1,489 @@
+{
+  "meta": {
+    "concurso": "TJSP — Escrevente Técnico Judiciário",
+    "edital": "TJSP2607",
+    "banca": "VUNESP",
+    "fonte": "estrutura derivada da matriz oficial — validar",
+    "estrutura_derivada": true,
+    "revisado": false,
+    "gerado_em": "2026-11-18",
+    "aviso": "Tópicos derivados da matriz e do banco; NÃO é transcrição do Anexo VIII. Use tools/edital_importar.py quando o PDF oficial for fornecido."
+  },
+  "matriz": {
+    "lp": 16,
+    "direito": 30,
+    "geraisTotal": 24,
+    "gerais": {
+      "Atualidades": 4,
+      "Matemática": 4,
+      "Informática": 9,
+      "Raciocínio Lógico": 7
+    }
+  },
+  "itens": [
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Ideia central e tema",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Inferência e pressuposição",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Coesão e referenciação",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Semântica e vocabulário no contexto",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Crase",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Regência nominal e verbal",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Concordância nominal e verbal",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Pontuação",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Língua Portuguesa",
+      "assunto": "Interpretação de texto",
+      "topico": "Ortografia e acentuação",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Constitucional",
+      "topico": "Direitos e garantias fundamentais (art. 5º)",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Constitucional",
+      "topico": "Organização do Estado e competências",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Constitucional",
+      "topico": "Poder Judiciário e organização judiciária",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Constitucional",
+      "topico": "Remédios constitucionais",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Administrativo",
+      "topico": "Princípios da Administração Pública",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Administrativo",
+      "topico": "Atos administrativos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Administrativo",
+      "topico": "Poderes administrativos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Administrativo",
+      "topico": "Responsabilidade civil do Estado",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Administrativo",
+      "topico": "Improbidade administrativa (Lei 8.429/92)",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Administrativo",
+      "topico": "Regime dos servidores públicos (Lei 10.261/68)",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Penal",
+      "topico": "Aplicação da lei penal",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Penal",
+      "topico": "Crimes contra a Administração Pública",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Penal",
+      "topico": "Crimes contra a fé pública",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Penal",
+      "topico": "Extinção da punibilidade",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Penal",
+      "topico": "Inquérito policial",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Penal",
+      "topico": "Ação penal",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Penal",
+      "topico": "Prisões e audiência de custódia",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Penal",
+      "topico": "Provas",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Penal",
+      "topico": "Nulidades",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Civil",
+      "topico": "Normas fundamentais do processo civil",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Civil",
+      "topico": "Competência",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Civil",
+      "topico": "Atos processuais e prazos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Civil",
+      "topico": "Provas",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Civil",
+      "topico": "Sentença e coisa julgada",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Direito Processual Civil",
+      "topico": "Execução",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Legislação interna (TJSP)",
+      "topico": "Provimento e vacância (Lei 10.261/68)",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Legislação interna (TJSP)",
+      "topico": "Deveres e proibições do servidor",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Legislação interna (TJSP)",
+      "topico": "Penalidades disciplinares",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Legislação interna (TJSP)",
+      "topico": "Organização judiciária e prazos internos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos em Direito",
+      "assunto": "Legislação interna (TJSP)",
+      "topico": "Normas da Corregedoria (NSCGJ)",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Atualidades",
+      "topico": "Política e economia nacional",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Atualidades",
+      "topico": "Tecnologia e sociedade",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Atualidades",
+      "topico": "Meio ambiente e sustentabilidade",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Atualidades",
+      "topico": "Direitos e cidadania",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Matemática",
+      "topico": "Razão, proporção e porcentagem",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Matemática",
+      "topico": "Regra de três",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Matemática",
+      "topico": "Juros simples e compostos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Matemática",
+      "topico": "Geometria plana",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Matemática",
+      "topico": "Conjuntos e contagem",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Informática",
+      "topico": "Windows 11 e explorador de arquivos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Informática",
+      "topico": "Microsoft 365: Word, Excel e PowerPoint",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Informática",
+      "topico": "Microsoft Teams",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Informática",
+      "topico": "Segurança da informação",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Informática",
+      "topico": "Internet, navegadores e correio eletrônico",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Raciocínio Lógico",
+      "topico": "Proposições e conectivos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Raciocínio Lógico",
+      "topico": "Equivalências e negações",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Raciocínio Lógico",
+      "topico": "Argumentação e validade",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Raciocínio Lógico",
+      "topico": "Sequências lógicas",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    },
+    {
+      "materia": "Conhecimentos Gerais",
+      "assunto": "Raciocínio Lógico",
+      "topico": "Diagramas de conjuntos",
+      "edital_ref": "estrutura derivada da matriz oficial — validar",
+      "estrutura_derivada": true,
+      "revisado": false
+    }
+  ]
+}

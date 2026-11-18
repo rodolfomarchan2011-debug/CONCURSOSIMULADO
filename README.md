@@ -131,6 +131,18 @@ Decisões e desvios do briefing original:
 5. Probabilidade de aprovação e módulo de redação estão fora do MVP (roadmap).
 6. Direitos autorais: enunciados pertencem à VUNESP/TJSP; uso educacional com atribuição. Para produto comercial, avalie licenciamento.
 
+## Edital e importação
+
+A matriz do simulado vem de `data/edital/tjsp2607.json` (estrutura **derivada** da matriz oficial, marcada `estrutura_derivada: true`). Quando o PDF do Anexo VIII for fornecido:
+
+```powershell
+python tools/edital_importar.py --pdf data/edital/anexo-viii.pdf
+# ou
+python tools/edital_importar.py --mapa data/edital/mapa.json
+```
+
+O script preenche `edital_ref` por tópico e zera `estrutura_derivada`; a revisão humana continua obrigatória (`revisado: true`).
+
 ## Roadmap
 
 - Fase 2: provas 2006–2021 como acervo histórico (matriz própria), explicações revisadas, Raio-X da banca, redação com rubrica oficial.
