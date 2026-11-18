@@ -1,0 +1,65 @@
+{
+  "id": "dir-pc-atos",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Processual Civil",
+  "topico": "Atos processuais e prazos",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Saber o horário e os dias em que os atos processuais podem ser praticados.",
+    "Entender as exceções para citação, intimação e penhora.",
+    "Contar prazos processuais corretamente."
+  ],
+  "secoes": [
+    {
+      "titulo": "O que são atos processuais",
+      "texto_md": "Atos processuais são todos os acontecimentos que movem o processo: a petição inicial, a citação, a audiência, a prova, a sentença, o recurso. O Código de Processo Civil disciplina quando e como esses atos podem ser praticados. A regra geral está no art. 212: os atos processuais serão realizados em dias úteis, das 6 às 20 horas. Essa regra existe para organizar o funcionamento do Judiciário e proteger o contraditório. Mas a lei prevê exceções, e é nelas que a banca costuma colocar a questão. O candidato precisa saber diferenciar o ato praticado pelas partes (petição, recurso) do ato praticado pelo juízo ou pelo oficial de justiça (citação, penhora).",
+      "artigos": ["CPC-212"]
+    },
+    {
+      "titulo": "A regra de horário",
+      "texto_md": "Pelo art. 212, os atos processuais ocorrem em dias úteis, das 6 às 20 horas. Se um ato começou antes das 20 horas e o adiamento prejudicar a diligência ou causar grave dano, ele pode ser concluído depois das 20 horas. Isso evita que uma audiência ou diligência seja interrompida no meio por causa do relógio. A regra não autoriza, por si só, iniciar qualquer ato às 21 horas de um sábado. Para saber se o ato fora do horário é válido, é preciso olhar a exceção do parágrafo seguinte e a natureza do ato. Petição em autos eletrônicos tem regra própria: pode ser protocolada até as 24 horas do último dia do prazo, conforme o art. 213.",
+      "artigos": ["CPC-212", "CPC-213"]
+    },
+    {
+      "titulo": "As exceções do art. 212, § 2º",
+      "texto_md": "O art. 212, § 2º, permite que citações, intimações e penhoras sejam realizadas no período de férias forenses, nos feriados e nos dias úteis fora do horário estabelecido, independentemente de autorização judicial. O texto ressalva a observância do art. 5º, inciso XI, da Constituição, que protege a casa. A leitura correta é: o ato de comunicação ou de constrição pode ocorrer fora do horário forense sem precisar de autorização judicial específica, mas a entrada na casa do executado continua sujeita às regras constitucionais. A banca costuma cobrar a expressão 'independentemente de autorização judicial' e tenta confundir com a necessidade de ordem do juiz. Para citação, intimação e penhora, a lei dispensa autorização específica; para entrada em domicílio, aplica-se a Constituição.",
+      "artigos": ["CPC-212", "CF-5"]
+    },
+    {
+      "titulo": "Contagem de prazos",
+      "texto_md": "O art. 218 do CPC diz que os prazos serão contados excluindo o dia do começo e incluindo o dia do vencimento. O art. 219 estabelece que os prazos processuais são contínuos e não se suspendem nos finais de semana e feriados, salvo disposição em sentido contrário. Isso significa que um prazo de 15 dias úteis conta apenas dias úteis; um prazo em dias corridos conta sábados, domingos e feriados. A parte precisa protocolar até as 24 horas do último dia, se o protocolo for eletrônico. A pegadinha é misturar prazo em dias úteis com prazo em dias corridos e esquecer que o dia do começo não entra na conta.",
+      "artigos": ["CPC-218", "CPC-219"]
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "A VUNESP gosta de uma situação concreta: o oficial comparece em determinado dia e horário para penhora ou citação e pergunta se o ato é válido. O caminho é verificar (1) se o ato é citação, intimação ou penhora; (2) se está fora do horário ou em dia não útil; (3) se a exceção do art. 212, § 2º, se aplica. Se for citação, intimação ou penhora, o ato pode ser válido independentemente de autorização judicial, respeitada a proteção constitucional da casa. Se for outro ato, vale a regra geral das 6 às 20 horas em dias úteis. Não confunda a validade do ato com a validade da entrada no imóvel: são planos diferentes.",
+      "artigos": ["CPC-212", "CF-5"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Oficial de justiça comparece à casa do executado em um sábado, às 21h, para penhorar um automóvel. O ato é válido?",
+    "passo_a_passo": [
+      "1) Identifique o ato: penhora, portanto incide a exceção do art. 212, § 2º.",
+      "2) Verifique que a lei dispensa autorização judicial específica para citação, intimação e penhora fora do horário.",
+      "3) Conclua pela validade do ato, sem esquecer a proteção constitucional da casa (art. 5º, XI)."
+    ],
+    "questao_id": "tjsp-2025-026"
+  },
+  "erro_comum": "Achar que toda penhora fora do horário depende de autorização judicial. O art. 212, § 2º, dispensa autorização específica para citação, intimação e penhora.",
+  "pegadinhas": [
+    "Aplicar a regra das 6 às 20 horas a qualquer ato, ignorando a exceção da penhora.",
+    "Esquecer que o dia do começo do prazo não entra na contagem."
+  ],
+  "resumo": "A regra é ato em dia útil, das 6 às 20 horas. Citação, intimação e penhora podem ocorrer em férias, feriados ou fora do horário independentemente de autorização judicial, respeitada a proteção da casa. Prazos excluem o dia do começo e incluem o do vencimento.",
+  "flashcards": [
+    { "frente": "Horário geral dos atos processuais", "verso": "Dias úteis, das 6 às 20 horas." },
+    { "frente": "Penhora fora do horário exige autorização judicial?", "verso": "Não, conforme o art. 212, § 2º." },
+    { "frente": "Como se conta prazo processual?", "verso": "Exclui o dia do começo e inclui o do vencimento." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-026", "tjsp-2025-027", "tjsp-2025-028", "tjsp-2025-029", "tjsp-2025-030"],
+  "artigos_citados": ["CPC-212", "CPC-213", "CPC-218", "CPC-219", "CF-5"],
+  "fonte": "CPC (Câmara dos Deputados) + CF/88 + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}

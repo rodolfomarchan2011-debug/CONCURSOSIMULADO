@@ -84,6 +84,106 @@
   "versao": 1
  },
  {
+  "id": "dir-pc-atos",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Processual Civil",
+  "topico": "Atos processuais e prazos",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Saber o horário e os dias em que os atos processuais podem ser praticados.",
+   "Entender as exceções para citação, intimação e penhora.",
+   "Contar prazos processuais corretamente."
+  ],
+  "secoes": [
+   {
+    "titulo": "O que são atos processuais",
+    "texto_md": "Atos processuais são todos os acontecimentos que movem o processo: a petição inicial, a citação, a audiência, a prova, a sentença, o recurso. O Código de Processo Civil disciplina quando e como esses atos podem ser praticados. A regra geral está no art. 212: os atos processuais serão realizados em dias úteis, das 6 às 20 horas. Essa regra existe para organizar o funcionamento do Judiciário e proteger o contraditório. Mas a lei prevê exceções, e é nelas que a banca costuma colocar a questão. O candidato precisa saber diferenciar o ato praticado pelas partes (petição, recurso) do ato praticado pelo juízo ou pelo oficial de justiça (citação, penhora).",
+    "artigos": [
+     "CPC-212"
+    ]
+   },
+   {
+    "titulo": "A regra de horário",
+    "texto_md": "Pelo art. 212, os atos processuais ocorrem em dias úteis, das 6 às 20 horas. Se um ato começou antes das 20 horas e o adiamento prejudicar a diligência ou causar grave dano, ele pode ser concluído depois das 20 horas. Isso evita que uma audiência ou diligência seja interrompida no meio por causa do relógio. A regra não autoriza, por si só, iniciar qualquer ato às 21 horas de um sábado. Para saber se o ato fora do horário é válido, é preciso olhar a exceção do parágrafo seguinte e a natureza do ato. Petição em autos eletrônicos tem regra própria: pode ser protocolada até as 24 horas do último dia do prazo, conforme o art. 213.",
+    "artigos": [
+     "CPC-212",
+     "CPC-213"
+    ]
+   },
+   {
+    "titulo": "As exceções do art. 212, § 2º",
+    "texto_md": "O art. 212, § 2º, permite que citações, intimações e penhoras sejam realizadas no período de férias forenses, nos feriados e nos dias úteis fora do horário estabelecido, independentemente de autorização judicial. O texto ressalva a observância do art. 5º, inciso XI, da Constituição, que protege a casa. A leitura correta é: o ato de comunicação ou de constrição pode ocorrer fora do horário forense sem precisar de autorização judicial específica, mas a entrada na casa do executado continua sujeita às regras constitucionais. A banca costuma cobrar a expressão 'independentemente de autorização judicial' e tenta confundir com a necessidade de ordem do juiz. Para citação, intimação e penhora, a lei dispensa autorização específica; para entrada em domicílio, aplica-se a Constituição.",
+    "artigos": [
+     "CPC-212",
+     "CF-5"
+    ]
+   },
+   {
+    "titulo": "Contagem de prazos",
+    "texto_md": "O art. 218 do CPC diz que os prazos serão contados excluindo o dia do começo e incluindo o dia do vencimento. O art. 219 estabelece que os prazos processuais são contínuos e não se suspendem nos finais de semana e feriados, salvo disposição em sentido contrário. Isso significa que um prazo de 15 dias úteis conta apenas dias úteis; um prazo em dias corridos conta sábados, domingos e feriados. A parte precisa protocolar até as 24 horas do último dia, se o protocolo for eletrônico. A pegadinha é misturar prazo em dias úteis com prazo em dias corridos e esquecer que o dia do começo não entra na conta.",
+    "artigos": [
+     "CPC-218",
+     "CPC-219"
+    ]
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "A VUNESP gosta de uma situação concreta: o oficial comparece em determinado dia e horário para penhora ou citação e pergunta se o ato é válido. O caminho é verificar (1) se o ato é citação, intimação ou penhora; (2) se está fora do horário ou em dia não útil; (3) se a exceção do art. 212, § 2º, se aplica. Se for citação, intimação ou penhora, o ato pode ser válido independentemente de autorização judicial, respeitada a proteção constitucional da casa. Se for outro ato, vale a regra geral das 6 às 20 horas em dias úteis. Não confunda a validade do ato com a validade da entrada no imóvel: são planos diferentes.",
+    "artigos": [
+     "CPC-212",
+     "CF-5"
+    ]
+   }
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "Oficial de justiça comparece à casa do executado em um sábado, às 21h, para penhorar um automóvel. O ato é válido?",
+   "passo_a_passo": [
+    "1) Identifique o ato: penhora, portanto incide a exceção do art. 212, § 2º.",
+    "2) Verifique que a lei dispensa autorização judicial específica para citação, intimação e penhora fora do horário.",
+    "3) Conclua pela validade do ato, sem esquecer a proteção constitucional da casa (art. 5º, XI)."
+   ],
+   "questao_id": "tjsp-2025-026"
+  },
+  "erro_comum": "Achar que toda penhora fora do horário depende de autorização judicial. O art. 212, § 2º, dispensa autorização específica para citação, intimação e penhora.",
+  "pegadinhas": [
+   "Aplicar a regra das 6 às 20 horas a qualquer ato, ignorando a exceção da penhora.",
+   "Esquecer que o dia do começo do prazo não entra na contagem."
+  ],
+  "resumo": "A regra é ato em dia útil, das 6 às 20 horas. Citação, intimação e penhora podem ocorrer em férias, feriados ou fora do horário independentemente de autorização judicial, respeitada a proteção da casa. Prazos excluem o dia do começo e incluem o do vencimento.",
+  "flashcards": [
+   {
+    "frente": "Horário geral dos atos processuais",
+    "verso": "Dias úteis, das 6 às 20 horas."
+   },
+   {
+    "frente": "Penhora fora do horário exige autorização judicial?",
+    "verso": "Não, conforme o art. 212, § 2º."
+   },
+   {
+    "frente": "Como se conta prazo processual?",
+    "verso": "Exclui o dia do começo e inclui o do vencimento."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-026",
+   "tjsp-2025-027",
+   "tjsp-2025-028",
+   "tjsp-2025-029",
+   "tjsp-2025-030"
+  ],
+  "artigos_citados": [
+   "CPC-212",
+   "CPC-213",
+   "CPC-218",
+   "CPC-219",
+   "CF-5"
+  ],
+  "fonte": "CPC (Câmara dos Deputados) + CF/88 + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+ },
+ {
   "id": "dir-penal-adm",
   "materia": "Conhecimentos em Direito",
   "assunto": "Direito Penal",
@@ -176,6 +276,110 @@
    "CP-320"
   ],
   "fonte": "CP (Câmara dos Deputados) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+ },
+ {
+  "id": "dir-pp-inquerito",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Processual Penal",
+  "topico": "Inquérito policial e imparcialidade do juiz",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Entender para que serve o inquérito policial.",
+   "Saber quem preside o inquérito e qual o valor das peças.",
+   "Distinguir juiz impedido de juiz suspeito."
+  ],
+  "secoes": [
+   {
+    "titulo": "O que é processo penal",
+    "texto_md": "O processo penal é o caminho pelo qual o Estado apura um crime e, se for o caso, aplica uma pena. Ele não se confunde com o inquérito policial. O inquérito é uma fase administrativa, preparatória, conduzida pela polícia judiciária; o processo é a fase judicial, conduzida por um juiz, com contraditório e ampla defesa. A Constituição garante que ninguém será processado sem juiz natural e sem respeito ao devido processo legal. Por isso, o estudo do processo penal começa pela figura do juiz: ele precisa ser imparcial. Se o juiz tiver interesse, amizade íntima ou inimizade com uma das partes, ou tiver atuado antes no caso, pode ser afastado. As regras estão nos arts. 252 a 254 do Código de Processo Penal.",
+    "artigos": [
+     "CPP-252",
+     "CPP-253",
+     "CPP-254"
+    ]
+   },
+   {
+    "titulo": "Inquérito policial",
+    "texto_md": "O inquérito policial é instaurado para colher elementos sobre a autoria e a materialidade do crime. Ele pode começar de ofício, por requisição do Ministério Público ou da autoridade judiciária, ou por requerimento do ofendido. A polícia não pode arquivar o inquérito por conta própria: encerrado, os autos vão ao Ministério Público, que decide denunciar, pedir diligências ou promover o arquivamento. O inquérito é dispensável para a denúncia, desde que o Ministério Público tenha outros elementos. O valor probatório das peças colhidas no inquérito é relativo: elas não substituem a prova produzida em juízo, sob contraditório. A banca costuma cobrar a diferença entre inquérito e processo e a impossibilidade de o delegado arquivar o procedimento.",
+    "artigos": [
+     "CPP-252",
+     "CPP-253",
+     "CPP-254"
+    ]
+   },
+   {
+    "titulo": "Juiz impedido e juiz suspeito",
+    "texto_md": "O Código de Processo Penal separa duas situações. O juiz impedido não pode julgar por razões objetivas, ligadas ao cargo ou ao parentesco: por exemplo, ter atuado como defensor, ter funcionado como juiz de outra instância ou ser parente de alguma das partes. O juiz suspeito é afastado por razões subjetivas, como ter aconselhado uma das partes, ser amigo íntimo ou inimigo capital, ou ter interesse direto no resultado. A consequência prática é parecida — o juiz não julga —, mas a classificação muda conforme o motivo. A VUNESP explora exatamente essa diferença: coloca uma situação de aconselhamento e pergunta se o juiz é suspeito ou impedido. Aconselhar qualquer das partes torna o juiz suspeito, não impedido.",
+    "artigos": [
+     "CPP-252",
+     "CPP-253",
+     "CPP-254"
+    ]
+   },
+   {
+    "titulo": "Ação penal",
+    "texto_md": "A ação penal é o pedido que leva o caso ao juiz. Em regra, nos crimes de ação pública, o Ministério Público é o titular e oferece a denúncia. Há crimes de ação pública condicionada, em que o Ministério Público depende de representação do ofendido ou de requisição do Ministro da Justiça. Há também crimes de ação privada, em que o ofendido ou seu representante oferece a queixa-crime. O prazo para a denúncia, quando o réu está solto, é de cinco dias contados do recebimento do inquérito; quando preso, é de cinco dias contados da prisão. A prova costuma pedir a identificação do titular da ação e a consequência da inércia do Ministério Público, que pode gerar arquivamento ou denúncia por outro legitimado, conforme o caso.",
+    "artigos": [
+     "CPP-252",
+     "CPP-253",
+     "CPP-254"
+    ]
+   },
+   {
+    "titulo": "Como isso cai na prova",
+    "texto_md": "A questão costuma trazer um caso concreto curto e pedir a classificação correta. Leia primeiro o motivo do afastamento do juiz: se estiver ligado a parentesco, defesa anterior ou atuação em outra instância, pense em impedimento; se estiver ligado a amizade, inimizade, interesse ou aconselhamento, pense em suspeição. Depois verifique se o enunciado fala de inquérito ou de processo. No inquérito, não há contraditório pleno e o delegado não arquiva. No processo, o juiz precisa ser imparcial e a prova é produzida com as partes. Esse roteiro resolve a maior parte das questões de Processual Penal da VUNESP.",
+    "artigos": [
+     "CPP-252",
+     "CPP-253",
+     "CPP-254"
+    ]
+   }
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "De acordo com o CPP, o juiz será considerado suspeito ou impedido em razão de aconselhamento, parentesco ou atuação anterior?",
+   "passo_a_passo": [
+    "1) Leia o motivo concreto do possível afastamento do juiz.",
+    "2) Se o motivo é aconselhar uma das partes, enquadre como suspeição.",
+    "3) Se o motivo é parentesco, defesa anterior ou atuação em outra instância, enquadre como impedimento."
+   ],
+   "questao_id": "tjsp-2025-021"
+  },
+  "erro_comum": "Chamar de impedimento qualquer motivo de afastamento. Aconselhar uma das partes é suspeição; parentesco e atuação anterior são impedimento.",
+  "pegadinhas": [
+   "Achar que o delegado pode arquivar o inquérito: quem decide é o Ministério Público.",
+   "Confundir inquérito (administrativo) com processo (judicial)."
+  ],
+  "resumo": "O inquérito é fase administrativa e dispensável; o processo é judicial e exige juiz imparcial. Impedimento decorre de razões objetivas (parentesco, atuação anterior); suspeição, de razões subjetivas (amizade, interesse, aconselhamento).",
+  "flashcards": [
+   {
+    "frente": "Quem pode arquivar o inquérito?",
+    "verso": "O Ministério Público, não o delegado."
+   },
+   {
+    "frente": "Aconselhar uma das partes gera o quê?",
+    "verso": "Suspeição do juiz."
+   },
+   {
+    "frente": "Parentesco com uma das partes gera o quê?",
+    "verso": "Impedimento do juiz."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-021",
+   "tjsp-2025-022",
+   "tjsp-2025-023",
+   "tjsp-2025-024",
+   "tjsp-2025-025"
+  ],
+  "artigos_citados": [
+   "CPP-252",
+   "CPP-253",
+   "CPP-254"
+  ],
+  "fonte": "CPP (Câmara dos Deputados) + VUNESP TJSP2503",
   "revisado": false,
   "versao": 1
  }
