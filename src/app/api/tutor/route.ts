@@ -10,6 +10,11 @@ import {
   registrarFallback,
 } from "@/lib/server/metricas";
 import {
+  getModeloAtivo,
+  registrarFalhaModelo,
+  setModeloAtivo,
+} from "@/lib/server/modelo-estado";
+import {
   blocoCorrecao,
   contarPalavras,
   contrato,
@@ -161,7 +166,7 @@ async function chamarModelo(
   temperatura: number,
 ): Promise<Geracao> {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 20000);
+  const timer = setTimeout(() => controller.abort(), 15000);
   try {
     const res = await fetch(cfg.url, {
       method: "POST",
@@ -202,26 +207,38 @@ async function gerar(
   mensagens: Mensagem[],
   temperatura: number,
 ): Promise<Geracao> {
-  try {
-    return await chamarModelo(cfg, cfg.modelo, mensagens, temperatura);
-  } catch (erro) {
-    const status = erro instanceof ErroProvedor ? erro.status : 0;
-    const podeTrocar =
-      cfg.nome === "gemini" &&
-      cfg.modelo !== MODELO_RESERVA_GEMINI &&
-      [404, 429, 503].includes(status);
-    if (!podeTrocar) throw erro;
-    console.log(
-      JSON.stringify({
-        tutor: true,
-        evento: "modelo-reserva",
-        de: cfg.modelo,
-        para: MODELO_RESERVA_GEMINI,
-        status,
-      }),
-    );
-    return chamarModelo(cfg, MODELO_RESERVA_GEMINI, mensagens, temperatura);
+  const ordem: string[] = [];
+  const inicial = getModeloAtivo() ?? cfg.modelo;
+  ordem.push(inicial);
+  if (cfg.nome === "gemini" && !ordem.includes(MODELO_RESERVA_GEMINI)) {
+    ordem.push(MODELO_RESERVA_GEMINI);
   }
+
+  let ultimo: unknown;
+  for (const modelo of ordem) {
+    try {
+      const geracao = await chamarModelo(cfg, modelo, mensagens, temperatura);
+      setModeloAtivo(modelo);
+      return geracao;
+    } catch (erro) {
+      const status = erro instanceof ErroProvedor ? erro.status : 0;
+      const motivo = status ? `HTTP ${status}` : "timeout/erro de rede";
+      registrarFalhaModelo({ modelo, status, motivo, em: Date.now() });
+      console.log(
+        JSON.stringify({
+          tutor: true,
+          evento: "modelo-falhou",
+          modelo,
+          status,
+          motivo,
+          proximo: ordem[ordem.indexOf(modelo) + 1] ?? null,
+        }),
+      );
+      ultimo = erro;
+      if (status === 401 || status === 403) throw erro;
+    }
+  }
+  throw ultimo;
 }
 
 /** Insere um reforço logo após a instrução principal (system antes do user). */
@@ -388,11 +405,15 @@ export async function POST(req: NextRequest) {
     headers.set("X-Finish-Reason", finish);
     headers.set("X-Tutor-Tentativas", String(tentativas));
     return new Response(sse(texto), { headers });
-  } catch {
+  } catch (erro) {
     registrarErro();
     registrarFallback();
-    console.log(JSON.stringify({ tutor: true, evento: "fallback", motivo: "provedor" }));
+    const status = erro instanceof ErroProvedor ? erro.status : 0;
+    console.log(
+      JSON.stringify({ tutor: true, evento: "fallback", motivo: "provedor", status }),
+    );
     headers.set("X-Tutor-Mode", "offline-fallback");
+    if (status === 401 || status === 403) headers.set("X-Tutor-Erro", "chave-invalida");
     return new Response(sse(fallback(q, escolha)), { headers });
   }
 }

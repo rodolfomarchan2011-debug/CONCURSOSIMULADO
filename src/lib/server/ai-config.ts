@@ -30,18 +30,11 @@ export function provedor(): Provedor | null {
   }
 
   if (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY) {
-    const configurado = process.env.AI_MODEL ?? "gemini-3.1-flash-lite";
-    // 3.5-flash gasta o orçamento em raciocínio oculto e tem 503 frequente;
-    // a não ser que o operador force, usamos o lite (rápido e estável).
-    const modelo =
-      process.env.AI_PERMITIR_MODELO_LENTO === "1"
-        ? configurado
-        : configurado.replace(/^gemini-3\.5-flash.*$/, "gemini-3.1-flash-lite");
     return {
       nome: "gemini",
       url: "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
       chave: process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY!,
-      modelo,
+      modelo: process.env.AI_MODEL ?? "gemini-3.1-flash-lite",
     };
   }
 
