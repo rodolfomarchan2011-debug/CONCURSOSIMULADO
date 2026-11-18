@@ -32,6 +32,11 @@
       "artigos": ["L10261-30", "L10261-31", "L10261-32"]
     },
     {
+      "titulo": "Controle e responsabilização",
+      "texto_md": "A Administração está sujeita a controle interno, externo e judicial. O controle interno é feito pela própria estrutura administrativa; o externo, pelo Legislativo, com auxílio dos tribunais de contas; o judicial, pelo Poder Judiciário, que verifica legalidade e abuso de poder, sem substituir a conveniência e a oportunidade do administrador. A responsabilidade civil do Estado, prevista no art. 37, § 6º, é objetiva: dispensa prova de culpa do agente, mas exige nexo causal entre o fato administrativo e o dano. Se o agente agiu com dolo ou culpa, o Estado pode cobrar dele o valor pago, em regressiva. A banca costuma cobrar a diferença entre responsabilidade objetiva do Estado e subjetiva do agente, além da necessidade de nexo causal. Não confunda improbidade, que exige dolo, com mera irregularidade administrativa.",
+      "artigos": ["CF-37", "L8429-1"]
+    },
+    {
       "titulo": "Como a prova cobra",
       "texto_md": "A questão costuma apresentar um servidor em situação concreta e perguntar qual instituto se aplica. Leia o fato e procure a palavra-chave: decisão judicial passada em julgado com ressarcimento aponta reintegração; retorno de demitido sem ressarcimento aponta readmissão; ato com vantagem indevida pode apontar improbidade. Nos princípios, procure a conduta contrária: favoritismo fere impessoalidade; falta de transparência fere publicidade; lentidão ou desperdício fere eficiência. Quando a questão falar em nomeação de parente para cargo em comissão, lembre que o STF considera o nepotismo violação de impessoalidade e moralidade, mesmo sem lei específica. Com esse roteiro, a alternativa correta costuma aparecer sem decoreba.",
       "artigos": ["CF-37", "L8429-1", "L10261-30"]

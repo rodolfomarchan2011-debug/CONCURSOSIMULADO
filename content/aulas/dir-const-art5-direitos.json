@@ -1,0 +1,70 @@
+{
+  "id": "dir-const-art5-direitos",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Constitucional",
+  "topico": "Direitos e garantias fundamentais (art. 5º) — direitos",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Entender o que é direito fundamental e por que ele limita o Estado.",
+    "Conhecer os incisos mais cobrados do art. 5º.",
+    "Aplicar as regras de domicílio, sigilo e legalidade em casos concretos."
+  ],
+  "secoes": [
+    {
+      "titulo": "O que são direitos fundamentais",
+      "texto_md": "Direitos fundamentais são posições jurídicas que protegem a pessoa contra o arbítrio do Estado e garantem condições mínimas de vida digna. Eles estão no art. 5º da Constituição e não são uma lista fechada: o § 2º diz que os direitos expressos não excluem outros decorrentes do regime e dos princípios constitucionais. Isso significa que a interpretação deve sempre favorecer a pessoa, e não o poder. A prova de Escrevente cobra menos teoria e mais aplicação: dado um caso, identificar qual inciso foi violado e qual a consequência. Por isso, vale memorizar os incisos por blocos: vida e liberdade, igualdade, legalidade, casa, sigilo, locomoção, expressão e devido processo.",
+      "artigos": ["CF-5"]
+    },
+    {
+      "titulo": "Vida, liberdade e igualdade",
+      "texto_md": "O caput do art. 5º garante a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade. A igualdade é formal e material: a lei não pode criar distinções arbitrárias, mas pode tratar desigualmente quem está em situação desigual, desde que haja justificativa constitucional. A liberdade não é absoluta: ela cede diante de lei que proteja outro direito fundamental, respeitados o devido processo e a proporcionalidade. A banca costuma apresentar uma situação de discriminação e perguntar qual princípio foi ferido. A resposta quase sempre passa pela igualdade, pela dignidade da pessoa humana ou pela impessoalidade, quando o agente é público. Guarde também que a tortura e o tratamento desumano são vedados sem exceção.",
+      "artigos": ["CF-5"]
+    },
+    {
+      "titulo": "Legalidade e devido processo",
+      "texto_md": "O inciso II do art. 5º diz que ninguém será obrigado a fazer ou deixar de fazer algo senão em virtude de lei. É a legalidade em sentido amplo. O inciso LIV garante o devido processo legal; o LV assegura contraditório e ampla defesa, com os meios e recursos a ela inerentes. Esses incisos aparecem quando a questão fala em processo administrativo, sindicância, penalidade ou privação de liberdade. A consequência da violação costuma ser a nulidade do ato. Cuidado com a diferença: legalidade exige previsão legal para a obrigação; devido processo exige procedimento adequado para a sanção. Um ato pode ter previsão legal e, ainda assim, ser nulo por falta de defesa.",
+      "artigos": ["CF-5", "CF-5-LIV", "CF-5-LV"]
+    },
+    {
+      "titulo": "Casa, sigilo e locomoção",
+      "texto_md": "O inciso XI protege a casa: ninguém entra sem consentimento do morador, salvo flagrante, desastre, socorro ou, durante o dia, determinação judicial. Só a determinação judicial tem limite de horário. O inciso IX protege a inviolabilidade do sigilo de correspondência e das comunicações telegráficas, de dados e telefônicas, salvo ordem judicial para investigação criminal ou instrução penal. O inciso LXVIII garante habeas corpus para quem sofre violência ou coação em sua liberdade de locomoção. A banca mistura casa e sigilo: mandado judicial para entrada é diferente de autorização para interceptação telefônica, e cada um tem requisitos próprios. Na dúvida, identifique o direito atingido e o instrumento previsto na Constituição.",
+      "artigos": ["CF-5-XI", "CF-5-IX", "CF-5-LXVIII"]
+    },
+    {
+      "titulo": "Direitos não são absolutos",
+      "texto_md": "Nenhum direito fundamental é absoluto. A própria Constituição admite restrições, desde que previstas em lei, justificadas por outro direito ou interesse constitucional e aplicadas sem arbitrariedade. O teste que a prova costuma cobrar é de proporcionalidade: a medida era necessária? Era adequada? Havia meio menos gravoso? Um exemplo é a liberdade de expressão, que não protege discurso de ódio nem a divulgação de informações sigilosas. Outro é a inviolabilidade da casa, que cede diante de flagrante ou socorro. Quando a questão disser que um direito 'nunca' pode ser restringido, desconfie: a regra é a proteção, mas as exceções existem e precisam estar na Constituição ou em lei compatível com ela. Guardar essa ideia evita alternativas extremadas.",
+      "artigos": ["CF-5", "CF-5-XI"]
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "A VUNESP apresenta um caso curto e pede a alternativa correta. O caminho é: (1) identificar o direito em jogo; (2) verificar se houve consentimento, ordem judicial ou situação de urgência; (3) comparar com o inciso correspondente. Em domicílio, separe o motivo da entrada e o horário. Em sigilo, verifique se há ordem judicial e finalidade constitucional. Em processo administrativo, verifique contraditório e ampla defesa. Não responda por impressão: a Constituição usa palavras precisas, e a diferença entre 'durante o dia' e 'a qualquer tempo' decide a questão.",
+      "artigos": ["CF-5-XI", "CF-5-LV"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Policial precisa entrar em duas casas à noite: em uma há flagrante; na outra, apenas ordem judicial. Como aplicar o art. 5º?",
+    "passo_a_passo": [
+      "1) Identifique o motivo da entrada em cada imóvel.",
+      "2) Lembre que flagrante, desastre e socorro não têm limite de horário.",
+      "3) Lembre que a determinação judicial só autoriza entrada durante o dia."
+    ],
+    "questao_id": "tjsp-2025-031"
+  },
+  "erro_comum": "Decorar que 'à noite ninguém entra' e aplicar a restrição a qualquer caso. A limitação de horário atinge apenas a entrada por determinação judicial.",
+  "pegadinhas": [
+    "Trocar ordem judicial por ordem policial.",
+    "Achar que o flagrante só vale de dia."
+  ],
+  "resumo": "O art. 5º protege vida, liberdade, igualdade, legalidade, casa, sigilo e locomoção. Em casa, só a determinação judicial tem limite de horário. Em sigilo, a interceptação exige ordem judicial e finalidade constitucional.",
+  "flashcards": [
+    { "frente": "Quatro exceções à inviolabilidade da casa", "verso": "Flagrante, desastre, socorro e determinação judicial durante o dia." },
+    { "frente": "Interceptação telefônica exige o quê?", "verso": "Ordem judicial, para investigação criminal ou instrução penal." },
+    { "frente": "Devido processo legal está em qual inciso?", "verso": "LIV, com contraditório e ampla defesa no LV." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-031", "tjsp-2025-032", "tjsp-2025-033", "tjsp-2025-034", "tjsp-2025-035"],
+  "artigos_citados": ["CF-5", "CF-5-XI", "CF-5-IX", "CF-5-LV", "CF-5-LXVIII"],
+  "fonte": "CF/88 (Câmara dos Deputados) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}

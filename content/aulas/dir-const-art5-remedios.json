@@ -1,0 +1,70 @@
+{
+  "id": "dir-const-art5-remedios",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Constitucional",
+  "topico": "Direitos e garantias fundamentais (art. 5º) — remédios",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Distinguir habeas corpus, habeas data, mandado de segurança e mandado de injunção.",
+    "Saber quando cabe ação popular e direito de petição.",
+    "Reconhecer a gratuidade de cada ação constitucional."
+  ],
+  "secoes": [
+    {
+      "titulo": "O que é remédio constitucional",
+      "texto_md": "Remédio constitucional é a ação prevista na Constituição para proteger um direito fundamental quando ele é ameaçado ou violado. Não é recurso, nem simples petição administrativa: é instrumento judicial com rito próprio. O art. 5º prevê habeas corpus, habeas data, mandado de segurança, mandado de injunção e ação popular; o direito de petição está no inciso XXXIV. A prova costuma dar uma situação e perguntar qual remédio cabe. Para acertar, identifique o direito lesado: liberdade de locomoção, acesso a informação pessoal, direito líquido e certo, falta de norma regulamentadora ou patrimônio público. Cada um tem um remédio diferente, e trocar o instrumento é o erro mais comum.",
+      "artigos": ["CF-5", "CF-5-XXXIV"]
+    },
+    {
+      "titulo": "Habeas corpus e habeas data",
+      "texto_md": "O habeas corpus (inciso LXVIII) protege a liberdade de locomoção: cabe quando alguém sofre violência ou coação por ilegalidade ou abuso de poder. Não serve para discutir pena pecuniária ou direito de visitas, salvo se houver reflexo direto na liberdade. O habeas data (inciso LXXII) assegura o conhecimento de informações relativas à pessoa do impetrante em registros públicos ou de entidades governamentais, bem como a retificação de dados. Não cabe para obter informação de terceiro ou para substituir ação de cobrança. Ambos são gratuitos, conforme o inciso LXXVII. A banca gosta de afirmar que habeas data serve para qualquer informação pública; não serve: é informação pessoal do impetrante.",
+      "artigos": ["CF-5-LXVIII", "CF-5-LXXII", "CF-5-LXXVII"]
+    },
+    {
+      "titulo": "Mandado de segurança e injunção",
+      "texto_md": "O mandado de segurança (inciso LXIX) protege direito líquido e certo não amparado por habeas corpus ou habeas data, quando o responsável pela ilegalidade ou abuso é autoridade pública ou agente de pessoa jurídica no exercício de atribuições do poder público. O coletivo (inciso LXX) pode ser impetrado por partido político com representação no Congresso, organização sindical, entidade de classe ou associação legalmente constituída. O mandado de injunção (inciso LXXI) cabe quando a falta de norma regulamentadora torna inviável o exercício de direitos e liberdades constitucionais e das prerrogativas inerentes à nacionalidade, à soberania e à cidadania. Não confunda: segurança combate ato ilegal; injunção combate omissão legislativa.",
+      "artigos": ["CF-5-LXIX", "CF-5-LXX", "CF-5-LXXI"]
+    },
+    {
+      "titulo": "Ação popular e direito de petição",
+      "texto_md": "A ação popular (inciso LXXIII) pode ser proposta por qualquer cidadão para anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural. O autor é isento de custas judiciais e do ônus da sucumbência, salvo comprovada má-fé. O direito de petição (inciso XXXIV, 'a') assegura a qualquer pessoa o direito de apresentar petição aos poderes públicos em defesa de direitos ou contra ilegalidade ou abuso de poder, independentemente de pagamento de taxas. A banca costuma trocar ação popular por ação civil pública: a popular é do cidadão; a civil pública é do Ministério Público e de outros legitimados.",
+      "artigos": ["CF-5-LXXIII", "CF-5-XXXIV"]
+    },
+    {
+      "titulo": "Gratuidade e legitimidade",
+      "texto_md": "A gratuidade não é igual para todos os remédios. Habeas corpus e habeas data são gratuitos por previsão expressa. A ação popular é gratuita, salvo comprovada má-fé. O mandado de segurança não tem essa gratuidade constitucional, embora a lei processual possa prever benefícios. A legitimidade também muda: habeas corpus e habeas data podem ser impetrados por qualquer pessoa física ou jurídica, em favor próprio ou de terceiro, e o Ministério Público pode atuar. O mandado de segurança individual é da pessoa lesada; o coletivo exige partido com representação no Congresso, sindicato, entidade de classe ou associação constituída há pelo menos um ano. A ação popular exige cidadão no gozo dos direitos políticos. A banca troca esses requisitos com frequência, por isso monte uma tabela mental antes de responder.",
+      "artigos": ["CF-5-LXVIII", "CF-5-LXXII", "CF-5-LXXIII", "CF-5-LXX"]
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "Leia o caso e procure o direito atingido. Liberdade de locomoção: habeas corpus. Informação pessoal: habeas data. Direito líquido e certo contra autoridade: mandado de segurança. Falta de lei regulamentadora: mandado de injunção. Ato lesivo ao patrimônio público por cidadão: ação popular. Depois verifique a gratuidade: habeas corpus e habeas data são gratuitos; ação popular é gratuita salvo má-fé; mandado de segurança não é gratuito. Por fim, confira a legitimidade: pessoa física, partido, sindicato, associação ou cidadão. Esses três passos resolvem a maior parte das questões.",
+      "artigos": ["CF-5-LXVIII", "CF-5-LXXII", "CF-5-LXIX", "CF-5-LXXIII"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Sobre ações constitucionais, qual alternativa está correta quanto a gratuidade e legitimidade?",
+    "passo_a_passo": [
+      "1) Identifique o remédio e o direito protegido.",
+      "2) Confira a gratuidade prevista na Constituição.",
+      "3) Confira quem pode propor cada ação."
+    ],
+    "questao_id": "tjsp-2025-032"
+  },
+  "erro_comum": "Achar que todo remédio constitucional é gratuito. Habeas corpus e habeas data são gratuitos; mandado de segurança não é; ação popular é gratuita salvo má-fé.",
+  "pegadinhas": [
+    "Usar habeas data para pedir informação de terceiro.",
+    "Confundir ação popular com ação civil pública."
+  ],
+  "resumo": "Habeas corpus protege locomoção; habeas data, informação pessoal; mandado de segurança, direito líquido e certo; injunção, omissão legislativa; ação popular, patrimônio público. A gratuidade varia e a legitimidade é específica de cada remédio.",
+  "flashcards": [
+    { "frente": "Remédio para falta de norma regulamentadora", "verso": "Mandado de injunção." },
+    { "frente": "Quem pode propor ação popular?", "verso": "Qualquer cidadão." },
+    { "frente": "Mandado de segurança é gratuito?", "verso": "Não; habeas corpus e habeas data são." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-032", "tjsp-2025-033", "tjsp-2025-034", "tjsp-2025-035"],
+  "artigos_citados": ["CF-5", "CF-5-LXVIII", "CF-5-LXXII", "CF-5-LXIX", "CF-5-LXXIII", "CF-5-XXXIV"],
+  "fonte": "CF/88 (Câmara dos Deputados) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}

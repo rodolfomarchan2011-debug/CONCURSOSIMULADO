@@ -27,6 +27,11 @@
       "artigos": ["CP-319", "CP-320"]
     },
     {
+      "titulo": "Penas e efeitos da condenação",
+      "texto_md": "As penas dos crimes funcionais variam conforme o tipo. O peculato tem pena de reclusão de 2 a 12 anos e multa; a concussão, de reclusão de 2 a 8 anos e multa; a corrupção passiva, de reclusão de 2 a 12 anos e multa; a prevaricação, de detenção de 3 meses a 1 ano e multa; a condescendência criminosa, de detenção de 15 dias a 1 mês ou multa. Além da pena, a condenação pode gerar a perda do cargo, função ou emprego público, quando a pena privativa de liberdade for superior a quatro anos ou quando o crime for praticado com abuso de poder ou violação de dever. O candidato não precisa decorar todas as penas, mas deve saber que a lei prevê efeitos específicos e que a esfera administrativa corre em paralelo. A prova costuma cobrar mais a tipificação do que a dosimetria.",
+      "artigos": ["CP-312", "CP-316", "CP-317", "CP-319", "CP-320"]
+    },
+    {
       "titulo": "Como a prova cobra",
       "texto_md": "A VUNESP costuma apresentar uma situação concreta e perguntar qual é o crime ou se ele está configurado. O caminho é sempre o mesmo: identifique o sujeito (funcionário público na definição do art. 327), o verbo praticado, o elemento subjetivo e o objeto material. Se o enunciado fala em exigir, procure concussão; se fala em solicitar ou receber, procure corrupção passiva; se fala em deixar de responsabilizar subordinado, procure condescendência. Não confunda o crime do funcionário que se apropria (peculato) com o do particular que induz o funcionário a erro (estelionato ou corrupção, conforme o caso). A prova também cobra as penas e os efeitos da condenação, mas o núcleo é a tipificação. Em regra, os crimes funcionais próprios exigem a condição de funcionário público; se o particular pratica o fato, pode responder por outro crime ou como partícipe, desde que saiba da condição do agente. Outra distinção útil: no peculato há posse do bem em razão do cargo; se o funcionário não tem essa posse, o fato pode ser apropriação indébita ou outro delito.",
       "artigos": ["CP-312", "CP-316", "CP-317", "CP-319", "CP-320"]

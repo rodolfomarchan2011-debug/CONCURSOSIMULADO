@@ -1,6 +1,8 @@
 """Valida aulas: content/aulas/<id>.json (ou todos, se sem argumento).
 
-Checa esquema mínimo, 600-900 palavras, questão real, citações existentes.
+Métrica: SOMENTE secoes[].texto_md (corpo didático).
+Mínimos: 650 palavras (Direito/LP) e 550 (Informática/RL/Matemática).
+Direito exige >= 3 artigos/incisos citados.
 """
 
 from __future__ import annotations
@@ -14,6 +16,9 @@ RAIZ = Path(__file__).resolve().parent.parent
 ORIGEM = RAIZ / "content" / "aulas"
 BANCO = RAIZ / "src" / "data" / "banco.json"
 LEGAL = RAIZ / "data" / "legal" / "artigos.json"
+
+MINIMO = 650
+MINIMO_OBJETIVO = 550
 
 
 def palavras(texto: str) -> int:
@@ -45,11 +50,15 @@ def validar(caminho: Path, ids: set[str], artigos: set[tuple[str, str]]) -> list
         if campo not in aula:
             erros.append(f"campo ausente: {campo}")
 
-    total = sum(palavras(s.get("texto_md", "")) for s in aula.get("secoes", []))
-    total += palavras(aula.get("resumo", ""))
-    total += palavras(aula.get("erro_comum", ""))
-    if not 600 <= total <= 900:
-        erros.append(f"{total} palavras (fora de 600-900)")
+    corpo = sum(palavras(s.get("texto_md", "")) for s in aula.get("secoes", []))
+    objetivo = aula.get("materia") == "Conhecimentos Gerais" and aula.get("assunto") in {
+        "Informática",
+        "Raciocínio Lógico",
+        "Matemática",
+    }
+    minimo = MINIMO_OBJETIVO if objetivo else MINIMO
+    if corpo < minimo:
+        erros.append(f"corpo={corpo} palavras (mínimo {minimo})")
 
     exemplo = aula.get("exemplo_resolvido", {}).get("questao_id")
     if exemplo not in ids:
@@ -61,14 +70,22 @@ def validar(caminho: Path, ids: set[str], artigos: set[tuple[str, str]]) -> list
     citacoes = list(aula.get("artigos_citados", []))
     for secao in aula.get("secoes", []):
         citacoes.extend(secao.get("artigos", []))
+    distintas: set[str] = set()
     for citacao in citacoes:
-        m = re.match(r"([A-Z0-9]+)-(\d+)$", citacao)
+        m = re.match(r"([A-Z0-9]+)-(\d+)(?:-[A-Z0-9]+)?$", citacao)
         if not m:
-            erros.append(f"citação mal formatada: {citacao} (use LEI-ARTIGO)")
-        elif (m.group(1), m.group(2)) not in artigos:
+            erros.append(f"citação mal formatada: {citacao} (use LEI-ARTIGO[-INCISO])")
+            continue
+        par = (m.group(1), m.group(2))
+        if par not in artigos:
             erros.append(f"citação inexistente: {citacao}")
+        distintas.add(citacao)
 
-    print(f"{caminho.name}: {total} palavras, {len(erros)} erro(s)")
+    direito = aula.get("materia") == "Conhecimentos em Direito"
+    if direito and len(distintas) < 3:
+        erros.append(f"Direito exige >= 3 artigos/incisos citados (tem {len(distintas)})")
+
+    print(f"{caminho.name}: corpo={corpo} palavras, {len(distintas)} artigos, {len(erros)} erro(s)")
     return erros
 
 

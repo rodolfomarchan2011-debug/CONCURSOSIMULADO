@@ -2,39 +2,44 @@
   "id": "dir-legis-tjsp",
   "materia": "Conhecimentos em Direito",
   "assunto": "Legislação interna (TJSP)",
-  "topico": "Deveres, penalidades e rotina do escrevente",
+  "topico": "Deveres, proibições e penalidades do servidor do TJSP",
   "edital_ref": "estrutura derivada — validar",
   "estrutura_derivada": true,
   "objetivos": [
-    "Conhecer os deveres e proibições do servidor estadual.",
-    "Entender as penalidades disciplinares.",
-    "Saber como a rotina do escrevente aparece na prova."
+    "Conhecer os deveres do funcionário no Estatuto estadual.",
+    "Diferenciar proibições e penalidades.",
+    "Aplicar a rotina do escrevente às normas da Corregedoria."
   ],
   "secoes": [
     {
       "titulo": "Por que estudar a legislação interna",
-      "texto_md": "O cargo de escrevente é regido por normas próprias do Tribunal de Justiça de São Paulo. A principal é a Lei 10.261/68, o Estatuto dos Funcionários Públicos Civis do Estado. Além dela, o Tribunal edita normas de organização judiciária e a Corregedoria Geral da Justiça edita as Normas de Serviço (NSCGJ). A prova cobra tanto o Estatuto quanto a rotina de cartório: prazos, assinatura de atos, organização de autos e atendimento ao público. Não é preciso decorar todos os artigos, mas é essencial saber onde procurar e distinguir dever, proibição e penalidade.",
-      "artigos": ["L10261-30"]
+      "texto_md": "O escrevente é servidor do Tribunal de Justiça de São Paulo e responde a um regime próprio. A base principal é a Lei 10.261/68, o Estatuto dos Funcionários Públicos Civis do Estado. Ao lado dela, o Tribunal edita normas de organização judiciária, e a Corregedoria Geral da Justiça edita as Normas de Serviço (NSCGJ), que organizam o dia a dia das serventias. A prova cobra tanto o texto do Estatuto quanto a rotina de cartório: prazos, assinatura de atos, organização de autos e atendimento ao público. Não é preciso decorar todos os artigos; é preciso saber onde cada assunto está e distinguir dever, proibição e penalidade. Esse mapa mental evita confundir uma falta funcional com um crime ou com uma simples irregularidade.",
+      "artigos": ["L10261-241"]
     },
     {
-      "titulo": "Deveres e proibições",
-      "texto_md": "O Estatuto lista deveres do funcionário, como exercer com zelo e dedicação as atribuições do cargo, ser leal às instituições, observar as normas legais e regulamentares, atender ao público com urbanidade e guardar sigilo sobre assuntos da repartição. Também lista proibições, como ausentar-se do serviço durante o expediente sem autorização, utilizar pessoal ou recursos materiais da repartição em serviços particulares e receber vantagem indevida. A diferença entre dever e proibição é simples: o dever manda fazer; a proibição manda não fazer. A violação de qualquer dos dois pode gerar responsabilidade administrativa, sem prejuízo da civil e da penal. Na prática do cartório, o sigilo e a urbanidade aparecem muito: o escrevente vê dados de processos e atende pessoas em situação de vulnerabilidade. Vazar informação ou tratar mal o público pode gerar reclamação e procedimento disciplinar.",
-      "artigos": ["L10261-30"]
+      "titulo": "Os deveres do art. 241",
+      "texto_md": "O art. 241 lista os deveres do funcionário. Entre eles: ser assíduo e pontual; cumprir as ordens superiores, representando quando forem manifestamente ilegais; desempenhar com zelo e presteza os trabalhos de que for incumbido; guardar sigilo sobre os assuntos da repartição, especialmente sobre despachos, decisões ou providências; representar aos superiores sobre irregularidades de que tiver conhecimento; e tratar com urbanidade os companheiros de serviço e o público. A lógica é simples: o dever manda fazer. A assiduidade e a pontualidade são cobradas em situações de falta ao serviço; o sigilo, em vazamento de informação; a urbanidade, em conflito com o público. Quando a questão descrever uma omissão do servidor, verifique se havia dever específico de agir.",
+      "artigos": ["L10261-241"]
     },
     {
-      "titulo": "Penalidades disciplinares",
-      "texto_md": "As penalidades previstas no Estatuto vão da advertência à demissão, passando por suspensão e multa. A aplicação depende da gravidade da falta e do procedimento adequado, com direito de defesa. A advertência é a mais leve; a suspensão afasta o servidor do serviço por determinado período; a demissão rompe o vínculo. A multa pode ser aplicada em certos casos, inclusive quando a suspensão é convertida. O candidato deve saber que a penalidade não se confunde com a sanção civil ou penal: o mesmo fato pode gerar consequências nas três esferas. A banca costuma perguntar qual penalidade cabe em uma situação concreta e se é necessária sindicância ou processo administrativo.",
-      "artigos": ["L10261-30"]
+      "titulo": "As proibições dos arts. 242 e 243",
+      "texto_md": "O art. 242 proíbe, entre outras condutas, retirar documentos da repartição sem permissão da autoridade competente e referir-se de forma depreciativa às autoridades ou aos atos da Administração em informação, parecer ou meio de divulgação, ressalvada a apreciação doutrinária em trabalho assinado. O art. 243 traz outras vedações, como fazer contratos comerciais com o Governo em benefício próprio e participar da administração de empresas que mantenham relações com o Estado. A diferença em relação ao art. 241 é de direção: o dever impõe uma conduta; a proibição veda outra. A violação de qualquer dos dois pode gerar responsabilidade administrativa, sem prejuízo da civil e da penal. Na rotina do cartório, retirar autos ou documentos sem autorização é falta grave, mesmo que o servidor alegue boa intenção.",
+      "artigos": ["L10261-242", "L10261-243"]
     },
     {
-      "titulo": "Normas da Corregedoria (NSCGJ)",
-      "texto_md": "As NSCGJ organizam o dia a dia das serventias: autuação, numeração, prazos, carga, vista dos autos, certidões e comunicação de atos. Uma questão típica pergunta quem deve assinar um ofício de comunicação ao Poder Executivo. A resposta depende da norma interna: atos direcionados a autoridades podem exigir assinatura do juiz, não do escrevente. Como a NSCGJ não está na base legal federal/estadual ingerida, a explicação deve ser marcada como 'sem artigo aplicável na base' e conferida na fonte oficial. O importante, na prova, é identificar a competência para assinar e a formalidade do ato.",
+      "titulo": "As penalidades do art. 251",
+      "texto_md": "O art. 251 lista as penas disciplinares: repreensão, suspensão, multa, demissão, demissão a bem do serviço público e cassação de aposentadoria ou disponibilidade. Não existe 'advertência' nessa lista; a pena mais leve é a repreensão. A suspensão afasta o servidor do exercício por determinado período; a multa é sanção pecuniária; a demissão rompe o vínculo; a demissão a bem do serviço público é mais grave e tem efeitos próprios; a cassação atinge aposentadoria ou disponibilidade. A aplicação exige procedimento com defesa, e a penalidade não se confunde com a sanção penal. A banca costuma apresentar uma falta e perguntar a pena cabível, ou afirmar que a advertência é a primeira pena: essa é a pegadinha mais comum.",
+      "artigos": ["L10261-251"]
+    },
+    {
+      "titulo": "NSCGJ e rotina do escrevente",
+      "texto_md": "As NSCGJ regulam autuação, numeração, prazos, carga, vista dos autos, certidões e comunicação de atos. Uma questão típica pergunta quem deve assinar ofício de comunicação de decisão judicial direcionado a autoridade. A resposta depende da norma interna: atos direcionados a autoridades podem exigir assinatura do juiz, não do escrevente. Como as NSCGJ não estão na base legal ingerida, a resposta deve ser marcada como 'sem artigo aplicável na base' e conferida na fonte oficial. O importante, na prova, é identificar a competência para assinar e a formalidade do ato. O escrevente elabora, confere e encaminha, mas não assume competência que a norma atribui ao juiz.",
       "artigos": []
     },
     {
       "titulo": "Como a prova cobra",
-      "texto_md": "A VUNESP mistura Estatuto e rotina. Leia o enunciado e separe: (1) é caso de dever, proibição ou penalidade? (2) a norma é o Estatuto (Lei 10.261/68) ou a NSCGJ? (3) quem é competente para praticar o ato? Se a questão fala de assinatura de ofício a autoridade, desconfie de alternativa que atribui a tarefa ao escrevente sem previsão. Se fala de retorno ao serviço por decisão judicial, lembre da reintegração. Se fala de vantagem indevida, lembre da improbidade e da esfera penal.",
-      "artigos": ["L10261-30"]
+      "texto_md": "Leia o enunciado e separe três perguntas: (1) é dever, proibição ou penalidade? (2) a norma é o Estatuto ou a NSCGJ? (3) quem é competente para o ato? Se a questão falar de retorno ao serviço por decisão judicial, lembre da reintegração do art. 30. Se falar de vantagem indevida, lembre da improbidade e da esfera penal. Se falar de assinatura de ofício a autoridade, desconfie da alternativa que atribui a tarefa ao escrevente sem previsão. Se falar de pena, lembre que a mais leve é repreensão, não advertência. Com esse roteiro, a alternativa correta costuma aparecer sem decoreba.",
+      "artigos": ["L10261-30", "L10261-251"]
     }
   ],
   "exemplo_resolvido": {
@@ -46,19 +51,19 @@
     ],
     "questao_id": "tjsp-2025-046"
   },
-  "erro_comum": "Achar que o escrevente pode assinar qualquer ofício porque elaborou o documento. A competência para assinar depende da norma e do destinatário, e ato privativo do juiz não pode ser delegado ao servidor.",
+  "erro_comum": "Achar que a primeira pena é advertência. O art. 251 começa pela repreensão, e a lista não inclui advertência. Também é erro supor que o escrevente pode assinar qualquer ofício porque o elaborou.",
   "pegadinhas": [
-    "Confundir penalidade administrativa com sanção penal.",
+    "Trocar repreensão por advertência.",
     "Atribuir ao escrevente ato privativo do juiz."
   ],
-  "resumo": "A Lei 10.261/68 trata de deveres, proibições e penalidades; as NSCGJ tratam da rotina das serventias. Dever manda fazer, proibição manda não fazer, e a violação pode gerar advertência, suspensão, multa ou demissão. Atos direcionados a autoridades podem exigir assinatura do juiz, e o sigilo funcional é dever permanente, cuja violação sujeita o servidor a procedimento disciplinar.",
+  "resumo": "O art. 241 lista deveres (assiduidade, zelo, sigilo, urbanidade); os arts. 242 e 243 listam proibições. O art. 251 prevê repreensão, suspensão, multa, demissão, demissão a bem do serviço e cassação. As NSCGJ regulam a rotina e a competência para assinar atos.",
   "flashcards": [
-    { "frente": "Principal estatuto do servidor estadual", "verso": "Lei 10.261/68." },
-    { "frente": "O que as NSCGJ regulam?", "verso": "A rotina das serventias: autos, prazos, certidões e comunicação de atos." },
-    { "frente": "Penalidade mais grave", "verso": "Demissão." }
+    { "frente": "Primeira pena do art. 251", "verso": "Repreensão." },
+    { "frente": "O que o art. 241 impõe sobre sigilo?", "verso": "Guardar sigilo sobre assuntos da repartição, despachos e decisões." },
+    { "frente": "Quem assina ofício a autoridade?", "verso": "Depende da NSCGJ; em regra, o juiz." }
   ],
   "questoes_relacionadas": ["tjsp-2025-041", "tjsp-2025-042", "tjsp-2025-043", "tjsp-2025-044", "tjsp-2025-046"],
-  "artigos_citados": ["L10261-30"],
+  "artigos_citados": ["L10261-241", "L10261-242", "L10261-243", "L10261-251", "L10261-30"],
   "fonte": "Lei 10.261/68 (ALESP) + NSCGJ (fonte oficial) + VUNESP TJSP2503",
   "revisado": false,
   "versao": 1

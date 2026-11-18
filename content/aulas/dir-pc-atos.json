@@ -32,6 +32,11 @@
       "artigos": ["CPC-218", "CPC-219"]
     },
     {
+      "titulo": "Atos das partes e atos do juiz",
+      "texto_md": "Nem todo ato processual segue a mesma regra de horário. Os atos das partes, como petições e recursos, são praticados por meio eletrônico e podem ser protocolados até as 24 horas do último dia do prazo, conforme o art. 213. Já os atos do juiz e dos auxiliares da justiça, como audiências, citações e penhoras, seguem o art. 212. A distinção importa porque a banca pode afirmar que uma petição protocolada às 22 horas é intempestiva: não é, se o protocolo é eletrônico e o prazo terminava naquele dia. Do mesmo modo, uma audiência marcada para as 21 horas não é válida pela regra geral, salvo se começou antes das 20 horas e o adiamento prejudicar a diligência. Separar o sujeito do ato e o meio utilizado é o que resolve a questão.",
+      "artigos": ["CPC-212", "CPC-213"]
+    },
+    {
       "titulo": "Como a prova cobra",
       "texto_md": "A VUNESP gosta de uma situação concreta: o oficial comparece em determinado dia e horário para penhora ou citação e pergunta se o ato é válido. O caminho é verificar (1) se o ato é citação, intimação ou penhora; (2) se está fora do horário ou em dia não útil; (3) se a exceção do art. 212, § 2º, se aplica. Se for citação, intimação ou penhora, o ato pode ser válido independentemente de autorização judicial, respeitada a proteção constitucional da casa. Se for outro ato, vale a regra geral das 6 às 20 horas em dias úteis. Não confunda a validade do ato com a validade da entrada no imóvel: são planos diferentes.",
       "artigos": ["CPC-212", "CF-5"]

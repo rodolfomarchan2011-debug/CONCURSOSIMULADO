@@ -46,6 +46,14 @@
     ]
    },
    {
+    "titulo": "Controle e responsabilização",
+    "texto_md": "A Administração está sujeita a controle interno, externo e judicial. O controle interno é feito pela própria estrutura administrativa; o externo, pelo Legislativo, com auxílio dos tribunais de contas; o judicial, pelo Poder Judiciário, que verifica legalidade e abuso de poder, sem substituir a conveniência e a oportunidade do administrador. A responsabilidade civil do Estado, prevista no art. 37, § 6º, é objetiva: dispensa prova de culpa do agente, mas exige nexo causal entre o fato administrativo e o dano. Se o agente agiu com dolo ou culpa, o Estado pode cobrar dele o valor pago, em regressiva. A banca costuma cobrar a diferença entre responsabilidade objetiva do Estado e subjetiva do agente, além da necessidade de nexo causal. Não confunda improbidade, que exige dolo, com mera irregularidade administrativa.",
+    "artigos": [
+     "CF-37",
+     "L8429-1"
+    ]
+   },
+   {
     "titulo": "Como a prova cobra",
     "texto_md": "A questão costuma apresentar um servidor em situação concreta e perguntar qual instituto se aplica. Leia o fato e procure a palavra-chave: decisão judicial passada em julgado com ressarcimento aponta reintegração; retorno de demitido sem ressarcimento aponta readmissão; ato com vantagem indevida pode apontar improbidade. Nos princípios, procure a conduta contrária: favoritismo fere impessoalidade; falta de transparência fere publicidade; lentidão ou desperdício fere eficiência. Quando a questão falar em nomeação de parente para cargo em comissão, lembre que o STF considera o nepotismo violação de impessoalidade e moralidade, mesmo sem lei específica. Com esse roteiro, a alternativa correta costuma aparecer sem decoreba.",
     "artigos": [
@@ -106,84 +114,224 @@
   "versao": 1
  },
  {
-  "id": "dir-const-art5",
+  "id": "dir-const-art5-direitos",
   "materia": "Conhecimentos em Direito",
   "assunto": "Direito Constitucional",
-  "topico": "Direitos e garantias fundamentais (art. 5º)",
+  "topico": "Direitos e garantias fundamentais (art. 5º) — direitos",
   "edital_ref": "estrutura derivada — validar",
   "estrutura_derivada": true,
   "objetivos": [
-   "Entender o que a Constituição protege quando fala em casa.",
-   "Decorar as quatro exceções ao direito de não ser incomodado em casa.",
-   "Saber quando a entrada depende de dia ou de autorização judicial."
+   "Entender o que é direito fundamental e por que ele limita o Estado.",
+   "Conhecer os incisos mais cobrados do art. 5º.",
+   "Aplicar as regras de domicílio, sigilo e legalidade em casos concretos."
   ],
   "secoes": [
    {
-    "titulo": "O que é 'casa' para a Constituição",
-    "texto_md": "A Constituição Federal de 1988 trata a casa como um espaço de intimidade e de tranquilidade da pessoa. Não é apenas o imóvel onde a pessoa dorme: quarto de hotel, trailer habitado, escritório profissional e até o veículo usado como moradia podem receber essa proteção, desde que sirvam de lugar de vida privada. A regra do art. 5º, inciso XI, é simples de enunciar: ninguém entra na casa de outra pessoa sem o consentimento do morador. O detalhe é que a própria Constituição abre exceções. A banca costuma cobrar exatamente a diferença entre a regra e a exceção, e não a definição teórica de casa.",
+    "titulo": "O que são direitos fundamentais",
+    "texto_md": "Direitos fundamentais são posições jurídicas que protegem a pessoa contra o arbítrio do Estado e garantem condições mínimas de vida digna. Eles estão no art. 5º da Constituição e não são uma lista fechada: o § 2º diz que os direitos expressos não excluem outros decorrentes do regime e dos princípios constitucionais. Isso significa que a interpretação deve sempre favorecer a pessoa, e não o poder. A prova de Escrevente cobra menos teoria e mais aplicação: dado um caso, identificar qual inciso foi violado e qual a consequência. Por isso, vale memorizar os incisos por blocos: vida e liberdade, igualdade, legalidade, casa, sigilo, locomoção, expressão e devido processo.",
     "artigos": [
      "CF-5"
     ]
    },
    {
-    "titulo": "As quatro exceções do inciso XI",
-    "texto_md": "O texto constitucional permite entrar na casa sem o consentimento do morador em quatro situações: flagrante delito, desastre, para prestar socorro e, durante o dia, por determinação judicial. As três primeiras não têm horário: podem ocorrer de dia ou de noite, porque a urgência ou a proteção da vida está na frente. A quarta é diferente: a determinação judicial só autoriza a entrada durante o dia. Essa é a chave da maioria das questões. Se o policial tem mandado judicial e chega à noite, não pode arrombar a porta e entrar; deve aguardar o dia seguinte, salvo se houver, ao mesmo tempo, flagrante, desastre ou socorro. O candidato que trata as quatro exceções como se fossem iguais erra a questão.",
+    "titulo": "Vida, liberdade e igualdade",
+    "texto_md": "O caput do art. 5º garante a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade. A igualdade é formal e material: a lei não pode criar distinções arbitrárias, mas pode tratar desigualmente quem está em situação desigual, desde que haja justificativa constitucional. A liberdade não é absoluta: ela cede diante de lei que proteja outro direito fundamental, respeitados o devido processo e a proporcionalidade. A banca costuma apresentar uma situação de discriminação e perguntar qual princípio foi ferido. A resposta quase sempre passa pela igualdade, pela dignidade da pessoa humana ou pela impessoalidade, quando o agente é público. Guarde também que a tortura e o tratamento desumano são vedados sem exceção.",
     "artigos": [
      "CF-5"
     ]
    },
    {
-    "titulo": "Flagrante durante a noite",
-    "texto_md": "Muita gente aprende que 'à noite ninguém entra em casa' e aplica essa frase a qualquer situação. A Constituição não diz isso. O que ela limita ao período diurno é apenas a entrada por determinação judicial. Se a polícia persegue alguém em flagrante e o suspeito se esconde em casa, a entrada é permitida também à noite, porque a exceção do flagrante não tem horário. O mesmo vale para desastre e socorro. Por isso, em uma questão com duas casas, é preciso olhar o motivo da entrada em cada uma: se em uma delas há mandado e na outra há flagrante, o resultado pode ser diferente para cada imóvel. A banca mistura os dois imóveis para testar se o candidato aplica a regra ao caso concreto, e não uma frase decorada.",
+    "titulo": "Legalidade e devido processo",
+    "texto_md": "O inciso II do art. 5º diz que ninguém será obrigado a fazer ou deixar de fazer algo senão em virtude de lei. É a legalidade em sentido amplo. O inciso LIV garante o devido processo legal; o LV assegura contraditório e ampla defesa, com os meios e recursos a ela inerentes. Esses incisos aparecem quando a questão fala em processo administrativo, sindicância, penalidade ou privação de liberdade. A consequência da violação costuma ser a nulidade do ato. Cuidado com a diferença: legalidade exige previsão legal para a obrigação; devido processo exige procedimento adequado para a sanção. Um ato pode ter previsão legal e, ainda assim, ser nulo por falta de defesa.",
     "artigos": [
-     "CF-5"
+     "CF-5",
+     "CF-5-LIV",
+     "CF-5-LV"
     ]
    },
    {
-    "titulo": "O que mais o art. 5º cobra",
-    "texto_md": "O art. 5º é um catálogo extenso. Para a prova de Escrevente, os pontos mais recorrentes são: igualdade perante a lei, legalidade, direito de resposta, liberdade de expressão, inviolabilidade do sigilo de correspondência e de comunicações telefônicas, salvo ordem judicial para investigação criminal ou instrução penal, e a gratuidade das ações de habeas corpus e habeas data. Também aparece a impetração de mandado de segurança coletivo por partido político com representação no Congresso Nacional, organização sindical, entidade de classe ou associação legalmente constituída. Guarde a diferença: ação popular é gratuita, salvo má-fé; mandado de segurança não é gratuito; habeas corpus e habeas data são gratuitos. Outro ponto lembrado é o devido processo legal, com contraditório e ampla defesa, e a proibição de provas obtidas por meios ilícitos. A banca costuma trocar o remédio adequado: habeas corpus protege liberdade de locomoção; habeas data protege acesso a informações pessoais; mandado de segurança protege direito líquido e certo não amparado por aqueles dois.",
+    "titulo": "Casa, sigilo e locomoção",
+    "texto_md": "O inciso XI protege a casa: ninguém entra sem consentimento do morador, salvo flagrante, desastre, socorro ou, durante o dia, determinação judicial. Só a determinação judicial tem limite de horário. O inciso IX protege a inviolabilidade do sigilo de correspondência e das comunicações telegráficas, de dados e telefônicas, salvo ordem judicial para investigação criminal ou instrução penal. O inciso LXVIII garante habeas corpus para quem sofre violência ou coação em sua liberdade de locomoção. A banca mistura casa e sigilo: mandado judicial para entrada é diferente de autorização para interceptação telefônica, e cada um tem requisitos próprios. Na dúvida, identifique o direito atingido e o instrumento previsto na Constituição.",
     "artigos": [
-     "CF-5"
+     "CF-5-XI",
+     "CF-5-IX",
+     "CF-5-LXVIII"
+    ]
+   },
+   {
+    "titulo": "Direitos não são absolutos",
+    "texto_md": "Nenhum direito fundamental é absoluto. A própria Constituição admite restrições, desde que previstas em lei, justificadas por outro direito ou interesse constitucional e aplicadas sem arbitrariedade. O teste que a prova costuma cobrar é de proporcionalidade: a medida era necessária? Era adequada? Havia meio menos gravoso? Um exemplo é a liberdade de expressão, que não protege discurso de ódio nem a divulgação de informações sigilosas. Outro é a inviolabilidade da casa, que cede diante de flagrante ou socorro. Quando a questão disser que um direito 'nunca' pode ser restringido, desconfie: a regra é a proteção, mas as exceções existem e precisam estar na Constituição ou em lei compatível com ela. Guardar essa ideia evita alternativas extremadas.",
+    "artigos": [
+     "CF-5",
+     "CF-5-XI"
+    ]
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "A VUNESP apresenta um caso curto e pede a alternativa correta. O caminho é: (1) identificar o direito em jogo; (2) verificar se houve consentimento, ordem judicial ou situação de urgência; (3) comparar com o inciso correspondente. Em domicílio, separe o motivo da entrada e o horário. Em sigilo, verifique se há ordem judicial e finalidade constitucional. Em processo administrativo, verifique contraditório e ampla defesa. Não responda por impressão: a Constituição usa palavras precisas, e a diferença entre 'durante o dia' e 'a qualquer tempo' decide a questão.",
+    "artigos": [
+     "CF-5-XI",
+     "CF-5-LV"
     ]
    }
   ],
   "exemplo_resolvido": {
-   "enunciado": "Policial é chamado para flagrante em uma casa e, na mesma diligência, precisa entrar em outra casa em cumprimento de ordem judicial, à noite. A resposta correta diferencia as duas situações.",
+   "enunciado": "Policial precisa entrar em duas casas à noite: em uma há flagrante; na outra, apenas ordem judicial. Como aplicar o art. 5º?",
    "passo_a_passo": [
-    "1) Identifique o motivo da entrada em cada casa: flagrante em uma, determinação judicial na outra.",
-    "2) Aplique o art. 5º, XI: flagrante não tem restrição de horário; determinação judicial só vale durante o dia.",
-    "3) Conclua: no imóvel do flagrante a entrada é possível à noite; no imóvel do mandado, não."
+    "1) Identifique o motivo da entrada em cada imóvel.",
+    "2) Lembre que flagrante, desastre e socorro não têm limite de horário.",
+    "3) Lembre que a determinação judicial só autoriza entrada durante o dia."
    ],
    "questao_id": "tjsp-2025-031"
   },
-  "erro_comum": "Decorar 'à noite ninguém entra' e esquecer que o flagrante, o desastre e o socorro podem justificar entrada noturna. A restrição de horário atinge apenas a determinação judicial; entrar por mandado à noite é ilegal.",
+  "erro_comum": "Decorar que 'à noite ninguém entra' e aplicar a restrição a qualquer caso. A limitação de horário atinge apenas a entrada por determinação judicial.",
   "pegadinhas": [
-   "Trocar 'determinação judicial' por 'ordem policial': só a judicial autoriza entrada sem consentimento.",
-   "Achar que o flagrante só vale de dia: a Constituição não impõe horário ao flagrante."
+   "Trocar ordem judicial por ordem policial.",
+   "Achar que o flagrante só vale de dia."
   ],
-  "resumo": "A casa é asilo inviolável, mas a Constituição permite entrada sem consentimento em flagrante, desastre, socorro e, durante o dia, por ordem judicial. Só a ordem judicial tem limite de horário; o flagrante vale de dia e de noite. Em prova, separe o motivo da entrada em cada imóvel antes de responder.",
+  "resumo": "O art. 5º protege vida, liberdade, igualdade, legalidade, casa, sigilo e locomoção. Em casa, só a determinação judicial tem limite de horário. Em sigilo, a interceptação exige ordem judicial e finalidade constitucional.",
   "flashcards": [
    {
-    "frente": "Quais são as quatro exceções à inviolabilidade da casa?",
+    "frente": "Quatro exceções à inviolabilidade da casa",
     "verso": "Flagrante, desastre, socorro e determinação judicial durante o dia."
    },
    {
-    "frente": "Qual exceção tem limite de horário?",
-    "verso": "A determinação judicial: somente durante o dia."
+    "frente": "Interceptação telefônica exige o quê?",
+    "verso": "Ordem judicial, para investigação criminal ou instrução penal."
    },
    {
-    "frente": "Habeas corpus e habeas data são gratuitos?",
-    "verso": "Sim, por expressa previsão constitucional."
+    "frente": "Devido processo legal está em qual inciso?",
+    "verso": "LIV, com contraditório e ampla defesa no LV."
    }
   ],
   "questoes_relacionadas": [
    "tjsp-2025-031",
    "tjsp-2025-032",
    "tjsp-2025-033",
-   "tjsp-2025-034"
+   "tjsp-2025-034",
+   "tjsp-2025-035"
   ],
   "artigos_citados": [
-   "CF-5"
+   "CF-5",
+   "CF-5-XI",
+   "CF-5-IX",
+   "CF-5-LV",
+   "CF-5-LXVIII"
+  ],
+  "fonte": "CF/88 (Câmara dos Deputados) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+ },
+ {
+  "id": "dir-const-art5-remedios",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Constitucional",
+  "topico": "Direitos e garantias fundamentais (art. 5º) — remédios",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Distinguir habeas corpus, habeas data, mandado de segurança e mandado de injunção.",
+   "Saber quando cabe ação popular e direito de petição.",
+   "Reconhecer a gratuidade de cada ação constitucional."
+  ],
+  "secoes": [
+   {
+    "titulo": "O que é remédio constitucional",
+    "texto_md": "Remédio constitucional é a ação prevista na Constituição para proteger um direito fundamental quando ele é ameaçado ou violado. Não é recurso, nem simples petição administrativa: é instrumento judicial com rito próprio. O art. 5º prevê habeas corpus, habeas data, mandado de segurança, mandado de injunção e ação popular; o direito de petição está no inciso XXXIV. A prova costuma dar uma situação e perguntar qual remédio cabe. Para acertar, identifique o direito lesado: liberdade de locomoção, acesso a informação pessoal, direito líquido e certo, falta de norma regulamentadora ou patrimônio público. Cada um tem um remédio diferente, e trocar o instrumento é o erro mais comum.",
+    "artigos": [
+     "CF-5",
+     "CF-5-XXXIV"
+    ]
+   },
+   {
+    "titulo": "Habeas corpus e habeas data",
+    "texto_md": "O habeas corpus (inciso LXVIII) protege a liberdade de locomoção: cabe quando alguém sofre violência ou coação por ilegalidade ou abuso de poder. Não serve para discutir pena pecuniária ou direito de visitas, salvo se houver reflexo direto na liberdade. O habeas data (inciso LXXII) assegura o conhecimento de informações relativas à pessoa do impetrante em registros públicos ou de entidades governamentais, bem como a retificação de dados. Não cabe para obter informação de terceiro ou para substituir ação de cobrança. Ambos são gratuitos, conforme o inciso LXXVII. A banca gosta de afirmar que habeas data serve para qualquer informação pública; não serve: é informação pessoal do impetrante.",
+    "artigos": [
+     "CF-5-LXVIII",
+     "CF-5-LXXII",
+     "CF-5-LXXVII"
+    ]
+   },
+   {
+    "titulo": "Mandado de segurança e injunção",
+    "texto_md": "O mandado de segurança (inciso LXIX) protege direito líquido e certo não amparado por habeas corpus ou habeas data, quando o responsável pela ilegalidade ou abuso é autoridade pública ou agente de pessoa jurídica no exercício de atribuições do poder público. O coletivo (inciso LXX) pode ser impetrado por partido político com representação no Congresso, organização sindical, entidade de classe ou associação legalmente constituída. O mandado de injunção (inciso LXXI) cabe quando a falta de norma regulamentadora torna inviável o exercício de direitos e liberdades constitucionais e das prerrogativas inerentes à nacionalidade, à soberania e à cidadania. Não confunda: segurança combate ato ilegal; injunção combate omissão legislativa.",
+    "artigos": [
+     "CF-5-LXIX",
+     "CF-5-LXX",
+     "CF-5-LXXI"
+    ]
+   },
+   {
+    "titulo": "Ação popular e direito de petição",
+    "texto_md": "A ação popular (inciso LXXIII) pode ser proposta por qualquer cidadão para anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural. O autor é isento de custas judiciais e do ônus da sucumbência, salvo comprovada má-fé. O direito de petição (inciso XXXIV, 'a') assegura a qualquer pessoa o direito de apresentar petição aos poderes públicos em defesa de direitos ou contra ilegalidade ou abuso de poder, independentemente de pagamento de taxas. A banca costuma trocar ação popular por ação civil pública: a popular é do cidadão; a civil pública é do Ministério Público e de outros legitimados.",
+    "artigos": [
+     "CF-5-LXXIII",
+     "CF-5-XXXIV"
+    ]
+   },
+   {
+    "titulo": "Gratuidade e legitimidade",
+    "texto_md": "A gratuidade não é igual para todos os remédios. Habeas corpus e habeas data são gratuitos por previsão expressa. A ação popular é gratuita, salvo comprovada má-fé. O mandado de segurança não tem essa gratuidade constitucional, embora a lei processual possa prever benefícios. A legitimidade também muda: habeas corpus e habeas data podem ser impetrados por qualquer pessoa física ou jurídica, em favor próprio ou de terceiro, e o Ministério Público pode atuar. O mandado de segurança individual é da pessoa lesada; o coletivo exige partido com representação no Congresso, sindicato, entidade de classe ou associação constituída há pelo menos um ano. A ação popular exige cidadão no gozo dos direitos políticos. A banca troca esses requisitos com frequência, por isso monte uma tabela mental antes de responder.",
+    "artigos": [
+     "CF-5-LXVIII",
+     "CF-5-LXXII",
+     "CF-5-LXXIII",
+     "CF-5-LXX"
+    ]
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "Leia o caso e procure o direito atingido. Liberdade de locomoção: habeas corpus. Informação pessoal: habeas data. Direito líquido e certo contra autoridade: mandado de segurança. Falta de lei regulamentadora: mandado de injunção. Ato lesivo ao patrimônio público por cidadão: ação popular. Depois verifique a gratuidade: habeas corpus e habeas data são gratuitos; ação popular é gratuita salvo má-fé; mandado de segurança não é gratuito. Por fim, confira a legitimidade: pessoa física, partido, sindicato, associação ou cidadão. Esses três passos resolvem a maior parte das questões.",
+    "artigos": [
+     "CF-5-LXVIII",
+     "CF-5-LXXII",
+     "CF-5-LXIX",
+     "CF-5-LXXIII"
+    ]
+   }
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "Sobre ações constitucionais, qual alternativa está correta quanto a gratuidade e legitimidade?",
+   "passo_a_passo": [
+    "1) Identifique o remédio e o direito protegido.",
+    "2) Confira a gratuidade prevista na Constituição.",
+    "3) Confira quem pode propor cada ação."
+   ],
+   "questao_id": "tjsp-2025-032"
+  },
+  "erro_comum": "Achar que todo remédio constitucional é gratuito. Habeas corpus e habeas data são gratuitos; mandado de segurança não é; ação popular é gratuita salvo má-fé.",
+  "pegadinhas": [
+   "Usar habeas data para pedir informação de terceiro.",
+   "Confundir ação popular com ação civil pública."
+  ],
+  "resumo": "Habeas corpus protege locomoção; habeas data, informação pessoal; mandado de segurança, direito líquido e certo; injunção, omissão legislativa; ação popular, patrimônio público. A gratuidade varia e a legitimidade é específica de cada remédio.",
+  "flashcards": [
+   {
+    "frente": "Remédio para falta de norma regulamentadora",
+    "verso": "Mandado de injunção."
+   },
+   {
+    "frente": "Quem pode propor ação popular?",
+    "verso": "Qualquer cidadão."
+   },
+   {
+    "frente": "Mandado de segurança é gratuito?",
+    "verso": "Não; habeas corpus e habeas data são."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-032",
+   "tjsp-2025-033",
+   "tjsp-2025-034",
+   "tjsp-2025-035"
+  ],
+  "artigos_citados": [
+   "CF-5",
+   "CF-5-LXVIII",
+   "CF-5-LXXII",
+   "CF-5-LXIX",
+   "CF-5-LXXIII",
+   "CF-5-XXXIV"
   ],
   "fonte": "CF/88 (Câmara dos Deputados) + VUNESP TJSP2503",
   "revisado": false,
@@ -193,46 +341,55 @@
   "id": "dir-legis-tjsp",
   "materia": "Conhecimentos em Direito",
   "assunto": "Legislação interna (TJSP)",
-  "topico": "Deveres, penalidades e rotina do escrevente",
+  "topico": "Deveres, proibições e penalidades do servidor do TJSP",
   "edital_ref": "estrutura derivada — validar",
   "estrutura_derivada": true,
   "objetivos": [
-   "Conhecer os deveres e proibições do servidor estadual.",
-   "Entender as penalidades disciplinares.",
-   "Saber como a rotina do escrevente aparece na prova."
+   "Conhecer os deveres do funcionário no Estatuto estadual.",
+   "Diferenciar proibições e penalidades.",
+   "Aplicar a rotina do escrevente às normas da Corregedoria."
   ],
   "secoes": [
    {
     "titulo": "Por que estudar a legislação interna",
-    "texto_md": "O cargo de escrevente é regido por normas próprias do Tribunal de Justiça de São Paulo. A principal é a Lei 10.261/68, o Estatuto dos Funcionários Públicos Civis do Estado. Além dela, o Tribunal edita normas de organização judiciária e a Corregedoria Geral da Justiça edita as Normas de Serviço (NSCGJ). A prova cobra tanto o Estatuto quanto a rotina de cartório: prazos, assinatura de atos, organização de autos e atendimento ao público. Não é preciso decorar todos os artigos, mas é essencial saber onde procurar e distinguir dever, proibição e penalidade.",
+    "texto_md": "O escrevente é servidor do Tribunal de Justiça de São Paulo e responde a um regime próprio. A base principal é a Lei 10.261/68, o Estatuto dos Funcionários Públicos Civis do Estado. Ao lado dela, o Tribunal edita normas de organização judiciária, e a Corregedoria Geral da Justiça edita as Normas de Serviço (NSCGJ), que organizam o dia a dia das serventias. A prova cobra tanto o texto do Estatuto quanto a rotina de cartório: prazos, assinatura de atos, organização de autos e atendimento ao público. Não é preciso decorar todos os artigos; é preciso saber onde cada assunto está e distinguir dever, proibição e penalidade. Esse mapa mental evita confundir uma falta funcional com um crime ou com uma simples irregularidade.",
     "artigos": [
-     "L10261-30"
+     "L10261-241"
     ]
    },
    {
-    "titulo": "Deveres e proibições",
-    "texto_md": "O Estatuto lista deveres do funcionário, como exercer com zelo e dedicação as atribuições do cargo, ser leal às instituições, observar as normas legais e regulamentares, atender ao público com urbanidade e guardar sigilo sobre assuntos da repartição. Também lista proibições, como ausentar-se do serviço durante o expediente sem autorização, utilizar pessoal ou recursos materiais da repartição em serviços particulares e receber vantagem indevida. A diferença entre dever e proibição é simples: o dever manda fazer; a proibição manda não fazer. A violação de qualquer dos dois pode gerar responsabilidade administrativa, sem prejuízo da civil e da penal. Na prática do cartório, o sigilo e a urbanidade aparecem muito: o escrevente vê dados de processos e atende pessoas em situação de vulnerabilidade. Vazar informação ou tratar mal o público pode gerar reclamação e procedimento disciplinar.",
+    "titulo": "Os deveres do art. 241",
+    "texto_md": "O art. 241 lista os deveres do funcionário. Entre eles: ser assíduo e pontual; cumprir as ordens superiores, representando quando forem manifestamente ilegais; desempenhar com zelo e presteza os trabalhos de que for incumbido; guardar sigilo sobre os assuntos da repartição, especialmente sobre despachos, decisões ou providências; representar aos superiores sobre irregularidades de que tiver conhecimento; e tratar com urbanidade os companheiros de serviço e o público. A lógica é simples: o dever manda fazer. A assiduidade e a pontualidade são cobradas em situações de falta ao serviço; o sigilo, em vazamento de informação; a urbanidade, em conflito com o público. Quando a questão descrever uma omissão do servidor, verifique se havia dever específico de agir.",
     "artigos": [
-     "L10261-30"
+     "L10261-241"
     ]
    },
    {
-    "titulo": "Penalidades disciplinares",
-    "texto_md": "As penalidades previstas no Estatuto vão da advertência à demissão, passando por suspensão e multa. A aplicação depende da gravidade da falta e do procedimento adequado, com direito de defesa. A advertência é a mais leve; a suspensão afasta o servidor do serviço por determinado período; a demissão rompe o vínculo. A multa pode ser aplicada em certos casos, inclusive quando a suspensão é convertida. O candidato deve saber que a penalidade não se confunde com a sanção civil ou penal: o mesmo fato pode gerar consequências nas três esferas. A banca costuma perguntar qual penalidade cabe em uma situação concreta e se é necessária sindicância ou processo administrativo.",
+    "titulo": "As proibições dos arts. 242 e 243",
+    "texto_md": "O art. 242 proíbe, entre outras condutas, retirar documentos da repartição sem permissão da autoridade competente e referir-se de forma depreciativa às autoridades ou aos atos da Administração em informação, parecer ou meio de divulgação, ressalvada a apreciação doutrinária em trabalho assinado. O art. 243 traz outras vedações, como fazer contratos comerciais com o Governo em benefício próprio e participar da administração de empresas que mantenham relações com o Estado. A diferença em relação ao art. 241 é de direção: o dever impõe uma conduta; a proibição veda outra. A violação de qualquer dos dois pode gerar responsabilidade administrativa, sem prejuízo da civil e da penal. Na rotina do cartório, retirar autos ou documentos sem autorização é falta grave, mesmo que o servidor alegue boa intenção.",
     "artigos": [
-     "L10261-30"
+     "L10261-242",
+     "L10261-243"
     ]
    },
    {
-    "titulo": "Normas da Corregedoria (NSCGJ)",
-    "texto_md": "As NSCGJ organizam o dia a dia das serventias: autuação, numeração, prazos, carga, vista dos autos, certidões e comunicação de atos. Uma questão típica pergunta quem deve assinar um ofício de comunicação ao Poder Executivo. A resposta depende da norma interna: atos direcionados a autoridades podem exigir assinatura do juiz, não do escrevente. Como a NSCGJ não está na base legal federal/estadual ingerida, a explicação deve ser marcada como 'sem artigo aplicável na base' e conferida na fonte oficial. O importante, na prova, é identificar a competência para assinar e a formalidade do ato.",
+    "titulo": "As penalidades do art. 251",
+    "texto_md": "O art. 251 lista as penas disciplinares: repreensão, suspensão, multa, demissão, demissão a bem do serviço público e cassação de aposentadoria ou disponibilidade. Não existe 'advertência' nessa lista; a pena mais leve é a repreensão. A suspensão afasta o servidor do exercício por determinado período; a multa é sanção pecuniária; a demissão rompe o vínculo; a demissão a bem do serviço público é mais grave e tem efeitos próprios; a cassação atinge aposentadoria ou disponibilidade. A aplicação exige procedimento com defesa, e a penalidade não se confunde com a sanção penal. A banca costuma apresentar uma falta e perguntar a pena cabível, ou afirmar que a advertência é a primeira pena: essa é a pegadinha mais comum.",
+    "artigos": [
+     "L10261-251"
+    ]
+   },
+   {
+    "titulo": "NSCGJ e rotina do escrevente",
+    "texto_md": "As NSCGJ regulam autuação, numeração, prazos, carga, vista dos autos, certidões e comunicação de atos. Uma questão típica pergunta quem deve assinar ofício de comunicação de decisão judicial direcionado a autoridade. A resposta depende da norma interna: atos direcionados a autoridades podem exigir assinatura do juiz, não do escrevente. Como as NSCGJ não estão na base legal ingerida, a resposta deve ser marcada como 'sem artigo aplicável na base' e conferida na fonte oficial. O importante, na prova, é identificar a competência para assinar e a formalidade do ato. O escrevente elabora, confere e encaminha, mas não assume competência que a norma atribui ao juiz.",
     "artigos": []
    },
    {
     "titulo": "Como a prova cobra",
-    "texto_md": "A VUNESP mistura Estatuto e rotina. Leia o enunciado e separe: (1) é caso de dever, proibição ou penalidade? (2) a norma é o Estatuto (Lei 10.261/68) ou a NSCGJ? (3) quem é competente para praticar o ato? Se a questão fala de assinatura de ofício a autoridade, desconfie de alternativa que atribui a tarefa ao escrevente sem previsão. Se fala de retorno ao serviço por decisão judicial, lembre da reintegração. Se fala de vantagem indevida, lembre da improbidade e da esfera penal.",
+    "texto_md": "Leia o enunciado e separe três perguntas: (1) é dever, proibição ou penalidade? (2) a norma é o Estatuto ou a NSCGJ? (3) quem é competente para o ato? Se a questão falar de retorno ao serviço por decisão judicial, lembre da reintegração do art. 30. Se falar de vantagem indevida, lembre da improbidade e da esfera penal. Se falar de assinatura de ofício a autoridade, desconfie da alternativa que atribui a tarefa ao escrevente sem previsão. Se falar de pena, lembre que a mais leve é repreensão, não advertência. Com esse roteiro, a alternativa correta costuma aparecer sem decoreba.",
     "artigos": [
-     "L10261-30"
+     "L10261-30",
+     "L10261-251"
     ]
    }
   ],
@@ -245,24 +402,24 @@
    ],
    "questao_id": "tjsp-2025-046"
   },
-  "erro_comum": "Achar que o escrevente pode assinar qualquer ofício porque elaborou o documento. A competência para assinar depende da norma e do destinatário, e ato privativo do juiz não pode ser delegado ao servidor.",
+  "erro_comum": "Achar que a primeira pena é advertência. O art. 251 começa pela repreensão, e a lista não inclui advertência. Também é erro supor que o escrevente pode assinar qualquer ofício porque o elaborou.",
   "pegadinhas": [
-   "Confundir penalidade administrativa com sanção penal.",
+   "Trocar repreensão por advertência.",
    "Atribuir ao escrevente ato privativo do juiz."
   ],
-  "resumo": "A Lei 10.261/68 trata de deveres, proibições e penalidades; as NSCGJ tratam da rotina das serventias. Dever manda fazer, proibição manda não fazer, e a violação pode gerar advertência, suspensão, multa ou demissão. Atos direcionados a autoridades podem exigir assinatura do juiz, e o sigilo funcional é dever permanente, cuja violação sujeita o servidor a procedimento disciplinar.",
+  "resumo": "O art. 241 lista deveres (assiduidade, zelo, sigilo, urbanidade); os arts. 242 e 243 listam proibições. O art. 251 prevê repreensão, suspensão, multa, demissão, demissão a bem do serviço e cassação. As NSCGJ regulam a rotina e a competência para assinar atos.",
   "flashcards": [
    {
-    "frente": "Principal estatuto do servidor estadual",
-    "verso": "Lei 10.261/68."
+    "frente": "Primeira pena do art. 251",
+    "verso": "Repreensão."
    },
    {
-    "frente": "O que as NSCGJ regulam?",
-    "verso": "A rotina das serventias: autos, prazos, certidões e comunicação de atos."
+    "frente": "O que o art. 241 impõe sobre sigilo?",
+    "verso": "Guardar sigilo sobre assuntos da repartição, despachos e decisões."
    },
    {
-    "frente": "Penalidade mais grave",
-    "verso": "Demissão."
+    "frente": "Quem assina ofício a autoridade?",
+    "verso": "Depende da NSCGJ; em regra, o juiz."
    }
   ],
   "questoes_relacionadas": [
@@ -273,6 +430,10 @@
    "tjsp-2025-046"
   ],
   "artigos_citados": [
+   "L10261-241",
+   "L10261-242",
+   "L10261-243",
+   "L10261-251",
    "L10261-30"
   ],
   "fonte": "Lei 10.261/68 (ALESP) + NSCGJ (fonte oficial) + VUNESP TJSP2503",
@@ -321,6 +482,14 @@
     "artigos": [
      "CPC-218",
      "CPC-219"
+    ]
+   },
+   {
+    "titulo": "Atos das partes e atos do juiz",
+    "texto_md": "Nem todo ato processual segue a mesma regra de horário. Os atos das partes, como petições e recursos, são praticados por meio eletrônico e podem ser protocolados até as 24 horas do último dia do prazo, conforme o art. 213. Já os atos do juiz e dos auxiliares da justiça, como audiências, citações e penhoras, seguem o art. 212. A distinção importa porque a banca pode afirmar que uma petição protocolada às 22 horas é intempestiva: não é, se o protocolo é eletrônico e o prazo terminava naquele dia. Do mesmo modo, uma audiência marcada para as 21 horas não é válida pela regra geral, salvo se começou antes das 20 horas e o adiamento prejudicar a diligência. Separar o sujeito do ato e o meio utilizado é o que resolve a questão.",
+    "artigos": [
+     "CPC-212",
+     "CPC-213"
     ]
    },
    {
@@ -412,6 +581,17 @@
     "titulo": "Prevaricação e condescendência",
     "texto_md": "A prevaricação (art. 319) ocorre quando o funcionário retarda ou deixa de praticar ato de ofício, ou o pratica contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal. O elemento subjetivo é o interesse pessoal: sem ele, o fato pode ser outro crime ou mera irregularidade administrativa. A condescendência criminosa (art. 320) ocorre quando o funcionário deixa de responsabilizar subordinado que cometeu infração no exercício do cargo ou, quando lhe falta competência, não leva o fato ao conhecimento da autoridade competente. O verbo é deixar de responsabilizar; o subordinado já cometeu a infração. Não se exige interesse pessoal. É comum a banca trocar os dois: prevaricação tem 'para satisfazer interesse pessoal'; condescendência é omissão em relação a subordinado.",
     "artigos": [
+     "CP-319",
+     "CP-320"
+    ]
+   },
+   {
+    "titulo": "Penas e efeitos da condenação",
+    "texto_md": "As penas dos crimes funcionais variam conforme o tipo. O peculato tem pena de reclusão de 2 a 12 anos e multa; a concussão, de reclusão de 2 a 8 anos e multa; a corrupção passiva, de reclusão de 2 a 12 anos e multa; a prevaricação, de detenção de 3 meses a 1 ano e multa; a condescendência criminosa, de detenção de 15 dias a 1 mês ou multa. Além da pena, a condenação pode gerar a perda do cargo, função ou emprego público, quando a pena privativa de liberdade for superior a quatro anos ou quando o crime for praticado com abuso de poder ou violação de dever. O candidato não precisa decorar todas as penas, mas deve saber que a lei prevê efeitos específicos e que a esfera administrativa corre em paralelo. A prova costuma cobrar mais a tipificação do que a dosimetria.",
+    "artigos": [
+     "CP-312",
+     "CP-316",
+     "CP-317",
      "CP-319",
      "CP-320"
     ]
@@ -522,6 +702,15 @@
      "CPP-252",
      "CPP-253",
      "CPP-254"
+    ]
+   },
+   {
+    "titulo": "Flagrante e audiência de custódia",
+    "texto_md": "O flagrante ocorre quando alguém é encontrado cometendo a infração, acaba de cometê-la, é perseguido logo após o crime ou é encontrado com instrumentos ou objetos que façam presumir ser o autor. Qualquer do povo pode prender em flagrante, e a autoridade policial também. Depois da prisão, o preso deve ser apresentado ao juiz em até 24 horas, para a audiência de custódia, em que se verifica a legalidade da prisão, a necessidade da preventiva e eventuais maus-tratos. O inquérito continua mesmo com o preso solto. A banca costuma perguntar se o delegado pode relaxar a prisão: não pode; o relaxamento é decisão judicial. Também cobra a diferença entre flagrante e preventiva: o primeiro é medida cautelar de quem acabou de cometer o crime; a segunda exige decisão fundamentada e requisitos próprios.",
+    "artigos": [
+     "CPP-301",
+     "CPP-302",
+     "CPP-306"
     ]
    },
    {
