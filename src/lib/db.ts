@@ -14,6 +14,10 @@ export interface RevisaoRow {
   ultimaEm: number;
   erros: number;
   acertos: number;
+  /** 1 chute, 2 inseguro, 3 certeza (última resposta) */
+  confianca?: number;
+  /** errou com confiança 3: prioridade máxima na fila */
+  erroConfiante?: boolean;
 }
 
 export interface ExplicacaoIaRow {

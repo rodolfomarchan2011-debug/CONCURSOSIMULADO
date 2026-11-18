@@ -8,6 +8,7 @@ import { QuestionBody } from "@/components/QuestionBody";
 import { ExplicacaoBox } from "@/components/ExplicacaoBox";
 import { ASSUNTOS, contextoDa, questoes } from "@/lib/banco";
 import { sortearTreino } from "@/lib/selecao";
+import { registrarResposta } from "@/lib/revisao";
 import type { Letra, Questao } from "@/lib/types";
 import { cn } from "@/lib/cn";
 
@@ -18,6 +19,7 @@ export function TreinoClient() {
   const [lista, setLista] = useState<Questao[]>([]);
   const [indice, setIndice] = useState(0);
   const [selecionada, setSelecionada] = useState<Letra | null>(null);
+  const [confianca, setConfianca] = useState<1 | 2 | 3 | null>(null);
   const [revelado, setRevelado] = useState(false);
   const [acertos, setAcertos] = useState(0);
   const [respondidas, setRespondidas] = useState(0);
@@ -36,15 +38,23 @@ export function TreinoClient() {
   function responder(letra: Letra) {
     if (revelado || !questao) return;
     setSelecionada(letra);
+  }
+
+  function confirmar(nivel: 1 | 2 | 3) {
+    if (!questao || !selecionada || revelado) return;
+    setConfianca(nivel);
     setRevelado(true);
     setRespondidas((n) => n + 1);
-    if (letra === questao.correta) setAcertos((n) => n + 1);
+    const acertou = selecionada === questao.correta;
+    if (acertou) setAcertos((n) => n + 1);
+    void registrarResposta(questao.id, acertou, nivel);
   }
 
   function proxima() {
     if (indice + 1 >= lista.length) return;
     setIndice((i) => i + 1);
     setSelecionada(null);
+    setConfianca(null);
     setRevelado(false);
   }
 
@@ -52,6 +62,7 @@ export function TreinoClient() {
     setLista(sortearTreino(questoes, assunto === "todas" ? undefined : assunto));
     setIndice(0);
     setSelecionada(null);
+    setConfianca(null);
     setRevelado(false);
     setAcertos(0);
     setRespondidas(0);
@@ -66,12 +77,16 @@ export function TreinoClient() {
         e.preventDefault();
         responder(letra);
       }
+      if (!revelado && selecionada && ["1", "2", "3"].includes(e.key)) {
+        e.preventDefault();
+        confirmar(Number(e.key) as 1 | 2 | 3);
+      }
       if (e.key === "ArrowRight" && revelado) proxima();
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [revelado, indice, lista.length, questao]);
+  }, [revelado, indice, lista.length, questao, selecionada]);
 
   const fim = revelado && indice + 1 >= lista.length;
 
@@ -160,6 +175,10 @@ export function TreinoClient() {
 
             {revelado ? (
               <div className="space-y-3 border-t border-ink-100 pt-4">
+                <p className="text-[11px] text-ink-500">
+                  Confiança declarada:{" "}
+                  {confianca === 1 ? "chute" : confianca === 2 ? "inseguro" : "certeza"}
+                </p>
                 <ExplicacaoBox questao={questao} escolha={selecionada} />
 
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -177,9 +196,38 @@ export function TreinoClient() {
                   )}
                 </div>
               </div>
+            ) : selecionada ? (
+              <div className="space-y-3 border-t border-ink-100 pt-4">
+                <p className="text-sm font-semibold text-ink-800">
+                  Como você chegou nessa resposta?
+                </p>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  {[
+                    { n: 1 as const, titulo: "Chute", texto: "sem base" },
+                    { n: 2 as const, titulo: "Inseguro", texto: "eliminei algumas" },
+                    { n: 3 as const, titulo: "Certeza", texto: "sei o fundamento" },
+                  ].map((c) => (
+                    <button
+                      key={c.n}
+                      type="button"
+                      onClick={() => confirmar(c.n)}
+                      className={buttonClass("secondary", "flex-col items-start px-3 py-2 text-left")}
+                    >
+                      <span className="text-sm font-semibold">
+                        {c.n}) {c.titulo}
+                      </span>
+                      <span className="text-[11px] font-normal text-ink-500">{c.texto}</span>
+                    </button>
+                  ))}
+                </div>
+                <p className="text-[11px] text-ink-400">
+                  Atalhos: 1, 2 ou 3. Errar com certeza coloca a questão no topo da revisão.
+                </p>
+              </div>
             ) : (
               <p className="border-t border-ink-100 pt-3 text-xs text-ink-400">
-                Selecione uma alternativa (ou tecle A–E). O gabarito aparece na hora.
+                Selecione uma alternativa (ou tecle A–E) e diga sua confiança. O gabarito aparece
+                na hora.
               </p>
             )}
           </Card>

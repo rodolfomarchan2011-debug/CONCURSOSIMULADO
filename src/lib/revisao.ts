@@ -43,6 +43,7 @@ export async function registrarErros(ids: string[]): Promise<number> {
 export async function registrarResposta(
   id: string,
   acertou: boolean,
+  confianca?: 1 | 2 | 3,
 ): Promise<RevisaoRow> {
   const agora = Date.now();
   const atual = await obterRevisao(id);
@@ -61,6 +62,8 @@ export async function registrarResposta(
     ultimaEm: agora,
     erros: base.erros + (acertou ? 0 : 1),
     acertos: base.acertos + (acertou ? 1 : 0),
+    confianca,
+    erroConfiante: !acertou && confianca === 3,
   };
   await salvarRevisao(atualizada);
   return atualizada;
@@ -71,7 +74,12 @@ export async function filaDevidas(limite = 20): Promise<RevisaoRow[]> {
   const todas = await listarRevisoes();
   return todas
     .filter((r) => r.proximaEm <= agora)
-    .sort((a, b) => a.proximaEm - b.proximaEm)
+    .sort((a, b) => {
+      if (Boolean(a.erroConfiante) !== Boolean(b.erroConfiante)) {
+        return a.erroConfiante ? -1 : 1;
+      }
+      return a.proximaEm - b.proximaEm;
+    })
     .slice(0, limite);
 }
 

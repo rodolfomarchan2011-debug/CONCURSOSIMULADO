@@ -44,6 +44,8 @@ export interface Resposta {
   numero: number;
   letra: Letra;
   tempoMs?: number;
+  /** 1 = chute, 2 = inseguro, 3 = certeza */
+  confianca?: 1 | 2 | 3;
 }
 
 export type Modo = "simulado" | "treino";
@@ -62,6 +64,8 @@ export interface Sessao {
   modoEstudo?: boolean;
   /** IDs das questões sorteadas para esta sessão (permite retomar após recarregar). */
   questaoIds?: string[];
+  /** Confiança declarada por questão (1 chute, 2 inseguro, 3 certeza). */
+  confiancas?: Record<string, 1 | 2 | 3>;
 }
 
 export interface BlocoResumo {
