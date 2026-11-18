@@ -13,6 +13,7 @@ export interface Aula {
   assunto: string;
   topico: string;
   edital_ref: string;
+  estrutura_derivada: boolean;
   objetivos: string[];
   secoes: SecaoAula[];
   exemplo_resolvido: {
@@ -21,9 +22,11 @@ export interface Aula {
     questao_id: string;
   };
   pegadinhas: string[];
+  erro_comum: string;
   resumo: string;
   flashcards: { frente: string; verso: string }[];
   questoes_relacionadas: string[];
+  artigos_citados: string[];
   fonte: string;
   revisado: boolean;
   versao: number;

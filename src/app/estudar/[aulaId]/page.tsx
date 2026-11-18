@@ -87,6 +87,13 @@ export default async function AulaPage({
         ) : null}
       </Card>
 
+      {aula.erro_comum ? (
+        <Card className="space-y-2 border-amber-200 bg-amber-50/50">
+          <h2 className="text-lg font-semibold">Erro comum do candidato</h2>
+          <p className="text-sm leading-relaxed text-ink-700">{aula.erro_comum}</p>
+        </Card>
+      ) : null}
+
       {aula.pegadinhas.length ? (
         <Card className="space-y-2">
           <h2 className="flex items-center gap-2 text-lg font-semibold">
