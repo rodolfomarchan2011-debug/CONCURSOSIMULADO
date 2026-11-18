@@ -1,10 +1,15 @@
 import type { Banco, Contexto, Questao } from "./types";
 import raw from "@/data/banco.json";
+import topicos from "@/data/banco.topicos.json";
 import edital from "../../data/edital/tjsp2607.json";
 
 export const banco = raw as unknown as Banco;
 
-export const questoes: Questao[] = banco.questoes;
+const overlay = topicos as Record<string, string>;
+
+export const questoes: Questao[] = banco.questoes.map((q) =>
+  overlay[q.id] ? { ...q, topico: overlay[q.id] } : q,
+);
 
 export const porId: Record<string, Questao> = Object.fromEntries(
   banco.questoes.map((q) => [q.id, q]),

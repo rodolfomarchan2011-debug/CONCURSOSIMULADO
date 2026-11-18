@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, melhoria-pedagogica]
   pull_request:
 
 jobs:
@@ -20,4 +20,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec tsc --noEmit
       - run: pnpm test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tools/checar_citacoes.py
       - run: pnpm build

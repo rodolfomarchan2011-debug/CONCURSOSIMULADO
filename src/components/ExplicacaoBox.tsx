@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, ChevronDown, Loader2, Sparkles, XCircle } from "lucide-react";
 import type { Letra, Questao } from "@/lib/types";
 import { getExplicacaoV2 } from "@/lib/explicacaoV2";
+import { aulasDaQuestao } from "@/lib/aulas";
 import { obterExplicacao, streamTutor } from "@/lib/tutorStream";
 import { Badge } from "@/components/ui";
 import { TutorPanel } from "@/components/TutorPanel";
 import { cn } from "@/lib/cn";
+import Link from "next/link";
 
 /**
  * Feedback imediato. A tela já revela o gabarito nas alternativas; aqui fica
@@ -25,6 +27,7 @@ export function ExplicacaoBox({
   compacto?: boolean;
 }) {
   const exp = getExplicacaoV2(questao);
+  const aula = aulasDaQuestao(questao)[0];
   const acertou = escolha === questao.correta;
 
   const [texto, setTexto] = useState("");
@@ -154,6 +157,15 @@ export function ExplicacaoBox({
           ) : null}
         </div>
       )}
+
+      {aula ? (
+        <Link
+          href={`/estudar/${aula.id}`}
+          className="focus-ring inline-flex items-center gap-1 text-sm font-semibold text-brand-700"
+        >
+          📖 Estudar: {aula.topico}
+        </Link>
+      ) : null}
 
       {!compacto ? <TutorPanel questao={questao} escolha={escolha} /> : null}
     </div>

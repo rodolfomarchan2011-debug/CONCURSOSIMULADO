@@ -8,6 +8,8 @@ export interface Questao {
   bloco: string;
   materia: string;
   assunto: string;
+  /** Tópico do edital (overlay banco.topicos.json); opcional. */
+  topico?: string;
   contexto_id: string | null;
   enunciado: string;
   alternativas: Record<Letra, string>;

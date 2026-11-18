@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Lightbulb, RotateCcw, Shuffle, Target } from "lu
 import { Badge, Card, buttonClass } from "@/components/ui";
 import { QuestionBody } from "@/components/QuestionBody";
 import { ExplicacaoBox } from "@/components/ExplicacaoBox";
-import { ASSUNTOS, contextoDa, questoes } from "@/lib/banco";
+import { ASSUNTOS, contextoDa, porId, questoes } from "@/lib/banco";
 import { sortearTreino } from "@/lib/selecao";
 import { registrarResposta } from "@/lib/revisao";
 import type { Letra, Questao } from "@/lib/types";
@@ -25,9 +25,27 @@ export function TreinoClient() {
   const [respondidas, setRespondidas] = useState(0);
 
   useEffect(() => {
+    const ids = new URLSearchParams(window.location.search).get("ids");
+    if (ids) {
+      const selecionadas = ids
+        .split(",")
+        .map((id) => porId[id])
+        .filter(Boolean) as Questao[];
+      if (selecionadas.length) {
+        setLista(selecionadas);
+        setIndice(0);
+        setSelecionada(null);
+        setConfianca(null);
+        setRevelado(false);
+        setAcertos(0);
+        setRespondidas(0);
+        return;
+      }
+    }
     setLista(sortearTreino(questoes, assunto === "todas" ? undefined : assunto));
     setIndice(0);
     setSelecionada(null);
+    setConfianca(null);
     setRevelado(false);
     setAcertos(0);
     setRespondidas(0);

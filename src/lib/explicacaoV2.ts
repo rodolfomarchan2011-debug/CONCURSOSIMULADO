@@ -1,6 +1,7 @@
 import type { Letra, Questao } from "./types";
 import { getExplicacao, type Explicacao } from "./explicacoes";
 import raw from "@/data/explicacoes-v2.json";
+import rawD1 from "@/data/explicacoes-d1.json";
 
 export interface FundamentoLegal {
   lei: string;
@@ -21,9 +22,11 @@ export interface ExplicacaoV2 {
   confianca: number;
   revisado: boolean;
   versao: number;
+  /** true quando não há artigo na base e a fonte precisa ser conferida. */
+  verificar?: boolean;
 }
 
-const mapa = raw as Record<string, ExplicacaoV2>;
+const mapa = { ...(raw as Record<string, ExplicacaoV2>), ...(rawD1 as Record<string, ExplicacaoV2>) };
 
 function detectarLei(texto: string): string {
   const t = texto.toLowerCase();
