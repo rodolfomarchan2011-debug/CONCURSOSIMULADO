@@ -27,6 +27,8 @@ export interface Aula {
   flashcards: { frente: string; verso: string }[];
   questoes_relacionadas: string[];
   artigos_citados: string[];
+  regras_gramaticais?: string[];
+  exemplos_concretos?: string[];
   fonte: string;
   revisado: boolean;
   versao: number;

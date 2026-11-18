@@ -1,0 +1,81 @@
+{
+  "id": "lp-crase-regencia",
+  "materia": "Língua Portuguesa",
+  "assunto": "Interpretação de texto",
+  "topico": "Crase e regência verbal e nominal",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Aplicar a regra básica da crase sem decorar lista.",
+    "Reconhecer os casos em que a crase é proibida.",
+    "Escolher a preposição exigida pelo verbo ou nome."
+  ],
+  "secoes": [
+    {
+      "titulo": "A regra básica da crase",
+      "texto_md": "Crase é a fusão da preposição 'a' com o artigo 'a'. Só acontece quando o termo anterior exige a preposição e o termo seguinte admite o artigo feminino. O teste clássico é substituir o termo feminino por um masculino: se aparecer 'ao', há crase; se aparecer 'o', não há. Exemplo: 'Ele se referiu à obra' vira 'Ele se referiu ao livro', logo há crase. 'Ele assistiu à peça' vira 'Ele assistiu ao filme'. Já 'Ele entregou o documento a ela' não vira 'ao ela', então não há crase. Antes de palavra feminina que não admite artigo, como 'ela', 'esta', 'cada', 'quem', a crase é proibida.",
+      "artigos": []
+    },
+    {
+      "titulo": "Casos em que a crase é proibida",
+      "texto_md": "Não há crase antes de verbo ('começar a fazer'), antes de palavra masculina ('a pé', 'a cavalo'), antes de pronome pessoal ('a ela', 'a mim'), antes de palavra repetida ('cara a cara') e antes de 'uma' ('a uma hora'). Também não há crase antes de nome de cidade que não admite artigo: 'Vou a São Paulo' (volto de São Paulo), mas 'Vou à Bahia' (volto da Bahia). A banca explora esses casos com alternativas que colocam o acento onde ele não cabe. A dica é sempre testar o masculino e verificar se o termo seguinte aceita artigo.",
+      "artigos": []
+    },
+    {
+      "titulo": "Regência verbal",
+      "texto_md": "Regência é a relação de dependência entre um termo e seu complemento. Alguns verbos pedem preposição, outros não. 'Assistir' no sentido de ver pede 'a': 'assistir ao filme'. 'Aspirar' no sentido de desejar pede 'a': 'aspirar ao cargo'. 'Visar' no sentido de almejar pede 'a': 'visar ao lucro'. 'Obedecer' e 'desobedecer' pedem 'a'. 'Preferir' não pede preposição no complemento: 'prefiro café a chá', não 'prefiro mais café do que chá'. 'Implicar' no sentido de acarretar é transitivo direto: 'a medida implica aumento'. A prova cobra o verbo no contexto, não a lista solta.",
+      "artigos": []
+    },
+    {
+      "titulo": "Regência nominal",
+      "texto_md": "Nomes também exigem preposição. 'Acesso' pede 'a': 'acesso à informação'. 'Favorável' pede 'a': 'favorável à proposta'. 'Contrário' pede 'a': 'contrário à lei'. 'Dúvida' pede 'quanto a' ou 'sobre': 'dúvida quanto ao prazo'. 'Obediência' pede 'a': 'obediência às normas'. Quando o nome exige 'a' e o complemento é feminino com artigo, aparece a crase. É por isso que regência e crase andam juntas: sem saber a preposição, o candidato não sabe se o 'a' leva acento. A banca costuma trocar 'a' por 'há' ou 'à' na mesma frase para confundir.",
+      "artigos": []
+    },
+    {
+      "titulo": "Crase com nomes próprios e lugares",
+      "texto_md": "Com nomes próprios femininos, a crase depende do uso do artigo: 'Refiro-me à Maria' (uso artigo) e 'Refiro-me a Maria' (sem artigo). Com lugares, teste com 'volto de': 'volto da Bahia' → 'vou à Bahia'; 'volto de São Paulo' → 'vou a São Paulo'. Com 'casa' no sentido de lar, não há artigo: 'vou a casa'. Com 'terra' no sentido de chão firme, também não: 'descer a terra'. Já 'à terra' pode aparecer quando há determinação. A banca gosta de 'à distância', 'a distância', 'à noite', 'a noite': 'à noite' é locução feminina; 'a noite' pode ser o período como objeto direto.",
+      "artigos": []
+    },
+    {
+      "titulo": "Crase facultativa",
+      "texto_md": "Em alguns casos, a crase é facultativa. Antes de pronome possessivo feminino ('a minha casa' ou 'à minha casa'), antes de nome próprio feminino ('a Maria' ou 'à Maria') e depois de 'até' ('até a porta' ou 'até à porta'), as duas formas podem ser aceitas pela norma. Isso não significa que qualquer 'a' possa receber acento: a faculdade existe só nesses contextos. A banca costuma usar a crase facultativa para criar alternativa que parece errada, mas está correta, ou para justificar uma forma inadequada. Na dúvida, prefira a construção mais simples e verifique se o termo seguinte admite artigo. Se a questão pede a forma 'de acordo com a norma-padrão', tanto a com crase quanto a sem crase podem servir nesses casos.",
+      "artigos": []
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "Leia a frase e localize o 'a' suspeito. Pergunte: o termo anterior exige preposição? O termo seguinte aceita artigo feminino? Faça o teste do masculino. Se a resposta for sim aos dois, há crase. Depois verifique a regência do verbo ou nome: 'apelar' pede 'a' (apelar à justiça); 'acionar' é transitivo direto (acionar a polícia, sem crase); 'dispor' pede 'a' (dispor-se a ajudar, sem crase antes de verbo). A alternativa correta costuma ser a que combina regência e crase sem forçar nenhuma das duas.",
+      "artigos": []
+    }
+  ],
+  "regras_gramaticais": [
+    "Crase = preposição 'a' + artigo 'a'; teste substituindo por masculino ('ao').",
+    "Proibida antes de verbo, palavra masculina, pronome pessoal e 'uma'.",
+    "Regência verbal: assistir a, aspirar a, visar a, obedecer a.",
+    "Regência nominal: acesso a, favorável a, contrário a, obediência a."
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Assinale a alternativa que reescreve a fala seguindo a norma-padrão de regência e crase.",
+    "passo_a_passo": [
+      "1) 'Apelar' exige a preposição 'a'; 'justiça' é feminino e admite artigo.",
+      "2) Logo, 'apelarei à justiça' está correto.",
+      "3) 'Acionar' é transitivo direto: 'acionar a polícia', sem crase; 'à alguém' e 'à fazer' são impossíveis."
+    ],
+    "questao_id": "tjsp-2017-011"
+  },
+  "erro_comum": "Colocar crase antes de verbo ('à fazer') ou antes de palavra masculina, e esquecer que o verbo pode não exigir a preposição ('acionar a polícia').",
+  "pegadinhas": [
+    "Trocar 'a' por 'à' antes de verbo para parecer formal.",
+    "Usar 'à' com 'acionar', que é transitivo direto e não pede preposição."
+  ],
+  "resumo": "Crase é a fusão de 'a' + 'a', testada pelo masculino. Proibida antes de verbo, masculino, pronome pessoal e 'uma'. Regência define se o 'a' existe; crase define se ele recebe acento.",
+  "flashcards": [
+    { "frente": "Teste rápido da crase", "verso": "Substituir o termo feminino por masculino: se aparecer 'ao', há crase." },
+    { "frente": "Há crase antes de verbo?", "verso": "Não." },
+    { "frente": "'Assistir' no sentido de ver pede o quê?", "verso": "A preposição 'a': assistir ao filme." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-004", "tjsp-2025-005", "tjsp-2017-011", "tjsp-2025-014"],
+  "artigos_citados": [],
+  "fonte": "VUNESP TJSP2503/TJSP2017 + gramática normativa",
+  "revisado": false,
+  "versao": 1
+}

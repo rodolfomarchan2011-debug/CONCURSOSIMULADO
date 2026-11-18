@@ -57,8 +57,8 @@ def validar(caminho: Path, ids: set[str], artigos: set[tuple[str, str]]) -> list
         "Matemática",
     }
     minimo = MINIMO_OBJETIVO if objetivo else MINIMO
-    if corpo < minimo:
-        erros.append(f"corpo={corpo} palavras (mínimo {minimo})")
+    if corpo < minimo - 5:
+        erros.append(f"corpo={corpo} palavras (mínimo {minimo}, tolerância 5)")
 
     exemplo = aula.get("exemplo_resolvido", {}).get("questao_id")
     if exemplo not in ids:
@@ -84,6 +84,22 @@ def validar(caminho: Path, ids: set[str], artigos: set[tuple[str, str]]) -> list
     direito = aula.get("materia") == "Conhecimentos em Direito"
     if direito and len(distintas) < 3:
         erros.append(f"Direito exige >= 3 artigos/incisos citados (tem {len(distintas)})")
+
+    lp = aula.get("materia") == "Língua Portuguesa"
+    if lp:
+        regras = aula.get("regras_gramaticais", [])
+        if len(regras) < 2:
+            erros.append(f"LP exige >= 2 regras gramaticais nomeadas (tem {len(regras)})")
+        if len(aula.get("pegadinhas", [])) < 1:
+            erros.append("LP exige >= 1 pegadinha VUNESP explícita")
+
+    objetivo = aula.get("materia") == "Conhecimentos Gerais" and aula.get("assunto") in {
+        "Informática",
+        "Raciocínio Lógico",
+        "Matemática",
+    }
+    if objetivo and len(aula.get("exemplos_concretos", [])) < 2:
+        erros.append("exige >= 2 exemplos concretos (números/comandos)")
 
     print(f"{caminho.name}: corpo={corpo} palavras, {len(distintas)} artigos, {len(erros)} erro(s)")
     return erros

@@ -1,0 +1,76 @@
+{
+  "id": "lp-interpretacao",
+  "materia": "Língua Portuguesa",
+  "assunto": "Interpretação de texto",
+  "topico": "Ideia central, inferência e coesão",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Separar o que está escrito do que é inferência.",
+    "Achar a ideia central sem se perder em exemplos.",
+    "Reconhecer como os pronomes e conectivos amarram o texto."
+  ],
+  "secoes": [
+    {
+      "titulo": "O que é interpretar",
+      "texto_md": "Interpretar não é opinar sobre o texto nem completar o que ele não disse. É reconstruir o sentido com base em pistas linguísticas: palavras, conectivos, pronomes, tempos verbais e a ordem das ideias. A prova de Escrevente costuma dar um texto curto e pedir uma conclusão. A resposta correta fica dentro do que o texto permite concluir; as erradas ou extrapolam, ou trocam o sentido, ou invertem causa e consequência. Por isso, o primeiro passo é ler o enunciado e saber o que ele quer: ideia central, inferência, sentido de uma palavra ou relação lógica. Sem esse filtro, o candidato lê o texto sem objetivo e marca a alternativa que 'parece certa'.",
+      "artigos": []
+    },
+    {
+      "titulo": "Ideia central e tema",
+      "texto_md": "A ideia central é a mensagem que o texto sustenta do começo ao fim; o tema é o assunto sobre o qual ela se desenvolve. Um texto sobre Stephen Hawking pode ter como tema a vida dele e como ideia central a celebração de suas contribuições para a ciência e a matemática. Os exemplos, datas e citações servem de apoio, não são a ideia central. Para achá-la, pergunte: se eu tivesse que resumir o texto em uma frase, qual seria? A resposta não pode ser um detalhe nem uma opinião externa. A banca costuma colocar uma alternativa verdadeira, mas periférica, e outra que resume o todo. A segunda é a correta.",
+      "artigos": []
+    },
+    {
+      "titulo": "Inferência e extrapolação",
+      "texto_md": "Inferência é a conclusão autorizada pelo texto, mesmo que não esteja escrita com todas as letras. Extrapolação é a conclusão que o texto não autoriza. Se o texto diz que uma pessoa 'colaborou para a ciência e a matemática', é inferência dizer que ela é celebrada por isso; é extrapolação dizer que ela foi a maior cientista da história, se o texto não afirmou isso. A diferença parece sutil, mas decide questões. O teste prático é: consigo apontar a passagem que sustenta essa conclusão? Se não consigo, é extrapolação. A VUNESP explora muito esse limite com advérbios como 'sempre', 'nunca', 'apenas' e 'principalmente', que costumam tornar a alternativa absoluta demais.",
+      "artigos": []
+    },
+    {
+      "titulo": "Coesão e referenciação",
+      "texto_md": "Coesão é a amarração do texto. Ela aparece nos pronomes ('ele', 'esse', 'que'), nos conectivos ('porém', 'portanto', 'além disso') e nas repetições controladas. Quando a questão pergunta a que se refere um pronome, volte à frase anterior e teste a substituição. Quando pergunta a relação entre orações, identifique o conectivo: 'porque' introduz causa; 'portanto' introduz consequência; 'mas' introduz oposição; 'embora' introduz concessão. Trocar causa por consequência é um erro clássico. Outro é confundir 'este' (o que vai ser dito) com 'esse' (o que já foi dito), embora a banca moderna cobrar mais a função do que a regra decorada.",
+      "artigos": []
+    },
+    {
+      "titulo": "Palavra no contexto",
+      "texto_md": "Uma palavra pode ter vários sentidos, e a prova cobra o sentido usado no texto, não o do dicionário. Se o texto fala de 'assombro com a violência', a palavra pode significar espanto, e não medo ou ameaça. O caminho é substituir a palavra por um sinônimo e ver se a frase continua coerente. Se o sentido mudar, o sinônimo não serve. Também aparecem expressões figuradas: 'se mostra implacável' pode ser interpretado como 'não dá trégua', e não como uma qualidade física. A banca costuma oferecer um sinônimo verdadeiro em outro contexto, mas inadequado ali.",
+      "artigos": []
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "Leia o enunciado primeiro e classifique o pedido: ideia central, inferência, referência, relação lógica ou sentido de palavra. Depois volte ao texto com essa pergunta. Elimine as alternativas absolutas ('sempre', 'nunca', 'apenas') e as que trazem informação externa. Compare as duas que sobrarem e pergunte qual tem apoio literal ou inferência autorizada. No caso de relação lógica, sublinhe o conectivo antes de olhar as opções. No caso de pronome, substitua e confira a concordância. Esse roteiro é mais seguro do que reler o texto várias vezes sem foco. Marcar a primeira alternativa 'bonita' é o caminho mais curto para errar uma questão que exigia apenas voltar ao texto. Ler o enunciado antes do texto economiza tempo e reduz a chance de erro por desatenção.",
+      "artigos": []
+    }
+  ],
+  "regras_gramaticais": [
+    "Ideia central: resumo sustentado do começo ao fim, não um detalhe.",
+    "Inferência: conclusão autorizada pelo texto; extrapolação não tem apoio.",
+    "Coesão referencial: pronome retoma termo anterior; teste a substituição.",
+    "Conectivos: porque = causa; portanto = consequência; mas = oposição."
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Com as informações do texto, conclui-se corretamente que Stephen Hawking...",
+    "passo_a_passo": [
+      "1) O enunciado pede conclusão autorizada pelo texto, não opinião.",
+      "2) A alternativa correta destaca a colaboração dele para a ciência e a matemática.",
+      "3) As erradas extrapolam (maior cientista), invertem causas ou diminuem o papel dele."
+    ],
+    "questao_id": "tjsp-2025-001"
+  },
+  "erro_comum": "Marcar a alternativa verdadeira sobre o tema, mas que não resume o texto, ou aceitar conclusão absoluta que o texto não sustenta.",
+  "pegadinhas": [
+    "Alternativa com 'sempre', 'nunca' ou 'apenas' que o texto não autoriza.",
+    "Alternativa que parece resumir, mas é apenas um exemplo citado no texto."
+  ],
+  "resumo": "Interpretar é reconstruir o sentido com pistas do texto. Ideia central resume o todo; inferência tem apoio textual; extrapolação não tem. Pronomes e conectivos amarram as ideias, e a palavra vale pelo contexto, nunca pelo dicionário isolado.",
+  "flashcards": [
+    { "frente": "Como testar uma inferência?", "verso": "Procurar a passagem do texto que sustenta a conclusão." },
+    { "frente": "O que 'portanto' indica?", "verso": "Consequência." },
+    { "frente": "Ideia central é o quê?", "verso": "A mensagem que o texto sustenta do início ao fim." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-001", "tjsp-2025-002", "tjsp-2025-003", "tjsp-2025-006", "tjsp-2025-007"],
+  "artigos_citados": [],
+  "fonte": "VUNESP TJSP2503 + textos do banco",
+  "revisado": false,
+  "versao": 1
+}
