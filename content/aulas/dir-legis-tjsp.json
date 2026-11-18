@@ -1,0 +1,65 @@
+{
+  "id": "dir-legis-tjsp",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Legislação interna (TJSP)",
+  "topico": "Deveres, penalidades e rotina do escrevente",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Conhecer os deveres e proibições do servidor estadual.",
+    "Entender as penalidades disciplinares.",
+    "Saber como a rotina do escrevente aparece na prova."
+  ],
+  "secoes": [
+    {
+      "titulo": "Por que estudar a legislação interna",
+      "texto_md": "O cargo de escrevente é regido por normas próprias do Tribunal de Justiça de São Paulo. A principal é a Lei 10.261/68, o Estatuto dos Funcionários Públicos Civis do Estado. Além dela, o Tribunal edita normas de organização judiciária e a Corregedoria Geral da Justiça edita as Normas de Serviço (NSCGJ). A prova cobra tanto o Estatuto quanto a rotina de cartório: prazos, assinatura de atos, organização de autos e atendimento ao público. Não é preciso decorar todos os artigos, mas é essencial saber onde procurar e distinguir dever, proibição e penalidade.",
+      "artigos": ["L10261-30"]
+    },
+    {
+      "titulo": "Deveres e proibições",
+      "texto_md": "O Estatuto lista deveres do funcionário, como exercer com zelo e dedicação as atribuições do cargo, ser leal às instituições, observar as normas legais e regulamentares, atender ao público com urbanidade e guardar sigilo sobre assuntos da repartição. Também lista proibições, como ausentar-se do serviço durante o expediente sem autorização, utilizar pessoal ou recursos materiais da repartição em serviços particulares e receber vantagem indevida. A diferença entre dever e proibição é simples: o dever manda fazer; a proibição manda não fazer. A violação de qualquer dos dois pode gerar responsabilidade administrativa, sem prejuízo da civil e da penal. Na prática do cartório, o sigilo e a urbanidade aparecem muito: o escrevente vê dados de processos e atende pessoas em situação de vulnerabilidade. Vazar informação ou tratar mal o público pode gerar reclamação e procedimento disciplinar.",
+      "artigos": ["L10261-30"]
+    },
+    {
+      "titulo": "Penalidades disciplinares",
+      "texto_md": "As penalidades previstas no Estatuto vão da advertência à demissão, passando por suspensão e multa. A aplicação depende da gravidade da falta e do procedimento adequado, com direito de defesa. A advertência é a mais leve; a suspensão afasta o servidor do serviço por determinado período; a demissão rompe o vínculo. A multa pode ser aplicada em certos casos, inclusive quando a suspensão é convertida. O candidato deve saber que a penalidade não se confunde com a sanção civil ou penal: o mesmo fato pode gerar consequências nas três esferas. A banca costuma perguntar qual penalidade cabe em uma situação concreta e se é necessária sindicância ou processo administrativo.",
+      "artigos": ["L10261-30"]
+    },
+    {
+      "titulo": "Normas da Corregedoria (NSCGJ)",
+      "texto_md": "As NSCGJ organizam o dia a dia das serventias: autuação, numeração, prazos, carga, vista dos autos, certidões e comunicação de atos. Uma questão típica pergunta quem deve assinar um ofício de comunicação ao Poder Executivo. A resposta depende da norma interna: atos direcionados a autoridades podem exigir assinatura do juiz, não do escrevente. Como a NSCGJ não está na base legal federal/estadual ingerida, a explicação deve ser marcada como 'sem artigo aplicável na base' e conferida na fonte oficial. O importante, na prova, é identificar a competência para assinar e a formalidade do ato.",
+      "artigos": []
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "A VUNESP mistura Estatuto e rotina. Leia o enunciado e separe: (1) é caso de dever, proibição ou penalidade? (2) a norma é o Estatuto (Lei 10.261/68) ou a NSCGJ? (3) quem é competente para praticar o ato? Se a questão fala de assinatura de ofício a autoridade, desconfie de alternativa que atribui a tarefa ao escrevente sem previsão. Se fala de retorno ao serviço por decisão judicial, lembre da reintegração. Se fala de vantagem indevida, lembre da improbidade e da esfera penal.",
+      "artigos": ["L10261-30"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Escrevente elabora ofício de comunicação, direcionado ao chefe do Poder Executivo municipal, contendo decisão judicial. Quem deve assinar?",
+    "passo_a_passo": [
+      "1) Identifique a natureza do ato: ofício de comunicação de decisão judicial a autoridade.",
+      "2) Verifique a norma interna sobre competência para assinar atos direcionados a autoridades.",
+      "3) Conclua que o ofício deve ser assinado pelo juiz, não pelo escrevente."
+    ],
+    "questao_id": "tjsp-2025-046"
+  },
+  "erro_comum": "Achar que o escrevente pode assinar qualquer ofício porque elaborou o documento. A competência para assinar depende da norma e do destinatário, e ato privativo do juiz não pode ser delegado ao servidor.",
+  "pegadinhas": [
+    "Confundir penalidade administrativa com sanção penal.",
+    "Atribuir ao escrevente ato privativo do juiz."
+  ],
+  "resumo": "A Lei 10.261/68 trata de deveres, proibições e penalidades; as NSCGJ tratam da rotina das serventias. Dever manda fazer, proibição manda não fazer, e a violação pode gerar advertência, suspensão, multa ou demissão. Atos direcionados a autoridades podem exigir assinatura do juiz, e o sigilo funcional é dever permanente.",
+  "flashcards": [
+    { "frente": "Principal estatuto do servidor estadual", "verso": "Lei 10.261/68." },
+    { "frente": "O que as NSCGJ regulam?", "verso": "A rotina das serventias: autos, prazos, certidões e comunicação de atos." },
+    { "frente": "Penalidade mais grave", "verso": "Demissão." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-041", "tjsp-2025-042", "tjsp-2025-043", "tjsp-2025-044", "tjsp-2025-046"],
+  "artigos_citados": ["L10261-30"],
+  "fonte": "Lei 10.261/68 (ALESP) + NSCGJ (fonte oficial) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}

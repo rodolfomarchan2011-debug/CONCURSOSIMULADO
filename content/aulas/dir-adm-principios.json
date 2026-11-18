@@ -1,0 +1,65 @@
+{
+  "id": "dir-adm-principios",
+  "materia": "Conhecimentos em Direito",
+  "assunto": "Direito Administrativo",
+  "topico": "Princípios da Administração Pública e regime dos servidores",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Reconhecer os princípios do art. 37 da Constituição.",
+    "Entender o que é improbidade administrativa.",
+    "Saber o que é reintegração no regime estadual."
+  ],
+  "secoes": [
+    {
+      "titulo": "O que é Administração Pública",
+      "texto_md": "Administração Pública é o conjunto de órgãos e agentes que executam as políticas públicas e prestam serviços à população. Ela não age por vontade própria: só pode fazer o que a lei autoriza ou determina. Essa é a ideia de legalidade administrativa, diferente da legalidade do particular, que pode fazer tudo o que a lei não proíbe. A Constituição, no art. 37, fixa os princípios que orientam essa atuação: legalidade, impessoalidade, moralidade, publicidade e eficiência. A VUNESP costuma cobrar o significado de cada um e a diferença entre eles. Impessoalidade, por exemplo, impede favoritismo e promoção pessoal; publicidade exige transparência, com exceções para sigilo previsto em lei.",
+      "artigos": ["CF-37"]
+    },
+    {
+      "titulo": "Poderes e atos administrativos",
+      "texto_md": "A Administração tem poderes instrumentais para cumprir a lei: hierárquico, disciplinar, regulamentar e de polícia. Esses poderes não são um cheque em branco; encontram limites na lei e nos direitos fundamentais. O ato administrativo é a manifestação da Administração que produz efeitos jurídicos. Ele tem elementos como competência, finalidade, forma, motivo e objeto. Se um desses elementos falha, o ato pode ser anulado. A prova gosta de situações em que o agente age fora da competência ou com finalidade diversa da prevista na lei. Reconhecer o vício é o primeiro passo para saber se o ato é nulo ou apenas irregular.",
+      "artigos": ["CF-37"]
+    },
+    {
+      "titulo": "Improbidade administrativa",
+      "texto_md": "A Lei 8.429/92 pune atos de improbidade que importam enriquecimento ilícito, causam prejuízo ao erário ou atentam contra os princípios da Administração Pública. O art. 1º define o universo de agentes alcançados, incluindo agentes públicos e, em certos casos, particulares que induzam ou concorram para o ato. O art. 9º trata do enriquecimento ilícito; o art. 10, do prejuízo ao erário; o art. 11, da violação de princípios. As sanções podem incluir perda de bens, ressarcimento, perda da função, suspensão de direitos políticos e multa. A lei foi alterada pela Lei 14.230/2021 e pela Lei 15.269/2025; por isso, ao estudar, use a redação vigente, não resumos antigos. A banca cobra a tipologia e a necessidade de dolo nos atos de improbidade.",
+      "artigos": ["L8429-1", "L8429-9", "L8429-10", "L8429-11"]
+    },
+    {
+      "titulo": "Servidores públicos estaduais",
+      "texto_md": "No Estado de São Paulo, a Lei 10.261/68 é o Estatuto dos Funcionários Públicos Civis. Ela trata de provimento, deveres, direitos, licenças e penalidades. Um ponto muito cobrado é a reintegração: o art. 30 define como reingresso no serviço público decorrente de decisão judicial passada em julgado, com ressarcimento de prejuízos. O art. 31 diz que a reintegração será no cargo anteriormente ocupado e, se este tiver sido transformado, no cargo resultante. O art. 32 fixa o prazo de 30 dias para expedir o decreto de reintegração depois do trânsito em julgado. Não confunda reintegração (decisão judicial, com ressarcimento) com readmissão (retorno de demitido ou exonerado, sem ressarcimento).",
+      "artigos": ["L10261-30", "L10261-31", "L10261-32"]
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "A questão costuma apresentar um servidor em situação concreta e perguntar qual instituto se aplica. Leia o fato e procure a palavra-chave: decisão judicial passada em julgado com ressarcimento aponta reintegração; retorno de demitido sem ressarcimento aponta readmissão; ato com vantagem indevida pode apontar improbidade. Nos princípios, procure a conduta contrária: favoritismo fere impessoalidade; falta de transparência fere publicidade; lentidão ou desperdício fere eficiência. Quando a questão falar em nomeação de parente para cargo em comissão, lembre que o STF considera o nepotismo violação de impessoalidade e moralidade, mesmo sem lei específica. Com esse roteiro, a alternativa correta costuma aparecer sem decoreba.",
+      "artigos": ["CF-37", "L8429-1", "L10261-30"]
+    }
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Servidor público estadual é reintegrado por decisão judicial passada em julgado. Qual é o instituto e o que ele garante?",
+    "passo_a_passo": [
+      "1) Identifique a causa: decisão judicial passada em julgado.",
+      "2) Lembre do art. 30 da Lei 10.261/68: reintegração é o reingresso com ressarcimento de prejuízos.",
+      "3) Diferencie de readmissão, que é retorno de demitido ou exonerado sem ressarcimento."
+    ],
+    "questao_id": "tjsp-2025-038"
+  },
+  "erro_comum": "Confundir reintegração com readmissão. Reintegração decorre de decisão judicial e garante ressarcimento; readmissão é ato administrativo de retorno sem ressarcimento.",
+  "pegadinhas": [
+    "Achar que eficiência é princípio facultativo: está expresso no art. 37.",
+    "Trocar improbidade por mera irregularidade administrativa."
+  ],
+  "resumo": "O art. 37 fixa legalidade, impessoalidade, moralidade, publicidade e eficiência. A Lei 8.429/92 pune enriquecimento ilícito, prejuízo ao erário e violação de princípios, e exige dolo após a Lei 14.230/2021. A Lei 10.261/68 define reintegração como retorno por decisão judicial com ressarcimento.",
+  "flashcards": [
+    { "frente": "Cinco princípios do art. 37", "verso": "Legalidade, impessoalidade, moralidade, publicidade e eficiência." },
+    { "frente": "Reintegração exige o quê?", "verso": "Decisão judicial passada em julgado e ressarcimento de prejuízos." },
+    { "frente": "Readmissão garante ressarcimento?", "verso": "Não; garante apenas contagem de tempo anterior." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-036", "tjsp-2025-037", "tjsp-2025-038", "tjsp-2025-039", "tjsp-2025-040"],
+  "artigos_citados": ["CF-37", "L8429-1", "L8429-9", "L8429-10", "L8429-11", "L10261-30", "L10261-31", "L10261-32"],
+  "fonte": "CF/88 + Lei 8.429/92 + Lei 10.261/68 (Câmara/ALESP) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}
