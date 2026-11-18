@@ -148,8 +148,15 @@ interface Geracao {
   finish: string;
 }
 
-async function gerar(
+class ErroProvedor extends Error {
+  constructor(public status: number) {
+    super(`upstream ${status}`);
+  }
+}
+
+async function chamarModelo(
   cfg: NonNullable<ReturnType<typeof provedor>>,
+  modelo: string,
   mensagens: Mensagem[],
   temperatura: number,
 ): Promise<Geracao> {
@@ -163,7 +170,7 @@ async function gerar(
         Authorization: `Bearer ${cfg.chave}`,
       },
       body: JSON.stringify({
-        model: cfg.modelo,
+        model: modelo,
         messages: mensagens,
         temperature: temperatura,
         max_tokens: maxTokens(),
@@ -173,7 +180,7 @@ async function gerar(
     });
     if (!res.ok) {
       registrarErro();
-      throw new Error(`upstream ${res.status}`);
+      throw new ErroProvedor(res.status);
     }
     const json = (await res.json()) as {
       choices?: { message?: { content?: string }; finish_reason?: string }[];
@@ -185,6 +192,35 @@ async function gerar(
     };
   } finally {
     clearTimeout(timer);
+  }
+}
+
+const MODELO_RESERVA_GEMINI = "gemini-3.1-flash-lite";
+
+async function gerar(
+  cfg: NonNullable<ReturnType<typeof provedor>>,
+  mensagens: Mensagem[],
+  temperatura: number,
+): Promise<Geracao> {
+  try {
+    return await chamarModelo(cfg, cfg.modelo, mensagens, temperatura);
+  } catch (erro) {
+    const status = erro instanceof ErroProvedor ? erro.status : 0;
+    const podeTrocar =
+      cfg.nome === "gemini" &&
+      cfg.modelo !== MODELO_RESERVA_GEMINI &&
+      [404, 429, 503].includes(status);
+    if (!podeTrocar) throw erro;
+    console.log(
+      JSON.stringify({
+        tutor: true,
+        evento: "modelo-reserva",
+        de: cfg.modelo,
+        para: MODELO_RESERVA_GEMINI,
+        status,
+      }),
+    );
+    return chamarModelo(cfg, MODELO_RESERVA_GEMINI, mensagens, temperatura);
   }
 }
 
