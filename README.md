@@ -127,11 +127,12 @@ Decisões e desvios do briefing original:
 1. Banco atual: 509 questões de 6 edições. Ficaram de fora: **2014** (versão 4 identificada, mas o parser trava no marcador 42 por causa das tabelas do Excel), **2013/2011/2010** (versões ainda não verificadas), **2023/2024R** (gabarito multi-versão sem caderno correspondente), **2021** (gabarito em imagem) e **2006/2007** (versões).
 2. Gabaritos: 2025 (VERSÃO 1, 70/70), 2024 (VERSÃO 3, 4 verificações), 2018 (versão 2), 2015 (VERSÃO 1, 3 verificações) e 2004 (caderno único). Questões anuladas ficam fora.
 3. Explicações curadas cobrem 42 questões da edição 2025; nas demais o app mostra gabarito, alternativa correta e fonte, e o tutor (com chave) aprofunda.
-4. Sem login: progresso é local ao navegador (exportável em JSON). Importação ainda não implementada.
+4. Sem login: progresso é local ao navegador; exportação e importação em JSON existem na tela de resultados.
 5. Probabilidade de aprovação e módulo de redação estão fora do MVP (roadmap).
 6. Direitos autorais: enunciados pertencem à VUNESP/TJSP; uso educacional com atribuição. Para produto comercial, avalie licenciamento.
 
 ## Roadmap
 
-- Fase 2: provas 2006–2021 como acervo histórico (matriz própria), explicações revisadas, caderno de erros + SRS, Raio-X da banca, importação de progresso, redação com rubrica oficial.
+- Fase 2: provas 2006–2021 como acervo histórico (matriz própria), explicações revisadas, Raio-X da banca, redação com rubrica oficial.
 - Fase 3: probabilidade com backtest, login/sync, backoffice de curadoria, atualidades mensais, relatório PDF.
+- Feito: caderno de erros + SRS, importação de progresso, cadeia de modelos do tutor.
