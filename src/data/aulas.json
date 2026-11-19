@@ -769,6 +769,97 @@
   "versao": 1
  },
  {
+  "id": "lp-concordancia",
+  "materia": "Língua Portuguesa",
+  "assunto": "Interpretação de texto",
+  "topico": "Concordância verbal e nominal",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Identificar o sujeito e fazer o verbo concordar com ele.",
+   "Resolver casos de sujeito composto, partícula 'se' e verbos impessoais.",
+   "Aplicar a concordância nominal em adjetivos e numerais."
+  ],
+  "secoes": [
+   {
+    "titulo": "A regra geral",
+    "texto_md": "Concordância verbal é a adaptação do verbo ao sujeito. Se o sujeito está no singular, o verbo fica no singular; se está no plural, o verbo vai para o plural. Parece simples, mas a banca esconde o sujeito em posição incomum, usa coletivos ou coloca uma expressão no meio. O primeiro passo é sempre localizar o sujeito e perguntar: quem pratica ou sofre a ação? Em 'Orlando Pantera transpõe para a canção o sentir das gentes', o sujeito é Orlando Pantera, singular, então o verbo fica 'transpõe', não 'transpõem'. Em 'São poucos que mantêm', o sujeito é 'poucos', plural, e o verbo 'manter' recebe circunflexo no plural: 'mantêm'.",
+    "artigos": []
+   },
+   {
+    "titulo": "Sujeito composto",
+    "texto_md": "Quando o sujeito é composto e vem antes do verbo, o verbo vai para o plural: 'O país e os seus ritmos contam com um amor que não tem paralelo'. Se o sujeito composto vem depois do verbo, a concordância pode ser com o conjunto (plural) ou com o núcleo mais próximo (singular), conforme a ênfase. Com 'ou', a concordância depende do sentido: se a ideia é exclusão, verbo no singular; se é soma, plural. Com 'com', o verbo concorda com o primeiro núcleo, e o termo introduzido por 'com' fica em destaque: 'O professor, com os alunos, organizou a feira'. A banca cobra muito a diferença entre 'um e outro' (verbo no singular ou plural) e 'nem um nem outro' (singular).",
+    "artigos": []
+   },
+   {
+    "titulo": "Haver, existir e fazer",
+    "texto_md": "'Haver' no sentido de existir é impessoal: fica sempre no singular, e o verbo que o acompanha também. 'Houveram artistas' está errado; o certo é 'Houve artistas'. 'Existir' não é impessoal: concorda com o sujeito, então 'Existem artistas'. 'Fazer' indicando tempo decorrido é impessoal: 'Faz cinco anos', não 'Fazem cinco anos'. Já 'fazer' como verbo de ação concorda normalmente: 'Eles fazem o relatório'. Esses três verbos aparecem em quase toda prova de concordância, e a pegadinha é sempre a mesma: usar o plural porque o complemento está no plural. O sujeito de 'haver' e 'fazer' (tempo) não existe; por isso, singular.",
+    "artigos": []
+   },
+   {
+    "titulo": "Partícula 'se' e sujeito posposto",
+    "texto_md": "Com a partícula 'se', é preciso verificar a função. Se 'se' é pronome apassivador, o verbo concorda com o sujeito paciente: 'Vendem-se casas' (casas são vendidas), 'Alugam-se salas'. Se 'se' é índice de indeterminação do sujeito, o verbo fica na terceira pessoa do singular: 'Precisa-se de médicos', 'Trata-se de questões difíceis'. A diferença está na transitividade: com verbo transitivo direto, 'se' apassiva; com verbo transitivo indireto ou de ligação, 'se' indetermina. Em sujeito posposto, o verbo pode concordar com o núcleo mais próximo, especialmente com expressões partitivas: 'Chegou a maioria dos alunos' ou 'Chegaram a maioria dos alunos'.",
+    "artigos": []
+   },
+   {
+    "titulo": "Concordância nominal",
+    "texto_md": "Na concordância nominal, adjetivos, artigos, pronomes e numerais se ajustam ao substantivo. Um adjetivo que se refere a dois substantivos de gêneros diferentes fica no masculino plural: 'casa e carro novos'. Se vem antes dos substantivos, concorda com o mais próximo: 'nova casa e carro'. Com 'é necessário', 'é proibido', 'é bom', a expressão fica invariável quando o sujeito não tem artigo: 'É proibido entrada'; com artigo, varia: 'É proibida a entrada'. 'Bastante' como adjetivo varia ('bastantes motivos'); como advérbio, fica invariável ('bastante cansados'). 'Meio' como numeral varia ('meia hora'); como advérbio, não ('meio cansada').",
+    "artigos": []
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "Leia a frase e sublinhe o sujeito antes de olhar o verbo. Depois verifique se há partícula 'se', verbo impessoal ou sujeito composto. Em 'todos os momentos da história dispõe', o sujeito é 'todos os momentos', plural, então o verbo deveria ser 'dispõem'. Em 'o país e os seus ritmos conta', o sujeito composto exige 'contam'. Em 'houveram artistas', 'haver' existencial exige 'houve'. A alternativa correta costuma ser a que mantém o sujeito e o verbo alinhados sem forçar plural onde não há sujeito. Quando a questão pedir 'norma-padrão', desconfie de construções que copiam a fala coloquial. Uma dica final: leia a frase em voz alta depois de trocar o verbo; se soar estranho, provavelmente a concordância está errada. Concordância é relação com o sujeito, não com o som da frase.",
+    "artigos": []
+   }
+  ],
+  "regras_gramaticais": [
+   "Verbo concorda com o sujeito, não com o complemento.",
+   "Sujeito composto antes do verbo: verbo no plural.",
+   "Haver (existir) e fazer (tempo) são impessoais: singular.",
+   "Se apassivador: verbo concorda com o sujeito paciente; se indeterminador: singular.",
+   "Adjetivo após dois substantivos de gêneros diferentes: masculino plural."
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "Assinale a frase com concordância verbal conforme a norma-padrão.",
+   "passo_a_passo": [
+    "1) Em 'São poucos que mantêm', o sujeito 'poucos' está no plural.",
+    "2) O verbo 'manter' concorda no plural: 'mantêm'.",
+    "3) As demais trocam sujeito singular por verbo plural ou usam 'houveram' com sentido de existir."
+   ],
+   "questao_id": "tjsp-2025-014"
+  },
+  "erro_comum": "Concordar o verbo com o complemento plural ('houveram artistas', 'dispõe os momentos') em vez de com o sujeito.",
+  "pegadinhas": [
+   "Usar 'houveram' quando 'haver' significa existir.",
+   "Colocar verbo no plural com sujeito composto que na verdade é singular."
+  ],
+  "resumo": "Localize o sujeito e faça o verbo concordar com ele. Sujeito composto pede plural; 'haver' e 'fazer' de tempo ficam no singular; 'se' apassivador concorda com o sujeito paciente.",
+  "flashcards": [
+   {
+    "frente": " 'Houve' ou 'houveram' artistas?",
+    "verso": "Houve: 'haver' existencial é impessoal."
+   },
+   {
+    "frente": " 'Faz' ou 'fazem' cinco anos?",
+    "verso": "Faz: tempo decorrido é impessoal."
+   },
+   {
+    "frente": " 'Vendem-se casas' — por que plural?",
+    "verso": " 'Se' apassivador; o sujeito é 'casas'."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-014",
+   "tjsp-2025-004",
+   "tjsp-2025-005",
+   "tjsp-2025-015"
+  ],
+  "artigos_citados": [],
+  "fonte": "VUNESP TJSP2503 + gramática normativa",
+  "revisado": false,
+  "versao": 1
+ },
+ {
   "id": "lp-crase-regencia",
   "materia": "Língua Portuguesa",
   "assunto": "Interpretação de texto",
@@ -951,6 +1042,102 @@
   ],
   "artigos_citados": [],
   "fonte": "VUNESP TJSP2503 + textos do banco",
+  "revisado": false,
+  "versao": 1
+ },
+ {
+  "id": "lp-pontuacao",
+  "materia": "Língua Portuguesa",
+  "assunto": "Interpretação de texto",
+  "topico": "Pontuação e emprego de pronomes",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Saber quando a vírgula separa e quando isola.",
+   "Distinguir oração explicativa de restritiva.",
+   "Empregar pronomes oblíquos sem quebrar a regência."
+  ],
+  "secoes": [
+   {
+    "titulo": "Para que serve a pontuação",
+    "texto_md": "Pontuação não é pausa para respirar; é marca de estrutura. A vírgula pode separar termos de mesma função, isolar explicações e marcar elipses. O ponto separa períodos; os dois-pontos introduzem explicação, citação ou enumeração; o ponto e vírgula separa itens de uma lista longa. A banca cobra a relação entre a pontuação e o sentido: mudar a vírgula pode mudar quem é o sujeito, qual é a informação principal e até o significado do texto. Por isso, antes de escolher a alternativa, pergunte qual termo a vírgula está isolando e se ele é explicativo ou restritivo.",
+    "artigos": []
+   },
+   {
+    "titulo": "O que a vírgula não pode fazer",
+    "texto_md": "A vírgula não pode separar sujeito e verbo, nem verbo e complemento direto. Em 'Stephen Hawking, contribuiu muito com a Universidade', a vírgula separa sujeito e verbo e está errada. Também não se usa vírgula antes de oração subordinada adjetiva restritiva, porque ela é essencial ao sentido: 'Os alunos que estudaram passaram' é diferente de 'Os alunos, que estudaram, passaram'. Na primeira, só os que estudaram passaram; na segunda, todos passaram, e a informação de que estudaram é um comentário. A VUNESP explora essa diferença com frequência.",
+    "artigos": []
+   },
+   {
+    "titulo": "Explicativa x restritiva",
+    "texto_md": "A oração adjetiva explicativa vem entre vírgulas e acrescenta informação sobre o termo, sem restringi-lo. A restritiva não tem vírgula e limita o sentido do antecedente. Em 'Stephen Hawking, que contribuiu muito com a Universidade de Cambridge, era uma inspiração', a oração entre vírgulas é explicativa: ela comenta o nome inteiro. Se tirarmos as vírgulas, o sentido passa a ser 'apenas o Hawking que contribuiu...', como se houvesse outros. A banca costuma oferecer as duas versões e pedir a correta. A escolha depende da intenção: se a informação é um comentário adicional, vírgulas; se é necessária para identificar, sem vírgulas.",
+    "artigos": []
+   },
+   {
+    "titulo": "Pronomes e colocação",
+    "texto_md": "O emprego do pronome oblíquo depende da função e da regência. 'Deixar' é transitivo direto e indireto: deixa algo a alguém. Por isso, 'deixando-lhes um legado' está correto: 'lhes' é o objeto indireto (a eles). 'Deixando-as' seria objeto direto, mas o legado é o objeto direto, não as pessoas. 'Deixando-nas' não existe na norma padrão. Em 'contribuiu muito com a Universidade', o complemento é 'com a Universidade', e não cabe 'lhe'. A colocação pronominal também entra: não se inicia frase com pronome oblíquo átono ('Me disse' é coloquial; 'Disse-me' é padrão), e não se usa pronome após vírgula sem motivo.",
+    "artigos": []
+   },
+   {
+    "titulo": "Vírgula com conectivos",
+    "texto_md": "Quando a oração subordinada vem antes da principal, usa-se vírgula: 'Embora estivesse cansado, foi à audiência'. Quando vem depois, a vírgula é facultativa em muitos casos, mas costuma marcar ênfase: 'Foi à audiência, embora estivesse cansado'. Com 'mas', 'porém', 'contudo' no início da oração, a vírgula antes do conectivo é obrigatória: 'Estudou muito, mas não foi aprovado'. Com 'portanto' e 'assim' concluindo, a vírgula também aparece. Já com 'que' integrando oração substantiva, não se separa por vírgula: 'Ele disse que viria'. A banca mistura esses conectivos para testar se o candidato sabe o que é explicação, oposição e conclusão, e não apenas decorar pausas.",
+    "artigos": []
+   },
+   {
+    "titulo": "Outros sinais",
+    "texto_md": "Os dois-pontos anunciam uma explicação ou uma fala; não substituem a vírgula de explicação em qualquer contexto. As aspas marcam citação, estrangeirismo ou ironia. O travessão pode isolar comentário, como a vírgula, mas com mais ênfase. O ponto e vírgula separa orações independentes que mantêm relação. O ponto final encerra o período. A banca costuma testar a diferença entre vírgula e travessão em comentários intercalados, e entre dois-pontos e vírgula em enumerações. O critério é a função sintática, não a pausa na leitura.",
+    "artigos": []
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "Leia a frase e localize a vírgula. Pergunte: ela está separando termos de mesma função (correto) ou separando sujeito e verbo (errado)? Está isolando explicação (correto) ou restringindo o sentido (errado)? Depois confira o pronome: ele retoma pessoa ou coisa, e exerce objeto direto ou indireto? Em 'deixando-lhes um legado', 'lhes' é indireto, e 'um legado' é direto. Em 'deixando-as', 'as' seria direto, mas o texto quer dizer que o legado foi deixado às pessoas. A alternativa correta combina pontuação e pronome coerentes com a regência.",
+    "artigos": []
+   }
+  ],
+  "regras_gramaticais": [
+   "Não separar sujeito e verbo por vírgula.",
+   "Adjetiva explicativa: entre vírgulas; restritiva: sem vírgulas.",
+   " 'Deixar' é transitivo direto e indireto: deixar algo a alguém.",
+   " 'Lhes' retoma pessoa como objeto indireto; 'as' seria objeto direto.",
+   "Dois-pontos anunciam explicação, citação ou enumeração."
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "Assinale a alternativa que atende à norma-padrão de pontuação e emprego de pronome.",
+   "passo_a_passo": [
+    "1) A oração 'que contribuiu muito...' é explicativa e deve ficar entre vírgulas.",
+    "2) 'Deixar' pede objeto direto (o legado) e indireto (a quem): 'deixando-lhes um legado'.",
+    "3) A alternativa D combina as duas escolhas; as demais erram a vírgula ou o pronome."
+   ],
+   "questao_id": "tjsp-2025-005"
+  },
+  "erro_comum": "Usar vírgula para separar sujeito e verbo ou empregar 'as/nas' quando a regência pede 'lhes'.",
+  "pegadinhas": [
+   "Colocar vírgula depois do sujeito e antes do verbo.",
+   "Trocar 'lhes' por 'as' sem verificar se o pronome é objeto direto ou indireto."
+  ],
+  "resumo": "A vírgula marca estrutura: separa termos iguais e isola explicativas, mas não separa sujeito e verbo. Explicativa leva vírgulas; restritiva não. O pronome deve corresponder à função (direto ou indireto) exigida pelo verbo.",
+  "flashcards": [
+   {
+    "frente": "Oração adjetiva explicativa",
+    "verso": "Entre vírgulas; acrescenta comentário sem restringir."
+   },
+   {
+    "frente": "Oração adjetiva restritiva",
+    "verso": "Sem vírgulas; limita o sentido do antecedente."
+   },
+   {
+    "frente": " 'Deixando-lhes um legado' — função de 'lhes'",
+    "verso": "Objeto indireto (a eles)."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-005",
+   "tjsp-2025-004",
+   "tjsp-2025-013",
+   "tjsp-2025-015"
+  ],
+  "artigos_citados": [],
+  "fonte": "VUNESP TJSP2503 + gramática normativa",
   "revisado": false,
   "versao": 1
  }

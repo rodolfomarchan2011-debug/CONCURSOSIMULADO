@@ -1,0 +1,77 @@
+{
+  "id": "lp-concordancia",
+  "materia": "Língua Portuguesa",
+  "assunto": "Interpretação de texto",
+  "topico": "Concordância verbal e nominal",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Identificar o sujeito e fazer o verbo concordar com ele.",
+    "Resolver casos de sujeito composto, partícula 'se' e verbos impessoais.",
+    "Aplicar a concordância nominal em adjetivos e numerais."
+  ],
+  "secoes": [
+    {
+      "titulo": "A regra geral",
+      "texto_md": "Concordância verbal é a adaptação do verbo ao sujeito. Se o sujeito está no singular, o verbo fica no singular; se está no plural, o verbo vai para o plural. Parece simples, mas a banca esconde o sujeito em posição incomum, usa coletivos ou coloca uma expressão no meio. O primeiro passo é sempre localizar o sujeito e perguntar: quem pratica ou sofre a ação? Em 'Orlando Pantera transpõe para a canção o sentir das gentes', o sujeito é Orlando Pantera, singular, então o verbo fica 'transpõe', não 'transpõem'. Em 'São poucos que mantêm', o sujeito é 'poucos', plural, e o verbo 'manter' recebe circunflexo no plural: 'mantêm'.",
+      "artigos": []
+    },
+    {
+      "titulo": "Sujeito composto",
+      "texto_md": "Quando o sujeito é composto e vem antes do verbo, o verbo vai para o plural: 'O país e os seus ritmos contam com um amor que não tem paralelo'. Se o sujeito composto vem depois do verbo, a concordância pode ser com o conjunto (plural) ou com o núcleo mais próximo (singular), conforme a ênfase. Com 'ou', a concordância depende do sentido: se a ideia é exclusão, verbo no singular; se é soma, plural. Com 'com', o verbo concorda com o primeiro núcleo, e o termo introduzido por 'com' fica em destaque: 'O professor, com os alunos, organizou a feira'. A banca cobra muito a diferença entre 'um e outro' (verbo no singular ou plural) e 'nem um nem outro' (singular).",
+      "artigos": []
+    },
+    {
+      "titulo": "Haver, existir e fazer",
+      "texto_md": "'Haver' no sentido de existir é impessoal: fica sempre no singular, e o verbo que o acompanha também. 'Houveram artistas' está errado; o certo é 'Houve artistas'. 'Existir' não é impessoal: concorda com o sujeito, então 'Existem artistas'. 'Fazer' indicando tempo decorrido é impessoal: 'Faz cinco anos', não 'Fazem cinco anos'. Já 'fazer' como verbo de ação concorda normalmente: 'Eles fazem o relatório'. Esses três verbos aparecem em quase toda prova de concordância, e a pegadinha é sempre a mesma: usar o plural porque o complemento está no plural. O sujeito de 'haver' e 'fazer' (tempo) não existe; por isso, singular.",
+      "artigos": []
+    },
+    {
+      "titulo": "Partícula 'se' e sujeito posposto",
+      "texto_md": "Com a partícula 'se', é preciso verificar a função. Se 'se' é pronome apassivador, o verbo concorda com o sujeito paciente: 'Vendem-se casas' (casas são vendidas), 'Alugam-se salas'. Se 'se' é índice de indeterminação do sujeito, o verbo fica na terceira pessoa do singular: 'Precisa-se de médicos', 'Trata-se de questões difíceis'. A diferença está na transitividade: com verbo transitivo direto, 'se' apassiva; com verbo transitivo indireto ou de ligação, 'se' indetermina. Em sujeito posposto, o verbo pode concordar com o núcleo mais próximo, especialmente com expressões partitivas: 'Chegou a maioria dos alunos' ou 'Chegaram a maioria dos alunos'.",
+      "artigos": []
+    },
+    {
+      "titulo": "Concordância nominal",
+      "texto_md": "Na concordância nominal, adjetivos, artigos, pronomes e numerais se ajustam ao substantivo. Um adjetivo que se refere a dois substantivos de gêneros diferentes fica no masculino plural: 'casa e carro novos'. Se vem antes dos substantivos, concorda com o mais próximo: 'nova casa e carro'. Com 'é necessário', 'é proibido', 'é bom', a expressão fica invariável quando o sujeito não tem artigo: 'É proibido entrada'; com artigo, varia: 'É proibida a entrada'. 'Bastante' como adjetivo varia ('bastantes motivos'); como advérbio, fica invariável ('bastante cansados'). 'Meio' como numeral varia ('meia hora'); como advérbio, não ('meio cansada').",
+      "artigos": []
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "Leia a frase e sublinhe o sujeito antes de olhar o verbo. Depois verifique se há partícula 'se', verbo impessoal ou sujeito composto. Em 'todos os momentos da história dispõe', o sujeito é 'todos os momentos', plural, então o verbo deveria ser 'dispõem'. Em 'o país e os seus ritmos conta', o sujeito composto exige 'contam'. Em 'houveram artistas', 'haver' existencial exige 'houve'. A alternativa correta costuma ser a que mantém o sujeito e o verbo alinhados sem forçar plural onde não há sujeito. Quando a questão pedir 'norma-padrão', desconfie de construções que copiam a fala coloquial. Uma dica final: leia a frase em voz alta depois de trocar o verbo; se soar estranho, provavelmente a concordância está errada. Concordância é relação com o sujeito, não com o som da frase.",
+      "artigos": []
+    }
+  ],
+  "regras_gramaticais": [
+    "Verbo concorda com o sujeito, não com o complemento.",
+    "Sujeito composto antes do verbo: verbo no plural.",
+    "Haver (existir) e fazer (tempo) são impessoais: singular.",
+    "Se apassivador: verbo concorda com o sujeito paciente; se indeterminador: singular.",
+    "Adjetivo após dois substantivos de gêneros diferentes: masculino plural."
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Assinale a frase com concordância verbal conforme a norma-padrão.",
+    "passo_a_passo": [
+      "1) Em 'São poucos que mantêm', o sujeito 'poucos' está no plural.",
+      "2) O verbo 'manter' concorda no plural: 'mantêm'.",
+      "3) As demais trocam sujeito singular por verbo plural ou usam 'houveram' com sentido de existir."
+    ],
+    "questao_id": "tjsp-2025-014"
+  },
+  "erro_comum": "Concordar o verbo com o complemento plural ('houveram artistas', 'dispõe os momentos') em vez de com o sujeito.",
+  "pegadinhas": [
+    "Usar 'houveram' quando 'haver' significa existir.",
+    "Colocar verbo no plural com sujeito composto que na verdade é singular."
+  ],
+  "resumo": "Localize o sujeito e faça o verbo concordar com ele. Sujeito composto pede plural; 'haver' e 'fazer' de tempo ficam no singular; 'se' apassivador concorda com o sujeito paciente.",
+  "flashcards": [
+    { "frente": " 'Houve' ou 'houveram' artistas?", "verso": "Houve: 'haver' existencial é impessoal." },
+    { "frente": " 'Faz' ou 'fazem' cinco anos?", "verso": "Faz: tempo decorrido é impessoal." },
+    { "frente": " 'Vendem-se casas' — por que plural?", "verso": " 'Se' apassivador; o sujeito é 'casas'." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-014", "tjsp-2025-004", "tjsp-2025-005", "tjsp-2025-015"],
+  "artigos_citados": [],
+  "fonte": "VUNESP TJSP2503 + gramática normativa",
+  "revisado": false,
+  "versao": 1
+}

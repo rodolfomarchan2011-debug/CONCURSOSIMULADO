@@ -1,0 +1,82 @@
+{
+  "id": "lp-pontuacao",
+  "materia": "Língua Portuguesa",
+  "assunto": "Interpretação de texto",
+  "topico": "Pontuação e emprego de pronomes",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Saber quando a vírgula separa e quando isola.",
+    "Distinguir oração explicativa de restritiva.",
+    "Empregar pronomes oblíquos sem quebrar a regência."
+  ],
+  "secoes": [
+    {
+      "titulo": "Para que serve a pontuação",
+      "texto_md": "Pontuação não é pausa para respirar; é marca de estrutura. A vírgula pode separar termos de mesma função, isolar explicações e marcar elipses. O ponto separa períodos; os dois-pontos introduzem explicação, citação ou enumeração; o ponto e vírgula separa itens de uma lista longa. A banca cobra a relação entre a pontuação e o sentido: mudar a vírgula pode mudar quem é o sujeito, qual é a informação principal e até o significado do texto. Por isso, antes de escolher a alternativa, pergunte qual termo a vírgula está isolando e se ele é explicativo ou restritivo.",
+      "artigos": []
+    },
+    {
+      "titulo": "O que a vírgula não pode fazer",
+      "texto_md": "A vírgula não pode separar sujeito e verbo, nem verbo e complemento direto. Em 'Stephen Hawking, contribuiu muito com a Universidade', a vírgula separa sujeito e verbo e está errada. Também não se usa vírgula antes de oração subordinada adjetiva restritiva, porque ela é essencial ao sentido: 'Os alunos que estudaram passaram' é diferente de 'Os alunos, que estudaram, passaram'. Na primeira, só os que estudaram passaram; na segunda, todos passaram, e a informação de que estudaram é um comentário. A VUNESP explora essa diferença com frequência.",
+      "artigos": []
+    },
+    {
+      "titulo": "Explicativa x restritiva",
+      "texto_md": "A oração adjetiva explicativa vem entre vírgulas e acrescenta informação sobre o termo, sem restringi-lo. A restritiva não tem vírgula e limita o sentido do antecedente. Em 'Stephen Hawking, que contribuiu muito com a Universidade de Cambridge, era uma inspiração', a oração entre vírgulas é explicativa: ela comenta o nome inteiro. Se tirarmos as vírgulas, o sentido passa a ser 'apenas o Hawking que contribuiu...', como se houvesse outros. A banca costuma oferecer as duas versões e pedir a correta. A escolha depende da intenção: se a informação é um comentário adicional, vírgulas; se é necessária para identificar, sem vírgulas.",
+      "artigos": []
+    },
+    {
+      "titulo": "Pronomes e colocação",
+      "texto_md": "O emprego do pronome oblíquo depende da função e da regência. 'Deixar' é transitivo direto e indireto: deixa algo a alguém. Por isso, 'deixando-lhes um legado' está correto: 'lhes' é o objeto indireto (a eles). 'Deixando-as' seria objeto direto, mas o legado é o objeto direto, não as pessoas. 'Deixando-nas' não existe na norma padrão. Em 'contribuiu muito com a Universidade', o complemento é 'com a Universidade', e não cabe 'lhe'. A colocação pronominal também entra: não se inicia frase com pronome oblíquo átono ('Me disse' é coloquial; 'Disse-me' é padrão), e não se usa pronome após vírgula sem motivo.",
+      "artigos": []
+    },
+    {
+      "titulo": "Vírgula com conectivos",
+      "texto_md": "Quando a oração subordinada vem antes da principal, usa-se vírgula: 'Embora estivesse cansado, foi à audiência'. Quando vem depois, a vírgula é facultativa em muitos casos, mas costuma marcar ênfase: 'Foi à audiência, embora estivesse cansado'. Com 'mas', 'porém', 'contudo' no início da oração, a vírgula antes do conectivo é obrigatória: 'Estudou muito, mas não foi aprovado'. Com 'portanto' e 'assim' concluindo, a vírgula também aparece. Já com 'que' integrando oração substantiva, não se separa por vírgula: 'Ele disse que viria'. A banca mistura esses conectivos para testar se o candidato sabe o que é explicação, oposição e conclusão, e não apenas decorar pausas.",
+      "artigos": []
+    },
+    {
+      "titulo": "Outros sinais",
+      "texto_md": "Os dois-pontos anunciam uma explicação ou uma fala; não substituem a vírgula de explicação em qualquer contexto. As aspas marcam citação, estrangeirismo ou ironia. O travessão pode isolar comentário, como a vírgula, mas com mais ênfase. O ponto e vírgula separa orações independentes que mantêm relação. O ponto final encerra o período. A banca costuma testar a diferença entre vírgula e travessão em comentários intercalados, e entre dois-pontos e vírgula em enumerações. O critério é a função sintática, não a pausa na leitura.",
+      "artigos": []
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "Leia a frase e localize a vírgula. Pergunte: ela está separando termos de mesma função (correto) ou separando sujeito e verbo (errado)? Está isolando explicação (correto) ou restringindo o sentido (errado)? Depois confira o pronome: ele retoma pessoa ou coisa, e exerce objeto direto ou indireto? Em 'deixando-lhes um legado', 'lhes' é indireto, e 'um legado' é direto. Em 'deixando-as', 'as' seria direto, mas o texto quer dizer que o legado foi deixado às pessoas. A alternativa correta combina pontuação e pronome coerentes com a regência.",
+      "artigos": []
+    }
+  ],
+  "regras_gramaticais": [
+    "Não separar sujeito e verbo por vírgula.",
+    "Adjetiva explicativa: entre vírgulas; restritiva: sem vírgulas.",
+    " 'Deixar' é transitivo direto e indireto: deixar algo a alguém.",
+    " 'Lhes' retoma pessoa como objeto indireto; 'as' seria objeto direto.",
+    "Dois-pontos anunciam explicação, citação ou enumeração."
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Assinale a alternativa que atende à norma-padrão de pontuação e emprego de pronome.",
+    "passo_a_passo": [
+      "1) A oração 'que contribuiu muito...' é explicativa e deve ficar entre vírgulas.",
+      "2) 'Deixar' pede objeto direto (o legado) e indireto (a quem): 'deixando-lhes um legado'.",
+      "3) A alternativa D combina as duas escolhas; as demais erram a vírgula ou o pronome."
+    ],
+    "questao_id": "tjsp-2025-005"
+  },
+  "erro_comum": "Usar vírgula para separar sujeito e verbo ou empregar 'as/nas' quando a regência pede 'lhes'.",
+  "pegadinhas": [
+    "Colocar vírgula depois do sujeito e antes do verbo.",
+    "Trocar 'lhes' por 'as' sem verificar se o pronome é objeto direto ou indireto."
+  ],
+  "resumo": "A vírgula marca estrutura: separa termos iguais e isola explicativas, mas não separa sujeito e verbo. Explicativa leva vírgulas; restritiva não. O pronome deve corresponder à função (direto ou indireto) exigida pelo verbo.",
+  "flashcards": [
+    { "frente": "Oração adjetiva explicativa", "verso": "Entre vírgulas; acrescenta comentário sem restringir." },
+    { "frente": "Oração adjetiva restritiva", "verso": "Sem vírgulas; limita o sentido do antecedente." },
+    { "frente": " 'Deixando-lhes um legado' — função de 'lhes'", "verso": "Objeto indireto (a eles)." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-005", "tjsp-2025-004", "tjsp-2025-013", "tjsp-2025-015"],
+  "artigos_citados": [],
+  "fonte": "VUNESP TJSP2503 + gramática normativa",
+  "revisado": false,
+  "versao": 1
+}
