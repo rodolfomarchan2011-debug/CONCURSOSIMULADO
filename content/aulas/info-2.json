@@ -1,0 +1,75 @@
+{
+  "id": "info-2",
+  "materia": "Conhecimentos Gerais",
+  "assunto": "Informática",
+  "topico": "Word e Excel 365: formatação, fórmulas e referências",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+    "Usar recursos básicos do Word 365.",
+    "Escrever fórmulas com SOMA, MÉDIA, SE e PROCV.",
+    "Diferenciar referência relativa de absoluta."
+  ],
+  "secoes": [
+    {
+      "titulo": "Office 365: interface",
+      "texto_md": "Word, Excel e PowerPoint 365 compartilham a faixa de opções com guias Arquivo, Página Inicial, Inserir, Layout, Referências, Revisão e Exibir. O botão Arquivo abre Backstage com Novo, Abrir, Salvar, Imprimir e Opções. A barra de status mostra página, palavras e zoom. Os arquivos podem ser salvos no OneDrive ou no computador. A configuração padrão usa salvamento automático quando o arquivo está na nuvem. Atalhos comuns: Ctrl + N novo, Ctrl + O abrir, Ctrl + S salvar, Ctrl + P imprimir, Ctrl + Z desfazer, Ctrl + Y refazer. A banca cobra caminhos de menu e atalhos, então associe cada tarefa à guia correspondente.",
+      "artigos": []
+    },
+    {
+      "titulo": "Word: formatação e atalhos",
+      "texto_md": "No Word 365, a guia Página Inicial concentra fonte, parágrafo e estilos. Ctrl + B aplica negrito; Ctrl + I itálico; Ctrl + U sublinhado. Ctrl + E centraliza; Ctrl + J justifica; Ctrl + L alinha à esquerda; Ctrl + R à direita. Ctrl + Enter insere quebra de página. A guia Inserir permite tabela, imagem, cabeçalho, rodapé e número de página. A guia Layout ajusta margens e orientação. A guia Revisão tem ortografia e gramática (F7), comentários e controle de alterações. Para exibir marcas de parágrafo, use Página Inicial > Parágrafo > Mostrar/Ocultar. A prova costuma pedir o efeito de um atalho ou o caminho para inserir número de página.",
+      "artigos": []
+    },
+    {
+      "titulo": "Excel: células e referências",
+      "texto_md": "No Excel 365, cada célula tem endereço formado por coluna e linha (A1, B7). A referência relativa muda ao copiar a fórmula; a absoluta fica fixa com $. F4 alterna entre relativa (A1), absoluta ($A$1), coluna absoluta (A$1) e linha absoluta ($A1). Ao arrastar a alça de preenchimento, o Excel ajusta referências relativas e mantém as absolutas. O intervalo A2:B4 pode ser travado como $A$2:$B$4. A barra de fórmulas mostra o conteúdo da célula; a guia Fórmulas tem Inserir Função e Auditoria de Fórmulas. Ctrl + Shift + L ativa filtro; Alt + = insere SOMA automática. A banca costuma mostrar uma planilha e pedir a fórmula que produz o resultado.",
+      "artigos": []
+    },
+    {
+      "titulo": "SOMA, MÉDIA e SE",
+      "texto_md": "As funções básicas seguem a sintaxe =FUNÇÃO(argumentos). =SOMA(A1:A10) soma o intervalo; =MÉDIA(B2:B5) calcula a média aritmética; =MÁXIMO(C1:C9) e =MÍNIMO(C1:C9) mostram extremos; =CONT.SE(D2:D20;\"SP\") conta ocorrências. A função SE tem três argumentos: =SE(C2>=7;\"Aprovado\";\"Reprovado\"). No Excel em português, o separador de argumentos é ponto e vírgula. Se o teste for verdadeiro, retorna o segundo argumento; se falso, o terceiro. É possível aninhar SE, mas a prova cobra principalmente o SE simples. Cuidado com texto entre aspas e com a ordem dos argumentos: inverter teste e resultados muda a resposta.",
+      "artigos": []
+    },
+    {
+      "titulo": "PROCV",
+      "texto_md": "PROCV procura um valor na primeira coluna de um intervalo e retorna o conteúdo de outra coluna na mesma linha. Sintaxe: =PROCV(valor_procurado; intervalo; número_da_coluna; [procurar_intervalo]). O último argumento é opcional; use FALSO ou 0 para correspondência exata. Exemplo real: =PROCV(C7;A$2:B$4;2) procura o valor de C7 na primeira coluna de A2:B4 e devolve a segunda coluna. O intervalo precisa ter o valor procurado na primeira coluna. Se o valor não existir, aparece #N/D. Para arrastar a fórmula sem deslocar o intervalo, trave as referências com $. A banca costuma trocar a ordem dos argumentos ou usar intervalo que não contém o valor.",
+      "artigos": []
+    },
+    {
+      "titulo": "Como a prova cobra",
+      "texto_md": "Leia a planilha e identifique o que a fórmula deve retornar. Depois confira três coisas: a função certa, a ordem dos argumentos e as referências absolutas. Em PROCV, o primeiro argumento é o valor procurado, o segundo é o intervalo e o terceiro é a coluna de retorno. Em SE, o primeiro é o teste, o segundo é o resultado verdadeiro e o terceiro é o falso. Em SOMA e MÉDIA, verifique se o intervalo inclui as células certas. Por fim, veja se a fórmula será arrastada: se sim, as referências que não devem mudar precisam de $. A alternativa correta costuma ser a que combina esses três elementos sem inverter nada.",
+      "artigos": []
+    }
+  ],
+  "exemplos_concretos": [
+    "Excel 365 → célula D7 → =PROCV(C7;A$2:B$4;2).",
+    "Excel 365 → Fórmulas → Inserir Função → SOMA → intervalo A1:A10.",
+    "Word 365 → Inserir → Número de Página → Posição: Fim da Página."
+  ],
+  "exemplo_resolvido": {
+    "enunciado": "Planilha com descrições em A2:B4 e códigos em C7:C9; qual fórmula em D7, arrastada até D9, retorna a descrição correta?",
+    "passo_a_passo": [
+      "1) O valor procurado é C7; o intervalo de consulta é A2:B4.",
+      "2) A descrição está na segunda coluna do intervalo, então o índice é 2.",
+      "3) Para arrastar sem deslocar o intervalo, trave as linhas: A$2:B$4. Fórmula: =PROCV(C7;A$2:B$4;2)."
+    ],
+    "questao_id": "tjsp-2025-058"
+  },
+  "erro_comum": "Inverter a ordem dos argumentos do PROCV ou usar referência relativa no intervalo que será arrastado, fazendo a consulta sair da tabela.",
+  "pegadinhas": [
+    "Trocar valor procurado por intervalo no primeiro argumento do PROCV.",
+    "Esquecer o $ e deslocar A2:B4 ao arrastar a fórmula para baixo."
+  ],
+  "resumo": "Word 365 usa faixa de opções e atalhos (Ctrl + B, Ctrl + Enter, F7). Excel 365 usa referências relativas e absolutas ($, F4) e funções como SOMA, MÉDIA, SE e PROCV. Em PROCV, a ordem é valor, intervalo, coluna de retorno.",
+  "flashcards": [
+    { "frente": "Sintaxe do PROCV", "verso": "=PROCV(valor; intervalo; coluna; [exato])." },
+    { "frente": "O que F4 faz?", "verso": "Alterna referência relativa e absoluta." },
+    { "frente": "Separador de argumentos no Excel em português", "verso": "Ponto e vírgula." }
+  ],
+  "questoes_relacionadas": ["tjsp-2025-056", "tjsp-2025-057", "tjsp-2025-058", "tjsp-2025-059"],
+  "artigos_citados": [],
+  "fonte": "Microsoft 365 (Word/Excel) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+}

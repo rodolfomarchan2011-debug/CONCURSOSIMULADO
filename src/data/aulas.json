@@ -769,6 +769,184 @@
   "versao": 1
  },
  {
+  "id": "info-1",
+  "materia": "Conhecimentos Gerais",
+  "assunto": "Informática",
+  "topico": "Windows 11: área de trabalho, arquivos e configurações",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Operar o Explorador de Arquivos e a barra de pesquisa.",
+   "Conhecer atalhos e caminhos de configuração do Windows 11.",
+   "Entender o uso do OneDrive no padrão do sistema."
+  ],
+  "secoes": [
+   {
+    "titulo": "Windows 11: o básico",
+    "texto_md": "O Windows 11 organiza o trabalho em área de trabalho, barra de tarefas, menu Iniciar e janelas. O botão Iniciar fica centralizado na barra de tarefas por padrão. A tecla Windows abre o menu Iniciar; Windows + E abre o Explorador de Arquivos; Windows + I abre Configurações; Alt + Tab alterna entre janelas; Windows + D mostra a área de trabalho. Arquivos e pastas podem ser criados, renomeados, copiados, movidos e excluídos pelo Explorador. A exclusão com Delete manda para a Lixeira; Shift + Delete exclui sem passar pela Lixeira. Na configuração padrão, as extensões de nomes de arquivos ficam ocultas; para exibi-las, use Explorador de Arquivos > Exibir > Mostrar > Extensões de nomes de arquivos.",
+    "artigos": []
+   },
+   {
+    "titulo": "Explorador de Arquivos",
+    "texto_md": "O Explorador de Arquivos (Windows + E) tem painel de navegação à esquerda, barra de endereço e barra de pesquisa. A guia Exibir permite escolher detalhes, ícones e preview. A guia Compartilhar envia arquivos por e-mail ou aplicativos. O caminho completo aparece na barra de endereço, por exemplo C:\\Users\\Usuario\\Documents. A tecla F2 renomeia; Ctrl + C copia; Ctrl + X recorta; Ctrl + V cola; Ctrl + Z desfaz. Ao arrastar um arquivo para outra pasta no mesmo disco, ele é movido; com Ctrl pressionado, é copiado. O item 'Este Computador' mostra unidades e pastas pessoais. O OneDrive aparece como pasta separada e sincroniza o conteúdo com a nuvem quando o usuário está conectado.",
+    "artigos": []
+   },
+   {
+    "titulo": "Pesquisa e curingas",
+    "texto_md": "A barra de pesquisa do Explorador procura por nome e por conteúdo indexado. O asterisco (*) substitui qualquer sequência de caracteres; a interrogação (?) substitui um caractere. Na pesquisa por nome, o padrão é aplicado ao nome do arquivo e às palavras que o compõem. Exemplo real: em uma pasta com os arquivos normas_sindicato.txt, busca_indicios.txt, indicativo_correto.txt, Introducao.txt e processo_inicial.txt, a pesquisa ind* retorna busca_indicios.txt e indicativo_correto.txt, porque 'indicios' e 'indicativo' começam com 'ind'. Não retorna normas_sindicato.txt, porque a palavra 'sindicato' começa com 's'. Para restringir a pesquisa a um tipo, use *.pdf ou tipo:documento. A banca cobra o efeito do curinga, não a sintaxe avançada.",
+    "artigos": []
+   },
+   {
+    "titulo": "Configurações e atalhos",
+    "texto_md": "As Configurações do Windows 11 (Windows + I) concentram Sistema, Bluetooth e dispositivos, Rede e Internet, Personalização, Aplicativos, Contas, Hora e idioma, Jogos, Acessibilidade e Privacidade e segurança. Para ver o espaço em disco, use Configurações > Sistema > Armazenamento. Para desinstalar um programa, Configurações > Aplicativos > Aplicativos instalados. Para ativar o modo avião, Configurações > Rede e Internet > Modo avião. O Gerenciador de Tarefas (Ctrl + Shift + Esc) mostra processos, desempenho e inicialização. A Central de Segurança do Windows fica em Configurações > Privacidade e segurança > Segurança do Windows. Atalhos como Windows + L bloqueiam a sessão; Windows + P projeta a tela; Windows + Shift + S abre a captura de tela.",
+    "artigos": []
+   },
+   {
+    "titulo": "OneDrive e nuvem",
+    "texto_md": "O OneDrive é o serviço de armazenamento em nuvem da Microsoft integrado ao Windows 11. Na configuração padrão, a pasta OneDrive aparece no Explorador e os arquivos podem ficar disponíveis online ou baixados no dispositivo. O ícone de status ao lado do arquivo indica se ele está sincronizado, pendente ou somente na nuvem. Um arquivo da nuvem marcado como 'Disponível quando online' não ocupa espaço local até ser aberto. Se o usuário excluir um arquivo do OneDrive, ele vai para a Lixeira do OneDrive por um período e pode ser restaurado. A banca costuma perguntar o que acontece com o arquivo ao ser aberto, editado ou excluído, e a resposta depende desse status de sincronização.",
+    "artigos": []
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "A questão descreve uma ação no Windows 11 e pede o resultado ou o caminho correto. Leia com atenção o nome do arquivo, a pasta e o padrão de pesquisa. Em pesquisa com curinga, aplique o padrão ao início de cada palavra do nome, não ao meio. Em atalhos, lembre que Windows + E é Explorador, Windows + I é Configurações e Ctrl + Shift + Esc é Gerenciador de Tarefas. Em OneDrive, verifique se o arquivo está sincronizado ou apenas na nuvem. A alternativa correta costuma ser a que descreve o comportamento padrão, sem inventar menu ou tecla que não existe.",
+    "artigos": []
+   }
+  ],
+  "exemplos_concretos": [
+   "Windows 11 → Explorador de Arquivos → Exibir → Mostrar → Extensões de nomes de arquivos.",
+   "Windows 11 → Configurações (Windows + I) → Sistema → Armazenamento.",
+   "Pesquisa na pasta com ind* retorna busca_indicios.txt e indicativo_correto.txt."
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "Pasta com cinco arquivos; pesquisa ind* no Explorador do Windows 11. Quais arquivos aparecem?",
+   "passo_a_passo": [
+    "1) O curinga * substitui qualquer sequência após 'ind'.",
+    "2) O padrão vale para o início das palavras do nome: 'indicios' e 'indicativo' começam com ind.",
+    "3) 'sindicato' começa com s, então normas_sindicato.txt não é retornado."
+   ],
+   "questao_id": "tjsp-2025-063"
+  },
+  "erro_comum": "Achar que ind* procura 'ind' em qualquer posição do nome. O padrão do Explorador casa com o início das palavras do arquivo.",
+  "pegadinhas": [
+   "Incluir normas_sindicato.txt porque contém as letras 'ind' no meio de 'sindicato'.",
+   "Achar que Shift + Delete manda o arquivo para a Lixeira."
+  ],
+  "resumo": "Windows 11 usa Explorador (Windows + E), Configurações (Windows + I) e atalhos próprios. A pesquisa com * e ? aplica o padrão ao nome; ind* pega palavras que começam com ind. O OneDrive sincroniza e mantém status online/local.",
+  "flashcards": [
+   {
+    "frente": "Atalho do Explorador de Arquivos",
+    "verso": "Windows + E."
+   },
+   {
+    "frente": "O que ind* retorna?",
+    "verso": "Arquivos cujo nome tem palavra começando com 'ind'."
+   },
+   {
+    "frente": "Onde ver espaço em disco no Windows 11?",
+    "verso": "Configurações > Sistema > Armazenamento."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-055",
+   "tjsp-2025-063",
+   "tjsp-2025-062",
+   "tjsp-2025-061"
+  ],
+  "artigos_citados": [],
+  "fonte": "Microsoft Windows 11 (documentação) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+ },
+ {
+  "id": "info-2",
+  "materia": "Conhecimentos Gerais",
+  "assunto": "Informática",
+  "topico": "Word e Excel 365: formatação, fórmulas e referências",
+  "edital_ref": "estrutura derivada — validar",
+  "estrutura_derivada": true,
+  "objetivos": [
+   "Usar recursos básicos do Word 365.",
+   "Escrever fórmulas com SOMA, MÉDIA, SE e PROCV.",
+   "Diferenciar referência relativa de absoluta."
+  ],
+  "secoes": [
+   {
+    "titulo": "Office 365: interface",
+    "texto_md": "Word, Excel e PowerPoint 365 compartilham a faixa de opções com guias Arquivo, Página Inicial, Inserir, Layout, Referências, Revisão e Exibir. O botão Arquivo abre Backstage com Novo, Abrir, Salvar, Imprimir e Opções. A barra de status mostra página, palavras e zoom. Os arquivos podem ser salvos no OneDrive ou no computador. A configuração padrão usa salvamento automático quando o arquivo está na nuvem. Atalhos comuns: Ctrl + N novo, Ctrl + O abrir, Ctrl + S salvar, Ctrl + P imprimir, Ctrl + Z desfazer, Ctrl + Y refazer. A banca cobra caminhos de menu e atalhos, então associe cada tarefa à guia correspondente.",
+    "artigos": []
+   },
+   {
+    "titulo": "Word: formatação e atalhos",
+    "texto_md": "No Word 365, a guia Página Inicial concentra fonte, parágrafo e estilos. Ctrl + B aplica negrito; Ctrl + I itálico; Ctrl + U sublinhado. Ctrl + E centraliza; Ctrl + J justifica; Ctrl + L alinha à esquerda; Ctrl + R à direita. Ctrl + Enter insere quebra de página. A guia Inserir permite tabela, imagem, cabeçalho, rodapé e número de página. A guia Layout ajusta margens e orientação. A guia Revisão tem ortografia e gramática (F7), comentários e controle de alterações. Para exibir marcas de parágrafo, use Página Inicial > Parágrafo > Mostrar/Ocultar. A prova costuma pedir o efeito de um atalho ou o caminho para inserir número de página.",
+    "artigos": []
+   },
+   {
+    "titulo": "Excel: células e referências",
+    "texto_md": "No Excel 365, cada célula tem endereço formado por coluna e linha (A1, B7). A referência relativa muda ao copiar a fórmula; a absoluta fica fixa com $. F4 alterna entre relativa (A1), absoluta ($A$1), coluna absoluta (A$1) e linha absoluta ($A1). Ao arrastar a alça de preenchimento, o Excel ajusta referências relativas e mantém as absolutas. O intervalo A2:B4 pode ser travado como $A$2:$B$4. A barra de fórmulas mostra o conteúdo da célula; a guia Fórmulas tem Inserir Função e Auditoria de Fórmulas. Ctrl + Shift + L ativa filtro; Alt + = insere SOMA automática. A banca costuma mostrar uma planilha e pedir a fórmula que produz o resultado.",
+    "artigos": []
+   },
+   {
+    "titulo": "SOMA, MÉDIA e SE",
+    "texto_md": "As funções básicas seguem a sintaxe =FUNÇÃO(argumentos). =SOMA(A1:A10) soma o intervalo; =MÉDIA(B2:B5) calcula a média aritmética; =MÁXIMO(C1:C9) e =MÍNIMO(C1:C9) mostram extremos; =CONT.SE(D2:D20;\"SP\") conta ocorrências. A função SE tem três argumentos: =SE(C2>=7;\"Aprovado\";\"Reprovado\"). No Excel em português, o separador de argumentos é ponto e vírgula. Se o teste for verdadeiro, retorna o segundo argumento; se falso, o terceiro. É possível aninhar SE, mas a prova cobra principalmente o SE simples. Cuidado com texto entre aspas e com a ordem dos argumentos: inverter teste e resultados muda a resposta.",
+    "artigos": []
+   },
+   {
+    "titulo": "PROCV",
+    "texto_md": "PROCV procura um valor na primeira coluna de um intervalo e retorna o conteúdo de outra coluna na mesma linha. Sintaxe: =PROCV(valor_procurado; intervalo; número_da_coluna; [procurar_intervalo]). O último argumento é opcional; use FALSO ou 0 para correspondência exata. Exemplo real: =PROCV(C7;A$2:B$4;2) procura o valor de C7 na primeira coluna de A2:B4 e devolve a segunda coluna. O intervalo precisa ter o valor procurado na primeira coluna. Se o valor não existir, aparece #N/D. Para arrastar a fórmula sem deslocar o intervalo, trave as referências com $. A banca costuma trocar a ordem dos argumentos ou usar intervalo que não contém o valor.",
+    "artigos": []
+   },
+   {
+    "titulo": "Como a prova cobra",
+    "texto_md": "Leia a planilha e identifique o que a fórmula deve retornar. Depois confira três coisas: a função certa, a ordem dos argumentos e as referências absolutas. Em PROCV, o primeiro argumento é o valor procurado, o segundo é o intervalo e o terceiro é a coluna de retorno. Em SE, o primeiro é o teste, o segundo é o resultado verdadeiro e o terceiro é o falso. Em SOMA e MÉDIA, verifique se o intervalo inclui as células certas. Por fim, veja se a fórmula será arrastada: se sim, as referências que não devem mudar precisam de $. A alternativa correta costuma ser a que combina esses três elementos sem inverter nada.",
+    "artigos": []
+   }
+  ],
+  "exemplos_concretos": [
+   "Excel 365 → célula D7 → =PROCV(C7;A$2:B$4;2).",
+   "Excel 365 → Fórmulas → Inserir Função → SOMA → intervalo A1:A10.",
+   "Word 365 → Inserir → Número de Página → Posição: Fim da Página."
+  ],
+  "exemplo_resolvido": {
+   "enunciado": "Planilha com descrições em A2:B4 e códigos em C7:C9; qual fórmula em D7, arrastada até D9, retorna a descrição correta?",
+   "passo_a_passo": [
+    "1) O valor procurado é C7; o intervalo de consulta é A2:B4.",
+    "2) A descrição está na segunda coluna do intervalo, então o índice é 2.",
+    "3) Para arrastar sem deslocar o intervalo, trave as linhas: A$2:B$4. Fórmula: =PROCV(C7;A$2:B$4;2)."
+   ],
+   "questao_id": "tjsp-2025-058"
+  },
+  "erro_comum": "Inverter a ordem dos argumentos do PROCV ou usar referência relativa no intervalo que será arrastado, fazendo a consulta sair da tabela.",
+  "pegadinhas": [
+   "Trocar valor procurado por intervalo no primeiro argumento do PROCV.",
+   "Esquecer o $ e deslocar A2:B4 ao arrastar a fórmula para baixo."
+  ],
+  "resumo": "Word 365 usa faixa de opções e atalhos (Ctrl + B, Ctrl + Enter, F7). Excel 365 usa referências relativas e absolutas ($, F4) e funções como SOMA, MÉDIA, SE e PROCV. Em PROCV, a ordem é valor, intervalo, coluna de retorno.",
+  "flashcards": [
+   {
+    "frente": "Sintaxe do PROCV",
+    "verso": "=PROCV(valor; intervalo; coluna; [exato])."
+   },
+   {
+    "frente": "O que F4 faz?",
+    "verso": "Alterna referência relativa e absoluta."
+   },
+   {
+    "frente": "Separador de argumentos no Excel em português",
+    "verso": "Ponto e vírgula."
+   }
+  ],
+  "questoes_relacionadas": [
+   "tjsp-2025-056",
+   "tjsp-2025-057",
+   "tjsp-2025-058",
+   "tjsp-2025-059"
+  ],
+  "artigos_citados": [],
+  "fonte": "Microsoft 365 (Word/Excel) + VUNESP TJSP2503",
+  "revisado": false,
+  "versao": 1
+ },
+ {
   "id": "lp-concordancia",
   "materia": "Língua Portuguesa",
   "assunto": "Interpretação de texto",

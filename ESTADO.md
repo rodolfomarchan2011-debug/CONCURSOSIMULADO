@@ -7,7 +7,7 @@ Atualizado: 2026-11-18 · branch `melhoria-pedagogica` · `main` intocada em `57
 - **D0** (`7c8943b`): 8 fontes, 3.035 artigos; Lei 8.429/92 (22, lacunas 4–6), 9.099/95 (97), 13.146/15 (124), 10.261/68 (329). `meta.leis` com URL, sha256, lacunas, emenda.
 - **C1** (`3b9057c`): `data/edital/tjsp2607.json` (58 itens, 11 assuntos), `QUOTAS` derivadas, `tools/edital_importar.py`.
 - **C3** (`650b78d`, `4d5917b`): `/estudar`, `/estudar/[aulaId]`, `/curadoria`, overlay de tópicos, links, `/treino?ids=`, validador, montadores, CI.
-- **C2 — 11 aulas** (16 previstas após dividir o art. 5º):
+- **C2 — 13 aulas** (16 previstas após dividir o art. 5º):
   - `dir-const-art5-direitos` (650)
   - `dir-const-art5-remedios` (650)
   - `dir-penal-adm` (680)
@@ -19,10 +19,12 @@ Atualizado: 2026-11-18 · branch `melhoria-pedagogica` · `main` intocada em `57
   - `lp-crase-regencia` (693)
   - `lp-concordancia` (655)
   - `lp-pontuacao` (656)
+  - `info-1` (672)
+  - `info-2` (627)
 
 ## Falta
 
-- **C2**: 5 aulas — Informática 2, RL 2, Matemática 1.
+- **C2**: 3 aulas — RL 2 (`rl-1`, `rl-2`) e Matemática 1 (`mat-1`).
 - **D1**: 27 explicações (2025/018–043 e 046) em `content/explicacoes/<id>.json`, lotes de 5.
 - **Gate parcial**: com as 16 aulas, `pnpm test && pnpm build`, `git switch main && git merge --ff-only`, parar e pedir OK para push.
 - **Gate final**: D1 concluído e novo OK para deploy.
